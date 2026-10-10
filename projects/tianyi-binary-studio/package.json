@@ -1,0 +1,11 @@
+{
+  "name": "tianyi-binary-studio",
+  "version": "0.21.0",
+  "private": true,
+  "scripts": {
+    "test": "node tests/verify.cjs"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  }
+}

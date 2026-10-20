@@ -19,3 +19,6 @@ dist/*
 !dist/koishi-plugin-chatluna-mail-mcp-0.7.1.tgz.sha256
 !dist/mail-mcp-0.7.1-upgrade.zip
 !dist/mail-mcp-0.7.1-upgrade.zip.sha256
+!dist/mail-mcp-0.7.1-scripts.zip
+!dist/mail-mcp-0.7.1-scripts.zip.sha256
+!dist/SHA256SUMS.txt

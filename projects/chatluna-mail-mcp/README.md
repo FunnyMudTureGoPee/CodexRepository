@@ -1,5 +1,7 @@
 # ChatLuna Mail MCP 0.7.1
 
+首次安装请看 [快速开始](QUICKSTART.md)。推荐在 [GitHub Release](https://github.com/FunnyMudTureGoPee/CodexRepository/releases/tag/chatluna-mail-mcp-v0.7.1) 下载脚本包，解压后按文档安装。
+
 本地 Koishi 插件。通过 MCP 提供图文邮件服务；每日读取管理员指定的 ChatLuna 预设和会话上下文，由一个可选模型判断当前是否应发送，并生成邮件。没有多模型审核、投票或收件箱功能。
 
 

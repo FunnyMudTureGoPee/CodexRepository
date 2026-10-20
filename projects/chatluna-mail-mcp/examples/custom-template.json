@@ -1,0 +1,19 @@
+{
+  "id": "personal-briefing",
+  "name": "个人简报",
+  "prompt": "写给 {{name}} 的简洁图文简报，根据当前上下文决定邮件主题，不虚构事实。",
+  "fields": {
+    "name": {
+      "required": true,
+      "default": ""
+    }
+  },
+  "layout": {
+    "accent": "#2563eb",
+    "background": "#ffffff",
+    "textColor": "#1f2937",
+    "width": 640,
+    "heading": true,
+    "footer": "致 {{name}}：由 ChatLuna 助手整理。"
+  }
+}

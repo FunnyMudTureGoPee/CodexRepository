@@ -1,0 +1,8 @@
+{
+  "autoRetryEnabled": false,
+  "maxRetryAttempts": 2,
+  "retryDelayMinutes": 5,
+  "cleanupEnabled": false,
+  "retentionDays": 30,
+  "maxDecisionsPerHour": 60
+}

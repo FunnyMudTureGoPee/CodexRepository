@@ -1,0 +1,19 @@
+{
+  "id": "once-reminder",
+  "enabled": false,
+  "scheduleType": "once",
+  "time": "09:00",
+  "timezone": "Asia/Shanghai",
+  "runAt": "2026-10-20T09:00:00+08:00",
+  "conversationId": "填写已授权会话ID",
+  "model": "",
+  "preset": "",
+  "prompt": "根据当前上下文判断此时是否有必要发送提醒。",
+  "to": [
+    "your-test@example.com"
+  ],
+  "templateId": "briefing",
+  "variables": {},
+  "historyLimit": 60,
+  "cooldownMinutes": 60
+}

@@ -1,0 +1,67 @@
+{
+  "note": "先启用 allowAgentManage。conversationId、model 和收件人必须来自 get_mail_configuration；以下仅为示例。",
+  "steps": [
+    {
+      "name": "get_mail_configuration",
+      "arguments": {}
+    },
+    {
+      "name": "save_mail_template",
+      "arguments": {
+        "expectedVersion": 0,
+        "template": {
+          "id": "agent-daily-notice",
+          "name": "每日事项通知",
+          "prompt": "根据上下文为 {{person}} 写简洁通知，只引用提供的事实和图片。",
+          "fields": {
+            "person": {
+              "required": true,
+              "default": ""
+            }
+          },
+          "layout": {
+            "footer": "致 {{person}}"
+          }
+        }
+      }
+    },
+    {
+      "name": "save_mail_task",
+      "arguments": {
+        "expectedHash": "",
+        "task": {
+          "id": "agent-daily-task",
+          "name": "每日事项判断",
+          "enabled": false,
+          "scheduleType": "daily",
+          "time": "09:00",
+          "timezone": "Asia/Shanghai",
+          "conversationId": "替换为配置查询返回的会话ID",
+          "useDefaultModel": false,
+          "model": "",
+          "prompt": "只有出现值得 {{person}} 关注的新事项时才发送，缺乏信息时不发送。",
+          "to": [
+            "替换为白名单邮箱"
+          ],
+          "templateId": "agent-daily-notice",
+          "variables": {
+            "person": "小明"
+          }
+        }
+      }
+    },
+    {
+      "name": "evaluate_mail_task",
+      "arguments": {
+        "taskId": "agent-daily-task"
+      }
+    },
+    {
+      "name": "get_mail_task",
+      "arguments": {
+        "taskId": "agent-daily-task"
+      }
+    }
+  ],
+  "enable": "需要启用时，将 get_mail_task 返回的 task.enabled 设为 true，保持其他字段，并带该次 hash 调用 save_mail_task。"
+}

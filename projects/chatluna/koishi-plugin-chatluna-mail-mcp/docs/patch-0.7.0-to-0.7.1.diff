@@ -1,0 +1,310 @@
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -1,4 +1,8 @@
+ # 更新记录
++
++## 0.7.1
++
++修复工作流在线判断，使用 Koishi `Universal.Status.ONLINE`；图片生成与导入统一校验数字/字符串用户 ID，保留严格归属检查，支持合法 ID 0，未配置改为 null。自动配图增加可选 `presetName`，工具授权失败列出不匹配的名字。MCP 改用无状态 Streamable HTTP，取消 30 分钟空闲会话回收，保留逐请求鉴权、GET 405 和发信幂等；不自动重放工具调用。升级脚本备份旧 lib（含 bak 文件）。63 项自动测试通过；目标电脑的真实 ChatLuna/MediaLuna/SMTP 联调待升级后验收。
+ 
+ ## 0.7.0
+ 
+--- a/README.md
++++ b/README.md
+@@ -211,3 +211,8 @@
+ 0.7.0 共 60 项测试；详见 [acceptance-0.7.0.md](docs/acceptance-0.7.0.md)、[upgrade-0.7.0.md](docs/upgrade-0.7.0.md) 与 [iterations.md](docs/iterations.md)。源码核实、模拟模型测试、外部真实模型联调是不同证据等级。
+ 
+ API 参考：https://chatluna.chat/development/api-reference/chatluna-service.html
++
++
++## 0.7.1 工单修复
++
++修复在线枚举、图片归属类型及 ID 0；自动配图支持可选 presetName。MCP 使用无状态 HTTP 避免空闲会话过期；升级后在 ChatLuna 手动重连一次。升级脚本会备份旧 lib 及 bak 文件。详见 [升级与验收说明](docs/upgrade-0.7.1.md)。
+--- a/client/index.ts
++++ b/client/index.ts
+@@ -188,9 +188,9 @@
+           h('p',{class:'muted'},'开启后，主 Agent 可通过 import_mail_image 导入已完成的绘图任务。定时任务还可开启自动配图，每次执行最多提交一次绘图请求，可能产生绘图费用。绘图提示词由模型根据邮件内容自动生成，管理员只限定可用渠道。目前仅接本地 PNG/JPEG 缓存。'),
+           h('div',{class:'grid'},[
+             check('允许导入 MediaLuna 图片',!!settings.mediaImportEnabled,v=>settings.mediaImportEnabled=v),
+-            input('图片所属用户编号（Koishi user.id）',settings.mediaOwnerId??0,v=>settings.mediaOwnerId=Number(v),'number',{min:0}),
+-          ]),
+-          h('p',{class:'muted'},'此编号是 Koishi 用户表中的内部数字 ID，不是 QQ 号。自动绘图时必须与上方执行用户对应。'),
++            input('图片所属用户编号（Koishi user.id）',settings.mediaOwnerId??'',v=>settings.mediaOwnerId=v.trim()===''?null:Number(v),'number',{min:0}),
++          ]),
++          h('p',{class:'muted'},'此编号是 Koishi 用户表中的内部数字 ID，不是 QQ 号；0 是合法值，留空表示未配置。自动绘图时必须与上方执行用户对应。模型可使用 presetName 指定已有 MediaLuna 预设。'),
+           h('div',{class:'bar'},(data.value.mediaChannels??[]).map((c:any)=>check('允许绘图渠道 '+c.name,(settings.mediaChannels??[]).includes(c.name),v=>settings.mediaChannels=v?[...settings.mediaChannels,c.name]:settings.mediaChannels.filter((n:string)=>n!==c.name)))),
+           !(data.value.mediaChannels??[]).length?h('p',{class:'muted'},'未发现已启用的 MediaLuna 渠道，当前不能自动配图。'):null,
+           h('details',[h('summary','执行预算'),h('div',{class:'grid'},[
+--- a/package.json
++++ b/package.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "koishi-plugin-chatluna-mail-mcp",
+-  "version": "0.7.0",
++  "version": "0.7.1",
+   "description": "Local ChatLuna context-aware scheduled mail MCP for Koishi",
+   "type": "module",
+   "main": "lib/index.cjs",
+--- a/scripts/upgrade.ps1
++++ b/scripts/upgrade.ps1
+@@ -3,7 +3,7 @@
+   自动升级 koishi-plugin-chatluna-mail-mcp 到当前项目版本。
+ 
+ .DESCRIPTION
+-  检测 Koishi 实例目录，校验安装包 SHA256，备份实例配置与锁文件，
++  检测 Koishi 实例目录，校验安装包 SHA256，备份实例配置、锁文件和旧插件代码（含 bak 补丁），
+   使用实例现有的 Yarn / pnpm / npm 安装本地 tgz，并验证安装后的版本。
+   默认不结束、不重启正在运行的 Koishi；请先退出 Koishi Desktop。
+ 
+@@ -73,18 +73,7 @@
+   $PackagePath = Join-Path $projectRoot ('dist\' + $pluginName + '-' + $expectedVersion + '.tgz')
+ }
+ if (-not (Test-Path -LiteralPath $PackagePath)) {
+-  $distDir = Join-Path $projectRoot 'dist'
+-  $latest = $null
+-  if (Test-Path -LiteralPath $distDir) {
+-    $latest = Get-ChildItem -LiteralPath $distDir -Filter ($pluginName + '-*.tgz') -ErrorAction SilentlyContinue |
+-      Sort-Object LastWriteTime -Descending | Select-Object -First 1
+-  }
+-  if ($latest) {
+-    $PackagePath = $latest.FullName
+-    Write-Warn "当前版本包不存在，改用最新包：$($latest.Name)"
+-  } else {
+-    throw "找不到安装包：$PackagePath"
+-  }
++  throw "找不到目标版本安装包：$PackagePath。请先构建/复制对应版本，不会自动回退到旧包。"
+ }
+ $packagePathResolved = (Resolve-Path -LiteralPath $PackagePath).Path
+ Write-Ok "安装包：$packagePathResolved"
+@@ -179,7 +168,7 @@
+ 
+ if (-not $DryRun -and -not $SkipBackup) {
+   Write-Step '备份实例配置'
+-  $stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
++  $stamp = Get-Date -Format 'yyyyMMdd-HHmmss-fff'
+   if (-not $BackupDir) {
+     $BackupDir = Join-Path $instanceDir ('backups\' + $pluginName + '\' + $stamp)
+   }
+@@ -192,6 +181,11 @@
+   }
+   if (Test-Path -LiteralPath $installedPackagePath) {
+     Copy-Item -LiteralPath $installedPackagePath -Destination (Join-Path $BackupDir 'installed-package.json') -Force
++    $installedLib = Join-Path $installedRoot 'lib'
++    if (Test-Path -LiteralPath $installedLib) {
++      Copy-Item -LiteralPath $installedLib -Destination (Join-Path $BackupDir 'installed-lib') -Recurse -Force
++      Write-Ok '旧插件 lib（含 bak 文件）已备份'
++    }
+   }
+   @(
+     'time=' + (Get-Date).ToString('s'),
+--- a/src/mcp.ts
++++ b/src/mcp.ts
+@@ -1,9 +1,8 @@
+ import {WorkflowError} from './workflow-policy.js'
+ import {ContextReadError} from './history.js'
+-import { randomUUID, timingSafeEqual } from 'node:crypto'
++import { timingSafeEqual } from 'node:crypto'
+ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
+ import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js'
+-import { isInitializeRequest } from '@modelcontextprotocol/sdk/types.js'
+ import type { Context } from 'koishi'
+ import type {} from '@koishijs/plugin-server'
+ import { z } from 'zod'
+@@ -50,7 +49,10 @@
+   return server
+ }
+ export function registerMcp(ctx:Context,service:MailService) {
+-  const sessions=new Map<string,{server:McpServer;transport:StreamableHTTPServerTransport;last:number}>()
++  // All mail state lives in the repository. A per-request transport prevents stale
++  // idle session IDs and survives plugin reloads without replaying tool calls.
++  const active=new Set<McpServer>()
++  let disposed=false
+   ctx.server.all(service.config.endpoint,async web=>{
+     if(!loopback(web.req.socket.remoteAddress ?? '')) {web.status=403;return}
+     if(web.headers.origin) {web.status=403;return}
+@@ -59,25 +61,21 @@
+     if(!['localhost','127.0.0.1','[::1]'].includes(host)) {web.status=403;return}
+     if(!authenticated(web.headers.authorization,service.config.token)) {web.status=401;return}
+     if(web.method==='GET') {web.status=405;web.set('Allow','POST, DELETE');return}
+-    if(!['POST','DELETE'].includes(web.method)) {web.status=405;return}
+-    const id=web.headers['mcp-session-id'],body=web.request.body
+-    let session=typeof id==='string'?sessions.get(id):undefined
+-    if(web.method==='POST' && !id && isInitializeRequest(body)) {
+-      if(sessions.size>=32) {web.status=429;return}
+-      const server=createMcp(service)
+-      const transport:StreamableHTTPServerTransport=new StreamableHTTPServerTransport({
+-        sessionIdGenerator:randomUUID,enableJsonResponse:true,
+-        onsessioninitialized:sid=>{sessions.set(sid,{server,transport,last:Date.now()})}
+-      })
+-      transport.onclose=()=>{if(transport.sessionId) sessions.delete(transport.sessionId)}
+-      await server.connect(transport);session={server,transport,last:Date.now()}
+-    }
+-    if(!session) {web.status=id?404:400;return}
+-    session.last=Date.now();web.respond=false
+-    await session.transport.handleRequest(web.req,web.res,body)
++    if(web.method==='DELETE') {web.status=204;return}
++    if(web.method!=='POST') {web.status=405;web.set('Allow','POST, DELETE');return}
++    if(disposed) {web.status=503;return}
++    if(active.size>=32) {web.status=429;return}
++    const server=createMcp(service)
++    const transport=new StreamableHTTPServerTransport({sessionIdGenerator:undefined,enableJsonResponse:true})
++    active.add(server)
++    const close=()=>{if(active.delete(server)) void server.close().catch(()=>{})}
++    web.res.once('close',close)
++    web.res.once('finish',close)
++    try {
++      await server.connect(transport)
++      web.respond=false
++      await transport.handleRequest(web.req,web.res,web.request.body)
++    } catch(error) {close();throw error}
+   })
+-  ctx.setInterval(async()=>{
+-    for(const [id,s] of sessions) if(Date.now()-s.last>30*60*1000) {sessions.delete(id);await s.server.close()}
+-  },60000)
+-  ctx.on('dispose',async()=>{await Promise.all([...sessions.values()].map(s=>s.server.close()));sessions.clear()})
++  ctx.on('dispose',async()=>{disposed=true;await Promise.all([...active].map(s=>s.close()));active.clear()})
+ }
+--- a/src/media-bridge.ts
++++ b/src/media-bridge.ts
+@@ -1,7 +1,7 @@
+ import {open} from 'node:fs/promises'
+ import type {Assets} from './assets.js'
+ import type {Repository} from './repository.js'
+-import {WorkflowError,type WorkflowPolicy} from './workflow-policy.js'
++import {WorkflowError,sameOwner,type WorkflowPolicy} from './workflow-policy.js'
+ import {digest} from './repository.js'
+ export class MediaBridge {
+  private tail:Promise<unknown>=Promise.resolve()
+@@ -9,12 +9,12 @@
+  async importImage(taskId:number,index=0,guard:()=>Promise<void>=async()=>{}){
+   const work=async()=>{
+    const settings=await this.policy.settings(),media=this.policy.media()
+-   if(!settings.mediaImportEnabled || !settings.mediaOwnerId) throw new WorkflowError('MEDIA_IMPORT_DISABLED','Media image import is disabled')
++   if(!settings.mediaImportEnabled || settings.mediaOwnerId==null) throw new WorkflowError('MEDIA_IMPORT_DISABLED','Media image import is disabled')
+    if(!Number.isSafeInteger(taskId)||taskId<1||!Number.isInteger(index)||index<0||index>4)throw new WorkflowError('MEDIA_INVALID_SELECTION','Media task id or image index is invalid')
+    if(!media?.tasks?.getById || !media?.cache?.get)throw new WorkflowError('MEDIA_API_UNAVAILABLE','MediaLuna task/cache API is unavailable')
+    await guard()
+    const task=await media.tasks.getById(taskId)
+-   if(!task || task.uid!==settings.mediaOwnerId)throw new WorkflowError('MEDIA_TASK_NOT_ALLOWED','Media task is unavailable or belongs to another owner')
++   if(!task || !sameOwner(task.uid,settings.mediaOwnerId))throw new WorkflowError('MEDIA_TASK_NOT_ALLOWED','Media task is unavailable or belongs to another owner')
+    if(task.status!=='success')throw new WorkflowError('MEDIA_TASK_NOT_READY','Media task has not completed successfully')
+    const output=task.responseSnapshot?.[index]
+    if(output?.kind!=='image'||typeof output.url!=='string')throw new WorkflowError('MEDIA_IMAGE_UNAVAILABLE','Media task output is not a cached image')
+--- a/src/transport.ts
++++ b/src/transport.ts
+@@ -1,3 +1,4 @@
++import {WorkflowError} from './workflow-policy.js'
+ export type DeliveryOrigin =
+   | { kind: 'admin' }
+   | { kind: 'agent' }
+@@ -12,6 +13,7 @@
+   return { status: definite ? 'failed' : 'unknown', errorCode: code, responseCode: Number.isFinite(responseCode) ? responseCode : undefined, transient }
+ }
+ export function safeError(error: unknown) {
++  if(error instanceof WorkflowError) return error.message
+   const message = error instanceof Error ? error.message : ''
+   if(message==='Compatible ChatLuna conversation/preset APIs are unavailable') return message
+   if (/^(Workflow|Media |Retry|Cleanup|Maintenance|Draft|Task|Context|Selected model|Preset|Conversation|Missing template|Undeclared template|Recipient|Sending|Daily sending|Hourly decision|Asset|Image|Invalid asset|Copy builtin|Template)/.test(message) && message.length < 250)
+--- a/src/version.ts
++++ b/src/version.ts
+@@ -1 +1 @@
+-export const VERSION = '0.7.0'
++export const VERSION = '0.7.1'
+--- a/src/workflow-policy.ts
++++ b/src/workflow-policy.ts
+@@ -1,4 +1,4 @@
+-import type {Context} from 'koishi'
++import {Universal,type Context} from 'koishi'
+ import {createRequire} from 'node:module'
+ import {join} from 'node:path'
+ import {z} from 'zod'
+@@ -9,13 +9,16 @@
+  timeoutSeconds:z.number().int().min(10).max(900).default(300),maxToolResultChars:z.number().int().min(500).max(60000).default(16000),
+  platform:z.string().max(80).default(''),selfId:z.string().max(128).default(''),userId:z.string().max(128).default(''),
+  channelId:z.string().max(128).default(''),guildId:z.string().max(128).default(''),isDirect:z.boolean().default(true),
+- mediaImportEnabled:z.boolean().default(false),mediaOwnerId:z.number().int().min(0).default(0),
++ mediaImportEnabled:z.boolean().default(false),mediaOwnerId:z.number().int().safe().min(0).nullable().default(null),
+  mediaChannels:z.array(z.string().min(1).max(100)).max(10).default([]),
+ }).strict()
+ export type WorkflowSettings=z.infer<typeof workflowSettingsSchema>
+ export class WorkflowError extends Error {
+  constructor(readonly code:string,message:string,readonly trace?:unknown){super(message);this.name='WorkflowError'}
+ }
++// Database user IDs can be strings or numbers. Missing identities never authorize one another.
++export const sameOwner=(actual:unknown,expected:number|null)=>expected!=null && (typeof actual==='string'||typeof actual==='number') && String(actual)===String(expected)
++export const toolNames=(names:string[])=>JSON.stringify([...new Set(names)])
+ export const blockedTool=(name:string)=>/mail|media.?luna|(^|[_:-])draw($|[_:-])|generat.*image|image.*generat|sub.?agent|handoff|delegate|execute|shell|command|schedule|trigger|delete|remove|merge|replace|upload|import|write|update|create|save|send|publish|purchase|payment/i.test(name)
+ export class WorkflowPolicy {
+  private tail:Promise<unknown>=Promise.resolve()
+@@ -33,9 +36,10 @@
+    const settings=workflowSettingsSchema.parse(input),current=await this.settings()
+    if(current.hash!==expectedHash) throw new WorkflowError('WORKFLOW_CONFLICT','Workflow settings changed; refresh before saving')
+    const names=new Set(this.catalog().map(t=>t.name))
+-   if(settings.allowedTools.some(n=>!names.has(n))) throw new WorkflowError('WORKFLOW_TOOL_UNAVAILABLE','Workflow tool is unavailable or excluded')
++   const unavailable=settings.allowedTools.filter(n=>!names.has(n))
++   if(unavailable.length) throw new WorkflowError('WORKFLOW_TOOL_UNAVAILABLE','Workflow tool is unavailable or excluded: '+toolNames(unavailable))
+    if(settings.enabled && (!settings.platform || !settings.selfId || !settings.userId)) throw new WorkflowError('WORKFLOW_IDENTITY_REQUIRED','Workflow execution identity is required')
+-   if(settings.mediaImportEnabled && !settings.mediaOwnerId) throw new WorkflowError('WORKFLOW_MEDIA_OWNER_REQUIRED','Workflow MediaLuna owner id is required')
++   if(settings.mediaImportEnabled && settings.mediaOwnerId==null) throw new WorkflowError('WORKFLOW_MEDIA_OWNER_REQUIRED','Workflow MediaLuna owner id is required')
+    await this.repo.put('settings:workflow','settings','active',settings);return this.settings()
+   }
+   const next=this.tail.then(work,work);this.tail=next.catch(()=>{});return next
+@@ -45,14 +49,16 @@
+   if(task.executionMode!=='tools') return settings
+   if(!settings.enabled) throw new WorkflowError('WORKFLOW_DISABLED','Workflow execution is disabled')
+   if(!this.cl()?.createAgent || !this.cl()?.resolveToolMask || !this.cl()?.platform?.getFilteredTools) throw new WorkflowError('WORKFLOW_API_UNAVAILABLE','Workflow ChatLuna Agent API is unavailable')
+-  if(task.tools.some(t=>blockedTool(t)||!settings.allowedTools.includes(t)||!this.catalog().some(c=>c.name===t))) throw new WorkflowError('WORKFLOW_TOOL_NOT_ALLOWED','Workflow tool is not authorized')
++  const catalog=new Set(this.catalog().map(c=>c.name))
++  const denied=task.tools.filter(t=>blockedTool(t)||!settings.allowedTools.includes(t)||!catalog.has(t))
++  if(denied.length) throw new WorkflowError('WORKFLOW_TOOL_NOT_ALLOWED','Workflow tool is not authorized: '+toolNames(denied))
+   if(task.workflowImages && (!settings.mediaImportEnabled || !settings.mediaChannels.length || !this.media()?.generateByName)) throw new WorkflowError('WORKFLOW_MEDIA_UNAVAILABLE','Workflow image generation is not configured')
+   return settings
+  }
+  async createSession(settings:WorkflowSettings):Promise<any>{
+   const bot=(this.ctx.bots as any)[settings.platform+':'+settings.selfId]
+   if(!bot) throw new WorkflowError('WORKFLOW_BOT_NOT_FOUND','Workflow bot was not found; configure a real connected bot')
+-  if(bot.status && bot.status!=='online') throw new WorkflowError('WORKFLOW_BOT_OFFLINE','Workflow bot is offline')
++  if(bot.status!==Universal.Status.ONLINE) throw new WorkflowError('WORKFLOW_BOT_OFFLINE','Workflow bot is offline')
+   const require=createRequire(join(this.ctx.baseDir,'package.json'))
+   const helper=require('koishi-plugin-chatluna/utils/virtual_session')
+   const session=await helper.buildVirtualSession(bot,settings,{message:'邮件任务后台执行',messageName:'mail-workflow'})
+--- a/src/workflow.ts
++++ b/src/workflow.ts
+@@ -2,7 +2,7 @@
+ import {createRequire} from 'node:module'
+ import {join} from 'node:path'
+ import {z} from 'zod'
+-import {WorkflowError,type WorkflowPolicy} from './workflow-policy.js'
++import {WorkflowError,sameOwner,toolNames,type WorkflowPolicy} from './workflow-policy.js'
+ import type {MediaBridge} from './media-bridge.js'
+ import type {Task} from './types.js'
+ type Trace={tools:Array<{name:string;status:string;durationMs:number}>;modelRounds:number;toolCalls:number;generatedImages:number;durationMs:number}
+@@ -71,7 +71,7 @@
+     const conversation=await this.policy.cl().conversation.getConversation(task.conversationId)
+     const mask=await this.policy.cl().resolveToolMask({session,conversation,bindingKey:conversation.bindingKey,source:'chatluna'})
+     if(!this.policy.cl().platform.getFilteredTools(mask).includes(name) || entry.authorization && !entry.authorization(session))
+-      throw new WorkflowError('WORKFLOW_TOOL_AUTHORIZATION','Workflow tool is not authorized for this execution identity')
++      throw new WorkflowError('WORKFLOW_TOOL_AUTHORIZATION','Workflow tool is not authorized for this execution identity: '+toolNames([name]))
+    }
+    for(const name of task.tools)await authorize(name,this.policy.cl().platform.getTool(name))
+    const tools:any[]=task.tools.map(name=>{
+@@ -88,14 +88,14 @@
+     const require=createRequire(join(this.policy.ctx.baseDir,'package.json')),peerRequire=createRequire(require.resolve('koishi-plugin-chatluna'))
+     const {DynamicStructuredTool}=peerRequire('@langchain/core/tools')
+     tools.push({name:'generate_mail_image',selector:()=>true,createTool:()=>new DynamicStructuredTool({
+-     name:'generate_mail_image',description:'Generate one illustration through an administrator-allowed MediaLuna channel and import it as an email asset. Write the prompt yourself from the email content; the administrator only limits channels. Use the returned assetId in mail.images. This may incur image generation charges. At most one image generation per workflow.',
+-     schema:z.object({channelName:z.enum(settings.mediaChannels as [string,...string[]]),prompt:z.string().min(1).max(4000)}).strict(),
+-     func:wrap('generate_mail_image',async({channelName,prompt}:any)=>{
++     name:'generate_mail_image',description:'Generate one illustration through an administrator-allowed MediaLuna channel and import it as an email asset. Optional presetName selects an existing MediaLuna preset (for example character appearance). Write the prompt yourself from the email content; the administrator only limits channels. Use the returned assetId in mail.images. This may incur image generation charges. At most one image generation per workflow.',
++     schema:z.object({channelName:z.enum(settings.mediaChannels as [string,...string[]]),prompt:z.string().min(1).max(4000),presetName:z.string().trim().min(1).max(100).optional()}).strict(),
++     func:wrap('generate_mail_image',async({channelName,prompt,presetName}:any)=>{
+       if(!settings.mediaChannels.includes(channelName))throw new WorkflowError('WORKFLOW_MEDIA_CHANNEL','Workflow image channel is not allowed')
+       if(trace.generatedImages>=1)throw new WorkflowError('WORKFLOW_TOOL_LIMIT','Workflow image generation limit reached')
+-      if(session.user?.id!==settings.mediaOwnerId)throw new WorkflowError('MEDIA_TASK_NOT_ALLOWED','Media owner does not match the workflow execution identity')
++      if(!sameOwner(session.user?.id,settings.mediaOwnerId))throw new WorkflowError('MEDIA_TASK_NOT_ALLOWED','Media owner does not match the workflow execution identity')
+       trace.generatedImages++
+-      const result=await this.policy.media().generateByName({channelName,prompt,session,uid:settings.mediaOwnerId})
++      const result=await this.policy.media().generateByName({channelName,prompt,...(presetName?{presetName}:{}),session,uid:settings.mediaOwnerId})
+       await check()
+       if(!result?.success || !result.taskId)throw new WorkflowError('WORKFLOW_MEDIA_FAILED','Workflow image generation did not complete successfully')
+       const completed=await this.policy.media().tasks.getById(result.taskId)

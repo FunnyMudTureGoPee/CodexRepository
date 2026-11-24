@@ -1,0 +1,23 @@
+{
+  "id": "new-context-reminder",
+  "enabled": false,
+  "scheduleType": "daily",
+  "time": "09:00",
+  "timezone": "Asia/Shanghai",
+  "conversationId": "填写已授权会话ID",
+  "model": "",
+  "preset": "",
+  "prompt": "根据主插件预设及新增上下文判断是否有值得主动提醒的事项。无必要时不发邮件。",
+  "to": [
+    "your-test@example.com"
+  ],
+  "templateId": "briefing",
+  "variables": {},
+  "historyLimit": 60,
+  "cooldownMinutes": 60,
+  "contextMode": "since-last-send",
+  "contextMaxAgeHours": 24,
+  "minNewMessages": 1,
+  "contextOverflow": "reject",
+  "retryOnFailure": false
+}

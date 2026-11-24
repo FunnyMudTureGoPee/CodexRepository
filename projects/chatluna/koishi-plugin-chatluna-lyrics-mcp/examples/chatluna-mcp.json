@@ -1,0 +1,8 @@
+{
+  "name": "lyrics",
+  "type": "http",
+  "url": "http://127.0.0.1:5140/mcp/lyrics",
+  "headers": {
+    "Authorization": "Bearer replace-with-your-token"
+  }
+}

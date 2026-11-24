@@ -1,0 +1,70 @@
+{
+  "name": "koishi-plugin-chatluna-lyrics-mcp",
+  "version": "0.1.1",
+  "description": "A local, read-only lyrics MCP server for ChatLuna backed by the Koishi database.",
+  "type": "module",
+  "main": "lib/index.cjs",
+  "types": "lib/index.d.cts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.cts",
+      "import": "./lib/index.cjs",
+      "require": "./lib/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "tsc -p tsconfig.test.json && node -e \"require('node:fs').writeFileSync('test-build/package.json', JSON.stringify({ type: 'commonjs' }))\" && node --test test-build/tests/text.test.js test-build/tests/repository.test.js test-build/tests/mcp.test.js test-build/tests/performance.test.js",
+    "check": "pnpm typecheck && pnpm test && pnpm build",
+    "pack:local": "pnpm check && pnpm pack --pack-destination dist"
+  },
+  "keywords": [
+    "koishi",
+    "chatluna",
+    "mcp",
+    "lyrics"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.23.0",
+    "csv-parse": "5.6.0",
+    "zod": "3.25.76"
+  },
+  "peerDependencies": {
+    "@koishijs/plugin-server": "^3.2.3",
+    "koishi": "^4.18.9"
+  },
+  "devDependencies": {
+    "@koishijs/plugin-database-memory": "^3.7.0",
+    "@koishijs/plugin-server": "^3.2.3",
+    "@types/node": "^22.15.3",
+    "koishi": "^4.18.9",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  },
+  "koishi": {
+    "description": {
+      "zh": "复用 Koishi 数据库、供 ChatLuna Agent 只读访问的本地歌词 MCP 服务",
+      "en": "Local read-only lyrics MCP server for ChatLuna using the Koishi database"
+    },
+    "service": {
+      "required": [
+        "database",
+        "server"
+      ],
+      "optional": [
+        "chatluna"
+      ]
+    }
+  }
+}

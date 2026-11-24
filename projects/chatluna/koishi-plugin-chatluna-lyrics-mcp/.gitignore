@@ -1,0 +1,6 @@
+node_modules/
+lib/
+dist/
+coverage/
+test-build/
+*.log

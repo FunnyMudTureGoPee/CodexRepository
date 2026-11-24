@@ -1,0 +1,8 @@
+node_modules/
+lib/
+dist/
+*.log
+test-build/
+console/
+
+context-audit-*.json

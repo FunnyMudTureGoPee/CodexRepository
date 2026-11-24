@@ -1,0 +1,10 @@
+{
+  "name": "chatluna-mail-mcp",
+  "type": "http",
+  "startupTimeout": 20,
+  "timeout": 360,
+  "url": "http://127.0.0.1:5140/mcp/mail",
+  "headers": {
+    "Authorization": "Bearer REPLACE_WITH_YOUR_ASCII_TOKEN"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "workflow-daily-share",
+  "name": "搜索选曲配图日报",
+  "enabled": false,
+  "scheduleType": "daily",
+  "time": "20:00",
+  "timezone": "Asia/Shanghai",
+  "conversationId": "填写已授权会话ID",
+  "preset": "",
+  "model": "",
+  "prompt": "检索当天值得分享的资料，从歌曲库选择一首相关歌曲，必要时生成一张配图，写成简短的图文邮件。没有合适内容就不发送。",
+  "to": [
+    "your-test@example.com"
+  ],
+  "templateId": "briefing",
+  "variables": {},
+  "historyLimit": 60,
+  "cooldownMinutes": 60,
+  "executionMode": "tools",
+  "tools": [
+    "web_search",
+    "music_library"
+  ],
+  "workflowImages": true,
+  "toolFailurePolicy": "stop",
+  "contextMode": "since-last-send",
+  "contextMaxAgeHours": 24,
+  "minNewMessages": 1,
+  "contextOverflow": "reject",
+  "retryOnFailure": false
+}

@@ -1,0 +1,159 @@
+{
+  "advisories": {
+    "1113091": {
+      "findings": [
+        {
+          "version": "0.3.87",
+          "paths": [
+            ".>koishi-plugin-chatluna>@langchain/core>langsmith"
+          ],
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1113091,
+      "title": "LangSmith Client SDK Affected by Server-Side Request Forgery via Tracing Header Injection",
+      "module_name": "langsmith",
+      "vulnerable_versions": ">=0.3.41 <0.4.6",
+      "patched_versions": ">=0.4.6",
+      "severity": "moderate",
+      "cwe": "CWE-918",
+      "github_advisory_id": "GHSA-v34v-rq6j-cj6p",
+      "url": "https://github.com/advisories/GHSA-v34v-rq6j-cj6p"
+    },
+    "1114301": {
+      "findings": [
+        {
+          "version": "16.5.4",
+          "paths": [
+            ".>koishi-plugin-chatluna>koishi>@koishijs/core>@satorijs/core>@cordisjs/plugin-http>file-type",
+            ".>koishi-plugin-chatluna>koishi>@koishijs/loader>@koishijs/core>@satorijs/core>@cordisjs/plugin-http>file-type",
+            ".>koishi-plugin-chatluna>koishi>@koishijs/plugin-http>@cordisjs/plugin-http>file-type",
+            ".>koishi-plugin-chatluna>koishi>@koishijs/plugin-proxy-agent>@cordisjs/plugin-proxy-agent>@cordisjs/plugin-http>file-type",
+            ".>koishi-plugin-chatluna>koishi>@satorijs/core>@cordisjs/plugin-http>file-type",
+            ".>koishi-plugin-chatluna>koishi-plugin-markdown>koishi>@koishijs/core>@satorijs/core>@cordisjs/plugin-http>file-type",
+            ".>koishi-plugin-chatluna>koishi-plugin-markdown>koishi>@koishijs/loader>@koishijs/core>@satorijs/core>@cordisjs/plugin-http>file-type",
+            ".>koishi-plugin-chatluna>koishi-plugin-markdown>koishi>@koishijs/plugin-http>@cordisjs/plugin-http>file-type",
+            ".>koishi-plugin-chatluna>koishi-plugin-markdown>koishi>@koishijs/plugin-proxy-agent>@cordisjs/plugin-proxy-agent>@cordisjs/plugin-http>file-type",
+            ".>koishi-plugin-chatluna>koishi-plugin-markdown>koishi>@satorijs/core>@cordisjs/plugin-http>file-type"
+          ],
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1114301,
+      "title": "file-type affected by infinite loop in ASF parser on malformed input with zero-size sub-header",
+      "module_name": "file-type",
+      "vulnerable_versions": ">=13.0.0 <21.3.1",
+      "patched_versions": ">=21.3.1",
+      "severity": "moderate",
+      "cwe": "CWE-835",
+      "github_advisory_id": "GHSA-5v7r-6r5c-r473",
+      "url": "https://github.com/advisories/GHSA-5v7r-6r5c-r473"
+    },
+    "1116472": {
+      "findings": [
+        {
+          "version": "0.3.87",
+          "paths": [
+            ".>koishi-plugin-chatluna>@langchain/core>langsmith"
+          ],
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1116472,
+      "title": "LangSmith Client SDKs has Prototype Pollution in langsmith-sdk via Incomplete `__proto__` Guard in Internal lodash `set()`",
+      "module_name": "langsmith",
+      "vulnerable_versions": "<=0.5.17",
+      "patched_versions": ">=0.5.18",
+      "severity": "moderate",
+      "cwe": "CWE-1321",
+      "github_advisory_id": "GHSA-fw9q-39r9-c252",
+      "url": "https://github.com/advisories/GHSA-fw9q-39r9-c252"
+    },
+    "1117058": {
+      "findings": [
+        {
+          "version": "0.3.87",
+          "paths": [
+            ".>koishi-plugin-chatluna>@langchain/core>langsmith"
+          ],
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1117058,
+      "title": "LangSmith SDK: Streaming token events bypass output redaction",
+      "module_name": "langsmith",
+      "vulnerable_versions": "<=0.5.18",
+      "patched_versions": ">=0.5.19",
+      "severity": "moderate",
+      "cwe": "CWE-200, CWE-359, CWE-532",
+      "github_advisory_id": "GHSA-rr7j-v2q5-chgv",
+      "url": "https://github.com/advisories/GHSA-rr7j-v2q5-chgv"
+    },
+    "1119441": {
+      "findings": [
+        {
+          "version": "10.0.0",
+          "paths": [
+            ".>koishi-plugin-chatluna>@langchain/core>langsmith>uuid",
+            ".>koishi-plugin-chatluna>@langchain/core>uuid"
+          ],
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1119441,
+      "title": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided",
+      "module_name": "uuid",
+      "vulnerable_versions": "<11.1.1",
+      "patched_versions": ">=11.1.1",
+      "severity": "moderate",
+      "cwe": "CWE-787, CWE-1285",
+      "github_advisory_id": "GHSA-w5hq-g745-h8pq",
+      "url": "https://github.com/advisories/GHSA-w5hq-g745-h8pq"
+    },
+    "1120161": {
+      "findings": [
+        {
+          "version": "0.3.87",
+          "paths": [
+            ".>koishi-plugin-chatluna>@langchain/core>langsmith"
+          ],
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "id": 1120161,
+      "title": "LangSmith SDK: Public prompt pull deserializes untrusted manifests without trust boundary warning",
+      "module_name": "langsmith",
+      "vulnerable_versions": "<0.6.0",
+      "patched_versions": ">=0.6.0",
+      "severity": "high",
+      "cwe": "CWE-502",
+      "github_advisory_id": "GHSA-3644-q5cj-c5c7",
+      "url": "https://github.com/advisories/GHSA-3644-q5cj-c5c7"
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 5,
+      "high": 1,
+      "critical": 0
+    },
+    "dependencies": 263,
+    "devDependencies": 0,
+    "optionalDependencies": 0,
+    "totalDependencies": 263
+  }
+}

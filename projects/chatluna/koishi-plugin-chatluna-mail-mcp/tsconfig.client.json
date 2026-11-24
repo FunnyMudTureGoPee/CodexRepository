@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "types": [],
+    "baseUrl": ".",
+    "paths": {
+      "@koishijs/client": [
+        "client/vendor.d.ts"
+      ]
+    }
+  },
+  "include": [
+    "client"
+  ]
+}

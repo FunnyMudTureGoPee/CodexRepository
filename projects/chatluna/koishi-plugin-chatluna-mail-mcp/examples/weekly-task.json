@@ -1,0 +1,22 @@
+{
+  "id": "weekly-reminder",
+  "enabled": false,
+  "scheduleType": "weekly",
+  "time": "09:00",
+  "timezone": "Asia/Shanghai",
+  "weekdays": [
+    1,
+    5
+  ],
+  "conversationId": "填写已授权会话ID",
+  "model": "",
+  "preset": "",
+  "prompt": "根据主插件预设和上下文判断本周是否有新事项值得主动提醒。",
+  "to": [
+    "your-test@example.com"
+  ],
+  "templateId": "briefing",
+  "variables": {},
+  "historyLimit": 60,
+  "cooldownMinutes": 60
+}

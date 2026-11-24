@@ -1,0 +1,17 @@
+{
+  "id": "daily-reminder",
+  "enabled": false,
+  "time": "09:00",
+  "timezone": "Asia/Shanghai",
+  "conversationId": "填写已授权读取的会话ID",
+  "preset": "",
+  "model": "",
+  "prompt": "根据主插件预设和最近聊天上下文，判断今天是否有值得主动提醒我的事项。没有新信息或没有必要时不发邮件；有必要时用简洁文字说明，勿虚构事实。",
+  "to": [
+    "your-test@example.com"
+  ],
+  "templateId": "briefing",
+  "variables": {},
+  "historyLimit": 60,
+  "cooldownMinutes": 60
+}

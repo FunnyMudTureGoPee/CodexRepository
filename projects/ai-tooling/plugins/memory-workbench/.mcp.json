@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "memory-workbench": {
+      "command": "python",
+      "args": [
+        "-B",
+        "${PLUGIN_ROOT}/skills/memory-search/scripts/dashboard.py"
+      ],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "查询项目记忆"
+  short_description: "按范围查找以往踩坑经验、核对证据，并生成可筛选的离线浏览页"
+  default_prompt: "用 $memory-search 查找当前项目与这个问题有关的历史经验，并附上证据。"

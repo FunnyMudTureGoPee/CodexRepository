@@ -1,0 +1,30 @@
+[
+  {
+    "directory": "agents/experience_runtime",
+    "description": "上游派生工程，保留来源",
+    "upstream": "https://github.com/Jouryane/experience_runtime.git",
+    "source_commit": "d16b4a0b73411efa9834eff5b63725e6458b038b",
+    "file_count": 92,
+    "license_files": []
+  },
+  {
+    "directory": "agents/dsh-desk",
+    "description": "第三方社区工程源码快照，不声明原创",
+    "upstream": "https://github.com/majiayu000/dsh-desk.git",
+    "source_commit": "7a2759c736d1ba70651c346fb78a33642ba20ea3",
+    "file_count": 198,
+    "license_files": [
+      "LICENSE"
+    ]
+  },
+  {
+    "directory": "integrations/workbuddy2api",
+    "description": "上游工程与本地有效修改",
+    "upstream": "https://github.com/ShouZhuo0413/codebuddy2api.git",
+    "source_commit": "e0776154927e9e930ad59c58b3e22e83ac145bab",
+    "file_count": 54,
+    "license_files": [
+      "LICENSE"
+    ]
+  }
+]

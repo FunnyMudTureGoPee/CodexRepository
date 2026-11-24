@@ -1,0 +1,4 @@
+interface:
+  display_name: "btw"
+  short_description: "隔离插问与调查过程，复用子代理追问，独立分支优先在侧边聊天显示"
+  default_prompt: "使用 $btw 隔离处理我的插问，保护主任务上下文，仅回传最短结论；独立分支在侧边聊天展开。"

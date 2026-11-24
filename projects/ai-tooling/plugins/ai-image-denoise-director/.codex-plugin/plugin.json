@@ -1,0 +1,23 @@
+{
+  "name": "ai-image-denoise-director",
+  "version": "0.1.0",
+  "description": "Analyzes reference images and target styles to produce model-aware prompts for reducing unwanted AI image noise while preserving intentional texture.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AI Image Denoise Director",
+    "shortDescription": "参考图驱动的智能去噪与提示词优化",
+    "longDescription": "分析参考图、目标风格与噪点类型，生成兼顾主体、构图、材质和风格一致性的正向提示词、负向约束及迭代建议。",
+    "developerName": "Local developer",
+    "category": "Creativity",
+    "capabilities": ["Image analysis", "Prompt optimization"],
+    "defaultPrompt": [
+      "分析这张参考图的噪点并生成保留风格的优化提示词。",
+      "把这张 AI 图优化得更干净，但保留胶片质感。",
+      "根据参考图和目标风格给出正向、负向提示词。"
+    ],
+    "brandColor": "#315C72"
+  }
+}

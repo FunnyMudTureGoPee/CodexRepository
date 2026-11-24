@@ -1,0 +1,33 @@
+.DS_Store
+.cache/
+work/
+outputs/
+dist/
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+!.env.example
+# Runtime SDKs, weights, and private artwork are obtained separately.
+**/vendor/*.js
+*.bin
+*.param
+*.pth
+*.safetensors
+*.task
+*.wasm
+*.dylib
+*.dll
+*.so
+*.jar
+*.moc3
+# The only user-authorized published runtime; kit validation checks its companion files.
+!/examples/pink-sakura/runtime/PinkSakura.moc3
+*.cmo3
+*.psd
+*.zip
+
+# Rebuilt deterministically by the public Pink recipe.
+/examples/pink-sakura/manifest.json

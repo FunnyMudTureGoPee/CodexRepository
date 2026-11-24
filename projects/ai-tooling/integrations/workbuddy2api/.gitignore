@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+ENV/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# 本地运行产物 / 日志
+*.log
+.DS_Store
+Thumbs.db
+
+# 个人 / 敏感信息（绝不提交）
+*.token
+*.key
+secrets.*
+.env
+.env.*
+!.env.example
+!.env.admin.example
+auth/
+management/
+backups/
+deploy/one-click/data/
+wheels/
+*.info
+*.tar.gz
+management-access.txt
+.idea/
+
+# 本机部署产物（含账号凭据与代理状态，绝不提交）
+local-data/
+local-data-budget/
+local-data-*/
+
+# ---------------------------------------------------------------------------
+# 本机调试 / 取证脚本与输出
+#   这些文件里**硬编码了本机 API Key**（CODEBUDDY2OPENAI_KEY），
+#   或含上游请求体与对话内容（取证用的 wb_*.txt / _*.txt）。
+#   它们全部是本地产物，从未进过版本库；这里加规则是为了防止
+#   一次手滑的 `git add .` 把 Key 推到远端。
+#   注：已跟踪的文件不受 ignore 影响，所以此规则不会影响上游代码。
+# ---------------------------------------------------------------------------
+_*.py
+_*.txt
+wb_*.txt
+*.py.out
+*.py.err
+_caddy_test/
+check-vision.py
+sync-vscode-wbcli.py
+import-desktop-account.py
+

@@ -1,0 +1,4 @@
+interface:
+  display_name: "维护项目记忆"
+  short_description: "在项目或全局台账中维护已验证的经验，也可接入仓库现有工作流"
+  default_prompt: "用 $memory-maintain 把本次已验证的修复更新到当前项目的台账。"

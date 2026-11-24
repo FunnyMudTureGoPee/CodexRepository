@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "subagent-budget-router",
+  "version": "0.4.0",
+  "description": "在插件管理页配置子代理模型、思考等级、并发、执行轮次及无进展上限。每轮逐项验收，未完成且达到上限时交回主代理。保留实际用量记录，不使用预估 token 控制执行；不拦截原生内部工具调用。",
+  "author": {
+    "name": "Personal Tools"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "子代理模型与成本路由",
+        "shortDescription": "管理页配置模型，以验收和轮次避免循环",
+        "longDescription": "在插件管理页配置子代理模型、思考等级、并发、执行轮次及无进展上限。每轮逐项验收，未完成且达到上限时交回主代理。保留实际用量记录，不使用预估 token 控制执行；不拦截原生内部工具调用。",
+        "developerName": "Personal Tools",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "defaultPrompt": "使用子代理模型与成本路由，按均衡省成本策略处理当前任务。",
+        "logo": "./assets/icon.svg",
+        "composerIcon": "./assets/icon.svg"
+      },
+      "requires_local_executor": true
+    }
+  }
+}

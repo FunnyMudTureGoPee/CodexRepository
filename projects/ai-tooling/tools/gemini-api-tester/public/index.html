@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Gemini API · 本地连通性测试</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230e7668'/%3E%3Cpath d='M32 10L38 26L54 32L38 38L32 54L26 38L10 32L26 26Z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Gemini API Tester 首页"><span class="brand-mark">✦</span><span>Gemini <b>API Tester</b></span></a>
+    <div class="local-badge"><span class="dot"></span> LOCAL WORKSPACE <span id="server-status">连接中</span></div>
+  </header>
+  <main>
+    <section class="intro">
+      <div><div class="eyebrow">DEVELOPER TOOLS / CONNECTIVITY</div><h1>让每一个 API，<span>连接可见。</span></h1><p>多个服务、多个 Key、多个模型。在一个地方验证与比较。</p></div>
+      <div class="intro-note"><span>01</span><p>配置服务与凭证<br><b>02</b> 选择模型，一键测试</p></div>
+    </section>
+    <div class="workspace">
+      <section class="configuration">
+        <div class="section-title"><div><span class="step">01</span><h2>API 配置</h2><span id="profile-count" class="count">1 个服务</span></div><button id="add-profile" class="button small">＋ 添加服务</button></div>
+        <div class="config-tools"><button id="import-config" class="text-button">导入配置</button><span>/</span><button id="export-config" class="text-button">导出配置（不含 Key）</button><input id="config-file" type="file" accept=".json,application/json" hidden></div>
+        <div id="profiles"></div>
+        <label class="remember"><input id="remember-keys" type="checkbox"><span>在此浏览器记住 Key<small>选中后以明文保存在本机浏览器；默认仅保留在当前页面。</small></span></label>
+        <button id="clear-keys" class="text-button subtle">清除全部 Key</button>
+      </section>
+      <section class="testing">
+        <div class="section-title"><div><span class="step">02</span><h2>测试工作台</h2></div><span class="muted tiny">按服务 × Key × 模型组合执行</span></div>
+        <div class="panel controls">
+          <div class="segmented" role="group" aria-label="测试方式"><button data-mode="generate" class="active" aria-pressed="true">生成测试 <span>验证模型可用性</span></button><button data-mode="models" aria-pressed="false">连接检查 <span>仅获取模型列表</span></button></div>
+          <div id="generation-settings"><label for="prompt">测试提示词</label><textarea id="prompt" rows="2" maxlength="20000">Reply with exactly: OK</textarea></div>
+          <div class="settings-row"><label>并发数<select id="concurrency"><option>1</option><option selected>2</option><option>3</option><option>5</option><option>10</option></select></label><label>超时 / 秒<input id="timeout" type="number" min="1" max="300" value="30"></label><label id="tokens-field">输出 Token 上限<input id="max-tokens" type="number" min="1" max="8192" value="256"></label></div>
+          <p id="mode-note" class="field-note">会向每个组合发送一条短文本请求，可能消耗配额。思考模型无文本时可提高 Token 上限。</p>
+          <div class="run-row"><button id="run" class="button primary"><span>▶</span> 开始批量测试</button><button id="stop" class="button" disabled>停止</button><span id="job-count" class="muted tiny">等待配置</span></div>
+        </div>
+        <div class="metrics" aria-label="测试统计"><div><span>测试组合</span><strong id="metric-total">0</strong></div><div><span><i class="dot success"></i> 成功</span><strong id="metric-success">0</strong></div><div><span><i class="dot failure"></i> 失败 / 待检查</span><strong id="metric-failed">0</strong></div><div><span>平均耗时</span><strong id="metric-time">—<small>ms</small></strong></div></div>
+        <div class="panel results-panel">
+          <div class="result-toolbar"><h3>测试结果 <span id="progress-label" class="count">尚未开始</span></h3><div><select id="result-filter" aria-label="筛选测试结果"><option value="all">全部结果</option><option value="success">成功</option><option value="attention">失败 / 待检查</option><option value="pending">排队 / 运行中</option></select><button id="export-results" class="text-button" disabled>导出结果</button></div></div>
+          <div class="progress-track"><div id="progress-bar"></div></div>
+          <div id="empty-state" class="empty-state"><div class="empty-icon">⌁</div><h3>连接状态，即将一目了然</h3><p>填入左侧 API Key 和模型，开始第一次测试。<br>结果将在这里实时显示。</p><div class="empty-tags"><span>HTTP 状态</span><span>请求耗时</span><span>响应详情</span></div></div>
+          <div id="table-wrap" class="table-wrap" hidden><table><thead><tr><th>服务 / Key</th><th>模型</th><th>状态</th><th>耗时</th><th></th></tr></thead><tbody id="results"></tbody></table><p id="no-match" class="no-match" hidden>没有符合筛选条件的结果</p></div>
+        </div>
+        <p class="privacy-note"><span>⌂</span> 请求经本机服务转发至你填写的 API 地址。无第三方脚本，服务器不保存 Key。</p>
+      </section>
+    </div>
+    <footer><span>GEMINI API TESTER <b>/</b> LOCAL FIRST</span><span>生成成功才代表该 Key 与模型组合可用</span></footer>
+  </main>
+  <dialog id="detail-dialog"><div class="dialog-top"><h2>请求详情</h2><button id="close-detail" class="icon-button" aria-label="关闭详情">×</button></div><div id="detail-content"></div></dialog>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

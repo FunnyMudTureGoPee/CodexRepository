@@ -1,0 +1,16 @@
+{
+  "mode": "balanced",
+  "max_concurrent": 2,
+  "max_attempts_per_task": 3,
+  "max_escalations_per_task": 1,
+  "max_attempts_per_run": 12,
+  "max_no_progress_rounds": 2,
+  "max_auto_tier": "deep",
+  "profiles": {
+    "light": {"model": "gpt-6-luna", "reasoning_effort": "low"},
+    "standard": {"model": "gpt-6.1-sol", "reasoning_effort": "medium"},
+    "deep": {"model": "gpt-6.1-sol", "reasoning_effort": "high"},
+    "expert": {"model": "gpt-6-astra", "reasoning_effort": "high"}
+  },
+  "prices_usd_per_million": {}
+}

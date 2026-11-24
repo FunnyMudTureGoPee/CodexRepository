@@ -1,0 +1,20 @@
+{
+  "name": "chat-image-bridge",
+  "version": "0.4.6",
+  "description": "Queue image jobs from Codex and fulfill them through a local ChatGPT Web browser bridge.",
+  "author": { "name": "Local developer" },
+  "license": "MIT",
+  "keywords": ["images", "chatgpt", "browser", "bridge", "assets"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Chat Image Bridge",
+    "shortDescription": "Generate project images through ChatGPT Web.",
+    "longDescription": "Queues text-to-image jobs from Codex, lets a local browser extension fulfill them in ChatGPT Web, and imports approved results into the project with version history.",
+    "developerName": "Local developer",
+    "category": "Developer Tools",
+    "capabilities": ["Interactive", "Write", "UI"],
+    "defaultPrompt": ["Generate a project image through Chat Image Bridge.", "Check the status of my queued image jobs."],
+    "brandColor": "#10A37F"
+  }
+}

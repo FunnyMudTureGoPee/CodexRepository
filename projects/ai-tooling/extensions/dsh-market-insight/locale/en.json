@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Plugin Insight",
+    "description": "Adds an Insight tab to the Plugins page: star counts, downloads, and fork-family aggregation across the configured plugin market."
+  }
+}

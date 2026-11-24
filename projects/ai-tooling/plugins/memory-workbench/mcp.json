@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "memory-workbench": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "-B",
+        "${PLUGIN_ROOT}/skills/memory-search/scripts/dashboard.py"
+      ],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}

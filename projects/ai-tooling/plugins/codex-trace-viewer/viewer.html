@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codex 运行轨迹</title>
+<style>
+:root{color-scheme:light dark;--bg:#fbfbfd;--panel:#fff;--ink:#22243a;--mute:#62677c;--line:#e5e6ef;--accent:#5248b1;--soft:#eeecff;--green:#32845f;--purple:#7755b1;--orange:#a95516;--red:#b03045}
+@media(prefers-color-scheme:dark){:root{--bg:#171820;--panel:#20212c;--ink:#f0eff7;--mute:#aeb0c5;--line:#373948;--accent:#b9acff;--soft:#363056;--green:#79c39c;--purple:#bc9df6;--orange:#f4ad70;--red:#ff9aa9}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.5 system-ui,"Microsoft YaHei",sans-serif}
+main{max-width:1560px;margin:auto;padding:18px clamp(12px,3vw,32px) 24px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+h1{font-size:22px;line-height:1.2;letter-spacing:-.03em;margin:0 0 4px}
+p{margin:0;color:var(--mute)}
+button,input,select{font:inherit;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:7px;min-height:32px;padding:4px 9px}
+button{cursor:pointer}button:hover{border-color:var(--accent)}button:disabled{opacity:.5;cursor:default}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#live{display:flex;align-items:center;gap:4px;white-space:nowrap;color:var(--mute)}
+#live input{min-height:0;accent-color:var(--accent)}
+.controls,.tags,.metrics{display:flex;align-items:center;flex-wrap:wrap;gap:7px}
+.controls{margin:12px 0 8px}.controls select:first-child{max-width:300px}.controls select:nth-child(2){max-width:245px}.controls input{flex:1;min-width:150px}.controls select{min-width:0}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.metrics{gap:14px;padding:9px 12px;border-bottom:1px solid var(--line);color:var(--mute);font-variant-numeric:tabular-nums}
+.metrics strong{color:var(--ink);font-weight:650}
+.timeline{padding:9px 12px 11px;overflow:auto}
+.axis,.lane{display:grid;grid-template-columns:43px minmax(210px,1fr);align-items:center;gap:8px}
+.axis{color:var(--mute);font-size:11px}.ticks{display:flex;justify-content:space-between}
+.lane{height:21px;color:var(--mute)}
+.track{height:17px;position:relative;border-radius:3px;background:repeating-linear-gradient(to right,var(--line),var(--line) 1px,transparent 1px,transparent 25%)}
+.segment{position:absolute;min-height:0;padding:0;border:0;border-radius:2px;top:5px;height:7px;min-width:4px;opacity:.82;z-index:1}
+.segment:hover,.segment:focus-visible{opacity:1;z-index:2;box-shadow:0 0 0 2px var(--panel),0 0 0 4px currentColor}
+.segment.input{background:var(--green)}.segment.model{background:var(--purple)}.segment.tool{background:var(--orange)}
+.segment[data-status="failed"]{background:var(--red)}.segment.muted{opacity:.12;pointer-events:none}
+.tags{margin:10px 0}.chip{min-height:24px;padding:1px 8px;border-radius:999px;font-size:12px}
+.chip[aria-pressed="true"]{background:var(--soft);border-color:var(--accent);color:var(--accent)}
+#rows{max-height:min(59vh,700px);min-height:122px;overflow:auto}
+details{border-bottom:1px solid var(--line);scroll-margin:4px}details:last-child{border:0}
+summary{cursor:pointer;display:grid;grid-template-columns:64px 56px minmax(0,1fr) auto;gap:8px;align-items:center;padding:7px 11px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:hover,details[open] summary{background:var(--bg)}
+.elapsed{font:11px ui-monospace,monospace;color:var(--mute);white-space:nowrap}
+.badge{justify-self:start;font-size:11px;border:1px solid currentColor;border-radius:4px;padding:0 5px}
+.badge.input{color:var(--green)}.badge.model{color:var(--purple)}.badge.tool{color:var(--orange)}
+.event{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.event strong{font-weight:650;margin-right:8px}.event span{color:var(--mute)}
+.flag{font-size:11px;background:var(--soft);border-radius:4px;color:var(--accent);padding:1px 5px;margin-left:3px;white-space:nowrap}
+.detail{padding:3px 12px 11px 147px;overflow-wrap:anywhere;white-space:pre-wrap}
+.detail p + p{margin-top:4px}.error{color:var(--red)}
+.event span.error{color:var(--red)}
+.diagnostic{margin-top:8px;padding:8px 10px;border-left:3px solid var(--red);background:var(--bg);border-radius:4px}
+.diagnostic-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.diagnostic-head button{min-height:24px;font-size:11px}
+.diagnostic pre{margin:6px 0 0;max-height:270px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.5 ui-monospace,monospace}
+.empty{padding:20px 14px}.note{font-size:11px;margin-top:8px}
+dialog{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:12px;width:min(420px,calc(100% - 24px))}
+dialog label,dialog input{display:block;width:100%}dialog menu{padding:0;display:flex;gap:8px;justify-content:flex-end;margin-bottom:0}
+@media(max-width:620px){.controls select:first-child,.controls select:nth-child(2){flex:1;max-width:none}.controls input{flex-basis:60%}summary{grid-template-columns:49px 45px minmax(0,1fr);gap:5px;padding:6px 8px}summary .row-tags{grid-column:3}.detail{padding-left:107px}}
+</style>
+<main>
+  <header>
+    <div><h1>运行轨迹</h1><p>Codex 本机会话 · 按轮查看</p></div>
+    <label id="live"><input id="auto" type="checkbox" checked> 自动刷新</label>
+  </header>
+  <div class="controls">
+    <select id="sessions" aria-label="会话"><option value="">选择会话</option></select>
+    <select id="turns" aria-label="轮次" disabled><option value="">跟随最新轮次</option></select>
+    <input id="search" type="search" placeholder="搜索事件、标签或消息" aria-label="搜索轨迹">
+    <button id="by-id" type="button">按 ID 打开</button>
+    <button id="refresh" type="button">刷新</button>
+  </div>
+  <section class="panel" aria-label="轮次时间轴">
+    <div class="metrics" id="metrics">请选择会话</div>
+    <div class="timeline" id="timeline" hidden>
+      <div class="axis"><span></span><div class="ticks" id="ticks"></div></div>
+      <div class="lane"><span>输入</span><div class="track" id="input-track"></div></div>
+      <div class="lane"><span>助手</span><div class="track" id="model-track"></div></div>
+      <div class="lane"><span>工具</span><div class="track" id="tool-track"></div></div>
+    </div>
+  </section>
+  <nav class="tags" id="tags" aria-label="事件标签"></nav>
+  <section class="panel" id="rows" aria-label="事件列表"><p class="empty">正在连接本地轨迹服务…</p></section>
+  <p id="notice" class="note" role="status"></p>
+  <p class="note">MCP 调用按日志中的独立事件计数，functions.exec 批次单独计数。Skill 标签区分「已加载」与「读取线索」。</p>
+</main>
+<dialog id="id-dialog">
+  <form id="id-form">
+    <label for="id-field">本机会话 UUID</label>
+    <input id="id-field" required autocomplete="off" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx">
+    <menu><button id="cancel-id" type="button">取消</button><button type="submit">打开</button></menu>
+  </form>
+</dialog>
+<script>
+'use strict';
+const $ = (id) => document.getElementById(id);
+const embedded = window.parent !== window;
+const lanes = { input: '输入', model: '助手', tool: '工具' };
+const statuses = { running: '进行中', completed: '已完成', failed: '失败', aborted: '已中断', returned: '已返回', unknown: '状态未知', declined: '已拒绝', cancelled: '已取消', canceled: '已取消', timeout: '超时' };
+const tags = ['全部', '失败', 'MCP 调用', '插件调用', '插件提及', 'Skill', 'Shell', '批次', '工具', '输入', '助手'];
+const state = { sessions: [], thread: '', turn: '', trace: null, tag: '全部', version: '', pending: false };
+const pending = new Map();
+let rpcId = 0;
+let hostOrigin = '*';
+let ready;
+
+function post(message) {
+  window.parent.postMessage({ jsonrpc: '2.0', ...message }, hostOrigin);
+}
+
+function rpc(method, params) {
+  return new Promise((resolve, reject) => {
+    const id = ++rpcId;
+    const timeout = setTimeout(() => {
+      pending.delete(id);
+      reject(new Error('宿主未响应。可通过本地浏览器入口查看。'));
+    }, 6500);
+    pending.set(id, { resolve, reject, timeout });
+    post({ id, method, params });
+  });
+}
+
+function startBridge() {
+  window.addEventListener('message', (event) => {
+    if (event.source !== window.parent || (hostOrigin !== '*' && event.origin !== hostOrigin)) return;
+    const msg = event.data;
+    if (msg?.jsonrpc !== '2.0') return;
+    if (msg.method === 'ping' || msg.method === 'ui/resource-teardown') {
+      if (msg.id != null) post({ id: msg.id, result: {} });
+      return;
+    }
+    const call = pending.get(msg.id);
+    if (!call) return;
+    if (hostOrigin === '*' && event.origin !== 'null') hostOrigin = event.origin;
+    clearTimeout(call.timeout);
+    pending.delete(msg.id);
+    if (msg.error) call.reject(new Error(msg.error.message));
+    else call.resolve(msg.result);
+  });
+  return rpc('ui/initialize', {
+    appInfo: { name: 'codex-trace-viewer', version: '0.1.1' },
+    appCapabilities: {},
+    protocolVersion: '2026-01-26'
+  }).then(() => post({ method: 'ui/notifications/initialized' }));
+}
+
+async function request(name, args = {}) {
+  if (!embedded) {
+    const url = new URL('api', location.href);
+    url.search = new URLSearchParams({ method: name, ...args });
+    const response = await fetch(url);
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || '请求失败。');
+    return data;
+  }
+  await ready;
+  const result = await rpc('tools/call', { name, arguments: args });
+  if (result?.isError) throw new Error(result.content?.[0]?.text || '请求失败。');
+  const data = result?._meta?.trace;
+  if (!data) throw new Error('宿主未返回界面数据。可使用本地浏览器入口。');
+  return data;
+}
+
+function el(tag, className, value) {
+  const element = document.createElement(tag);
+  if (className) element.className = className;
+  if (value != null) element.textContent = value;
+  return element;
+}
+
+function labelDuration(value) {
+  if (value == null) return '—';
+  const seconds = Math.max(0, value) / 1000;
+  if (seconds < 60) return seconds.toFixed(seconds < 10 ? 1 : 0) + ' 秒';
+  return Math.floor(seconds / 60) + ' 分 ' + Math.floor(seconds % 60) + ' 秒';
+}
+
+function showNotice(message = '', error = false) {
+  $('notice').textContent = message;
+  $('notice').classList.toggle('error', error);
+}
+
+function sessionOptions() {
+  const options = state.sessions.map((session) => new Option(
+    [session.date, session.title, session.archived ? '已归档' : ''].filter(Boolean).join(' · '), session.id
+  ));
+  if (state.thread && !state.sessions.some((s) => s.id === state.thread)) {
+    options.unshift(new Option('会话 ' + state.thread, state.thread));
+  }
+  $('sessions').replaceChildren(new Option('选择本机会话', ''), ...options);
+  $('sessions').value = state.thread;
+}
+
+function turnOptions() {
+  $('turns').replaceChildren(new Option('跟随最新轮次', ''), ...(state.trace?.turns || []).slice().reverse().map((turn) =>
+    new Option('第 ' + turn.number + ' 轮 · ' + turn.title, turn.id)
+  ));
+  $('turns').value = state.turn;
+  $('turns').disabled = !state.trace?.turns.length;
+}
+
+function failureDetail(diagnostic) {
+  const box = el('div', 'diagnostic');
+  const head = el('div', 'diagnostic-head');
+  const title = '失败日志' + (diagnostic.exitCode == null ? '' : ' · 退出码 ' + diagnostic.exitCode);
+  head.append(el('strong', 'error', title));
+  box.append(head);
+  if (!diagnostic.text) {
+    box.append(el('p', '', '会话记录里没有更详细的错误输出。'));
+    return box;
+  }
+  const body = el('pre', '', diagnostic.text);
+  const copy = el('button', '', '复制日志');
+  copy.type = 'button';
+  copy.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(title + '\n' + diagnostic.text);
+      copy.textContent = '已复制';
+    } catch {
+      const range = document.createRange();
+      range.selectNodeContents(body);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      copy.textContent = '已选中日志';
+    }
+  });
+  head.append(copy);
+  box.append(body);
+  return box;
+}
+
+function render() {
+  const turn = state.trace?.selected;
+  const events = turn?.events || [];
+  const query = $('search').value.trim().toLowerCase();
+  const matches = (e) => (state.tag === '全部' || e.tags.includes(state.tag)) &&
+    (!query || [e.title, e.text, ...e.tags, statuses[e.status], e.diagnostic?.text, e.diagnostic?.exitCode].join(' ').toLowerCase().includes(query));
+  const visible = events.filter(matches);
+  const opened = new Set([...$('rows').querySelectorAll('details[open]')].map((node) => node.id));
+  const extraTags = [...new Set(events.flatMap((e) => e.tags))].filter((tag) => !tags.includes(tag)).slice(0, 12);
+  const chips = [...new Set([...tags, ...extraTags, state.tag])];
+  $('tags').replaceChildren(...chips.map((tag) => {
+    const button = el('button', 'chip', tag);
+    button.type = 'button';
+    button.setAttribute('aria-pressed', String(tag === state.tag));
+    button.addEventListener('click', () => { state.tag = tag; render(); $('tags').querySelector('[aria-pressed="true"]')?.focus(); });
+    return button;
+  }));
+  $('timeline').hidden = !turn;
+  if (!turn) {
+    $('metrics').textContent = state.thread ? '暂无轮次' : '请选择会话';
+    $('rows').replaceChildren(el('p', 'empty', state.thread ? '未读取到轮次。' : '选择一个本机会话，或输入会话 UUID。'));
+    return;
+  }
+  const start = turn.started ?? events.find((e) => e.start != null)?.start ?? 0;
+  const ends = events.map((e) => (e.start ?? start) + (e.duration || 0));
+  const range = Math.max(1, (turn.ended ?? start) - start, turn.duration ?? 0, Math.max(start, ...ends) - start);
+  const knownDuration = turn.duration ?? (turn.ended == null ? null : turn.ended - start);
+  const { tools, mcp, batches, failures } = turn.counts;
+  $('metrics').replaceChildren(
+    el('strong', '', '第 ' + turn.number + ' / ' + state.trace.turns.length + ' 轮'),
+    el('span', '', statuses[turn.status] || turn.status),
+    el('span', '', '时长 ' + labelDuration(knownDuration)),
+    el('span', '', '工具 ' + tools + ' · MCP ' + mcp),
+    el('span', '', '批次 ' + batches + ' · 失败 ' + failures),
+    el('span', '', '显示 ' + visible.length + ' / ' + turn.totalEvents + ' 条')
+  );
+  $('ticks').replaceChildren(...[0, .25, .5, .75, 1].map((fraction) => el('span', '', labelDuration(range * fraction))));
+  const segments = { input: [], model: [], tool: [] };
+  const rows = [];
+  for (const event of events) {
+    const isVisible = matches(event);
+    const rowId = 'event-' + event.seq;
+    const elapsed = event.start == null ? null : Math.max(0, event.start - start);
+    if (elapsed != null) {
+      const segment = el('button', 'segment ' + event.lane + (isVisible ? '' : ' muted'));
+      segment.type = 'button';
+      segment.title = event.title + ' · ' + labelDuration(elapsed);
+      segment.setAttribute('aria-label', segment.title);
+      segment.dataset.status = event.status || '';
+      segment.style.left = Math.min(99.4, elapsed / range * 100) + '%';
+      segment.style.width = Math.min(100 - elapsed / range * 100, (event.duration || 0) / range * 100) + '%';
+      segment.tabIndex = isVisible ? 0 : -1;
+      segment.disabled = !isVisible;
+      segment.addEventListener('click', () => {
+        const row = $(rowId);
+        if (!row) return;
+        row.open = true;
+        row.scrollIntoView({ block: 'nearest' });
+        row.querySelector('summary').focus({ preventScroll: true });
+      });
+      segments[event.lane].push(segment);
+    }
+    if (!isVisible) continue;
+    const details = el('details');
+    details.id = rowId;
+    details.open = opened.has(rowId);
+    const summary = el('summary');
+    const title = el('span', 'event');
+    const errorLine = event.diagnostic?.text.split('\n').find((line) => line.trim());
+    title.append(el('strong', '', event.title), el('span', event.diagnostic ? 'error' : '',
+      errorLine || event.text || statuses[event.status] || ''));
+    const flags = el('span', 'row-tags');
+    const baseTags = ['输入', '助手', '工具'];
+    flags.append(...event.tags.filter((tag) => !baseTags.includes(tag)).slice(0, 3).map((tag) => el('span', 'flag', tag)));
+    summary.append(el('span', 'elapsed', elapsed == null ? '—' : '+' + (elapsed / 1000).toFixed(1) + 's'),
+      el('span', 'badge ' + event.lane, lanes[event.lane]), title, flags);
+    const detail = el('div', 'detail');
+    detail.append(el('p', '', event.text || event.title), el('p', '',
+      [...event.tags, statuses[event.status], event.duration != null ? '耗时 ' + labelDuration(event.duration) : null].filter(Boolean).join(' · ')));
+    if (event.tags.includes('读取线索')) detail.append(el('p', '', 'Shell 记录显示读取了对应 SKILL.md 路径。'));
+    if (event.diagnostic) detail.append(failureDetail(event.diagnostic));
+    details.append(summary, detail);
+    rows.push(details);
+  }
+  for (const [lane, children] of Object.entries(segments)) $(lane + '-track').replaceChildren(...children);
+  $('rows').replaceChildren(...(rows.length ? rows : [el('p', 'empty', '没有符合条件的事件。')]));
+}
+
+async function refresh({ sessions = false, show = false } = {}) {
+  const thread = state.thread;
+  const turn = state.turn;
+  if (sessions) {
+    state.sessions = (await request('trace_sessions')).sessions;
+    sessionOptions();
+  }
+  if (!thread) { turnOptions(); render(); return; }
+  const trace = await request('trace_turn', { threadId: thread, ...(turn ? { turnId: turn } : {}) });
+  if (thread !== state.thread || turn !== state.turn) return;
+  const version = [trace.id, trace.version, trace.selected?.id].join(':');
+  if (version !== state.version) {
+    state.version = version;
+    state.trace = trace;
+    turnOptions();
+    render();
+  }
+  if (show || $('notice').classList.contains('error')) showNotice('已更新 · ' + new Date().toLocaleTimeString());
+}
+
+function load(options) {
+  return refresh(options).catch((error) => showNotice(error.message, true));
+}
+
+function pickThread(thread) {
+  state.thread = thread;
+  state.turn = '';
+  state.tag = '全部';
+  state.trace = null;
+  state.version = '';
+  sessionOptions();
+  turnOptions();
+  render();
+  showNotice();
+  load({ show: true });
+}
+
+$('sessions').addEventListener('change', () => pickThread($('sessions').value));
+$('turns').addEventListener('change', () => {
+  state.turn = $('turns').value;
+  load({ show: true });
+});
+$('search').addEventListener('input', render);
+$('refresh').addEventListener('click', () => load({ sessions: true, show: true }));
+$('by-id').addEventListener('click', () => $('id-dialog').showModal());
+$('cancel-id').addEventListener('click', () => $('id-dialog').close());
+$('id-form').addEventListener('submit', (event) => {
+  event.preventDefault();
+  const field = $('id-field');
+  const value = field.value.trim();
+  if (!/^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i.test(value)) {
+    field.setCustomValidity('请输入有效的会话 UUID。');
+    field.reportValidity();
+    return;
+  }
+  $('id-dialog').close();
+  pickThread(value.toLowerCase());
+});
+$('id-field').addEventListener('input', () => $('id-field').setCustomValidity(''));
+
+async function init() {
+  if (embedded) {
+    ready = startBridge();
+    let loaded = false;
+    window.addEventListener('message', (event) => {
+      if (event.source !== window.parent || (hostOrigin !== '*' && event.origin !== hostOrigin)) return;
+      const msg = event.data;
+      if (msg?.jsonrpc !== '2.0' || msg.method !== 'ui/notifications/tool-result' || loaded) return;
+      const initial = msg.params?._meta?.trace;
+      if (initial?.error) showNotice(initial.error, true);
+      if (initial?.threadId && !state.thread) { loaded = true; pickThread(initial.threadId); }
+    });
+  } else {
+    const info = await request('open_trace');
+    const fromUrl = new URLSearchParams(location.search).get('thread');
+    state.thread = fromUrl || info.threadId || '';
+  }
+  await load({ sessions: true });
+  setInterval(async () => {
+    if (!state.thread || !$('auto').checked || document.hidden || state.pending) return;
+    state.pending = true;
+    try { await load(); } finally { state.pending = false; }
+  }, 3000);
+}
+init().catch((error) => { render(); showNotice(error.message, true); });
+</script>
+</html>

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "codex-trace-viewer": {
+      "type": "stdio",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-File", "${PLUGIN_ROOT}/start.ps1"],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}

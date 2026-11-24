@@ -1,0 +1,41 @@
+# Local-only CLIProxyAPI configuration.
+host: "127.0.0.1"
+port: 8317
+
+tls:
+  enable: false
+  cert: ""
+  key: ""
+
+remote-management:
+  allow-remote: false
+  secret-key: "__MANAGEMENT_KEY__"
+  disable-control-panel: false
+
+auth-dir: "./auths"
+
+api-keys:
+  - "__API_KEY__"
+
+debug: false
+logging-to-file: true
+logs-max-total-size-mb: 100
+error-logs-max-files: 10
+usage-statistics-enabled: false
+
+request-retry: 2
+max-retry-credentials: 1
+max-retry-interval: 15
+
+routing:
+  strategy: "round-robin"
+  session-affinity: true
+  session-affinity-ttl: "1h"
+
+codex:
+  identity-confuse: false
+  disable-codex-cloaking: false
+  optimize-multi-agent-v2: false
+
+ws-auth: true
+

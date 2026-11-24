@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "chat-image-bridge": {
+      "cwd": ".",
+      "command": "node",
+      "args": ["./server.mjs"],
+      "enabled": true,
+      "startup_timeout_sec": 30
+    }
+  }
+}

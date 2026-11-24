@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "email": "funnymudturegopee@gmail.com",
+    "name": "马ziyuan"
+  },
+  "description": "从 Codex 左侧应用菜单或会话旁打开记忆工作台，管理本机全局、项目台账并查阅自动记忆。",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "category": "Productivity",
+        "composerIcon": "./assets/memory.svg",
+        "defaultPrompt": [
+          "查找当前项目里与这个报错相关的历史经验。",
+          "把本次已验证的修复沉淀到当前项目的记忆台账。",
+          "为当前项目和全局经验生成可搜索的离线浏览页。"
+        ],
+        "developerName": "马ziyuan",
+        "displayName": "记忆工作台",
+        "logo": "./assets/memory.svg",
+        "longDescription": "在 Codex 应用内搜索、维护全局与项目记忆，查看 Agent 写入的更新，并通过两个 Skill 衔接现有工作流。",
+        "shortDescription": "查询与维护全局、项目记忆",
+        "capabilities": [
+          "Interactive"
+        ]
+      },
+      "requires_local_executor": true
+    }
+  },
+  "keywords": [
+    "memory",
+    "knowledge",
+    "codex",
+    "regressions"
+  ],
+  "name": "memory-workbench",
+  "version": "0.3.1"
+}

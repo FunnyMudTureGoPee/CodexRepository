@@ -1,0 +1,6 @@
+interface:
+  display_name: "AI 生图去噪导演"
+  short_description: "分析参考图并生成保留风格的智能去噪提示词"
+  default_prompt: "使用 $denoise-image-prompt 分析参考图噪点，并给出保守与加强两版优化提示词。"
+policy:
+  allow_implicit_invocation: true

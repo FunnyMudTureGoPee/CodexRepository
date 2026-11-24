@@ -1,0 +1,7 @@
+.runtime/
+.secrets.json
+auths/
+static/
+logs/
+config.yaml
+*.log

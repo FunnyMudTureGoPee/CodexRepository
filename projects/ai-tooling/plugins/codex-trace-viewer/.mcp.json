@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "codex-trace-viewer": {
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-File", "${PLUGIN_ROOT}/start.ps1"],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}

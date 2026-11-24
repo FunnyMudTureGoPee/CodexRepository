@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>记忆工作台</title>
+<style>
+:root { font: 15px/1.55 system-ui, "Microsoft YaHei", sans-serif; color: #193038; background: #f6f7f2; --border: #dce4dc; --muted: #4c6466; --green: #145849; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+header { background: #142f36; color: #eafff4; padding: 1rem max(1.5rem, calc((100vw - 1320px)/2)); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+header h1 { font-size: 1.35rem; margin: 0; }
+header p { margin: .2rem 0 0; color: #c8e5de; }
+header span { color: #9ae4cb; white-space: nowrap; font-size: .88rem; }
+.shell { max-width: 1368px; margin: auto; padding: 1.5rem; display: grid; grid-template-columns: 215px minmax(0, 1fr); gap: 1.5rem; }
+aside { border-right: 1px solid var(--border); padding-right: 1rem; }
+aside h2 { font-size: .9rem; color: var(--muted); margin: .6rem 0; }
+nav { display: grid; gap: .3rem; }
+nav button { text-align: left; overflow-wrap: anywhere; border: 0; background: transparent; }
+nav button[aria-current="true"] { background: #d9ede4; color: #0c4f40; font-weight: 650; }
+button, input, select, textarea { border: 1px solid #aebfba; border-radius: .45rem; padding: .45rem .7rem; background: white; color: inherit; }
+button:hover { background: #edf4ee; }
+button:disabled { cursor: default; opacity: .6; }
+.primary { background: var(--green); color: white; border-color: var(--green); font-weight: 650; }
+.primary:hover { background: #0d4539; }
+.danger { color: #9b2929; }
+h2 { margin: 0; font-size: 1.55rem; }
+h3 { margin: .1rem 0; font-size: 1.06rem; }
+.muted { color: var(--muted); }
+.scopebar, .toolbar, .entry-head, .actions { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+.scopebar > div { min-width: 0; }
+.path { overflow-wrap: anywhere; margin: .25rem 0 .75rem; font-size: .85rem; }
+.toolbar { margin: 1rem 0 .5rem; justify-content: flex-start; }
+.toolbar input { flex: 1; min-width: 12rem; }
+#count { font-size: .9rem; margin: .6rem 0; }
+#message { white-space: pre-wrap; color: #8c3125; margin: .6rem 0; }
+article, .empty { background: #fff; border: 1px solid var(--border); border-radius: .65rem; padding: .8rem 1rem; margin: .65rem 0; }
+article p { margin: .4rem 0; }
+.badge { background: #e3efe7; color: #155647; padding: .18rem .5rem; border-radius: 1rem; font-size: .85rem; }
+[data-status="待验证"] { background: #f5eaca; color: #694b13; }
+[data-status="已替代"] { background: #e9ecea; color: #4c5a59; }
+details { margin-top: .4rem; }
+summary { color: var(--green); cursor: pointer; width: fit-content; }
+.body { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; }
+dialog { width: min(42rem, calc(100vw - 2rem)); max-height: calc(100dvh - 2rem); border: 1px solid var(--border); border-radius: .8rem; padding: 1.3rem; color: inherit; }
+dialog::backdrop { background: #142f3677; }
+dialog form { display: grid; gap: .65rem; }
+dialog label { display: grid; gap: .2rem; }
+dialog textarea { min-height: 12rem; resize: vertical; }
+dialog p { margin: 0; }
+dialog .actions { justify-content: flex-end; }
+#editor-error, #project-error { color: #8c3125; }
+@media (max-width: 660px) { .shell { display: block; padding: 1rem; } aside { border: 0; margin-bottom: 1rem; } nav { display: flex; flex-wrap: wrap; } header { padding: .8rem 1rem; } }
+</style>
+</head>
+<body>
+<header>
+  <div><h1>记忆工作台</h1><p>查看和维护 Agent 使用的经验台账</p></div>
+  <span id="connection" role="status">正在连接</span>
+</header>
+<div class="shell">
+  <aside>
+    <h2>记忆范围</h2>
+    <nav id="sources" aria-label="记忆范围"></nav>
+    <p><button id="add-project" type="button">＋ 添加项目</button></p>
+  </aside>
+  <main>
+    <div class="scopebar">
+      <div><h2 id="scope-title">全局记忆</h2><p id="path" class="path muted"></p></div>
+      <div class="actions">
+        <button id="remove-project" type="button" hidden>移除项目</button>
+        <button id="new-entry" class="primary" type="button" disabled>＋ 新建记忆</button>
+      </div>
+    </div>
+    <div class="toolbar">
+      <input id="query" type="search" aria-label="搜索记忆" placeholder="搜索关键词、模块或 ID">
+      <select id="status" aria-label="筛选状态">
+        <option value="">全部状态</option><option>待验证</option><option>已验证</option><option>已替代</option>
+      </select>
+      <button id="refresh" type="button">刷新</button>
+    </div>
+    <p id="count" class="muted"></p>
+    <p id="message" role="status" hidden></p>
+    <section id="entries" aria-label="记忆条目"></section>
+  </main>
+</div>
+<dialog id="project-dialog">
+  <form id="project-form">
+    <h2>添加项目</h2>
+    <label>项目根目录<input id="project-path" required placeholder="例如 D:\UnityProject\EatEatSing"></label>
+    <p class="muted">选择和该项目的 Codex 会话相同的仓库根目录。第一次保存记忆时才会创建台账。</p>
+    <p id="project-error" role="alert"></p>
+    <div class="actions"><button type="button" data-close="project-dialog">取消</button><button id="save-project" class="primary" type="button">添加</button></div>
+  </form>
+</dialog>
+<dialog id="editor">
+  <form id="entry-form">
+    <h2 id="editor-title">新建记忆</h2>
+    <label>条目 ID<input name="id" required placeholder="例如 STARTUP-001"></label>
+    <label>标题<input name="title" required maxlength="180"></label>
+    <label>模块<input name="module" required maxlength="120"></label>
+    <label>状态<select name="status"><option>待验证</option><option>已验证</option><option>已替代</option></select></label>
+    <label>正文<textarea name="body" placeholder="触发条件、结论、下次怎么做和证据。可用 Markdown。"></textarea></label>
+    <p id="editor-error" role="alert"></p>
+    <div class="actions">
+      <button id="delete-entry" type="button" class="danger">删除条目</button>
+      <button type="button" data-close="editor">取消</button>
+      <button id="save-entry" class="primary" type="button">保存</button>
+    </div>
+  </form>
+</dialog>
+<dialog id="confirmation">
+  <div>
+    <h2>确认操作</h2>
+    <p id="confirmation-text"></p>
+    <div class="actions"><button type="button" data-close="confirmation" autofocus>取消</button><button id="confirm-action" type="button" class="danger">确认</button></div>
+  </div>
+</dialog>
+<!-- MCP_APP_SCRIPT -->
+</body>
+</html>

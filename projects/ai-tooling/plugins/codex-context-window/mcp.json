@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "codex-context-window": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "-B",
+        "${PLUGIN_ROOT}/server.py"
+      ],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}

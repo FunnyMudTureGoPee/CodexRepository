@@ -1,0 +1,79 @@
+# workbuddy2api 反向代理配置（Caddy v2）
+#
+# 启动方式：
+#   start-proxy.bat（推荐，自动定位 caddy.exe 与本文件）
+#   或  <仓库根>\tools\caddy\caddy.exe run --config <仓库根>\codebuddy2api\deploy\local\Caddyfile
+#
+# ---------------------------------------------------------------------------
+# 场景 A：仅本机使用（默认启用）
+#   监听 127.0.0.1:8080，明文转发到应用 127.0.0.1:8787。
+#   只绑定回环地址，局域网不可达；不涉及证书，浏览器零告警。
+#   管理后台：http://127.0.0.1:8080/admin/
+#   接口地址：http://127.0.0.1:8080/v1
+# ---------------------------------------------------------------------------
+http://127.0.0.1:8080 {
+	# ⚠️ 必须有这一行。
+	# 只写 `http://127.0.0.1:8080` 时，Caddy 会把它适配成
+	#     "listen": [":8080"]            ← 绑到**所有网卡**
+	#     match host ["127.0.0.1"]       ← 只靠 Host 头匹配站点
+	# Host 头是客户端可控的，所以「绑全网卡 + Host 路由」不构成安全边界。
+	# 实测（2026-10-15）：局域网另一台机器伪造 `Host: 127.0.0.1:8080`
+	# 即可完整访问 /v1/* 与 /admin/。加上 bind 后适配结果变为
+	#     "listen": ["127.0.0.1:8080"]
+	# 校验方法：caddy adapt --config <本文件> --adapter caddyfile | findstr listen
+	bind 127.0.0.1
+
+	# 部分 Responses 客户端请求 /responses，而非 /v1/responses（对齐仓库自带 nginx 示例）
+	@bare_responses path /responses /responses/
+	rewrite @bare_responses /v1/responses
+
+	reverse_proxy 127.0.0.1:8787 {
+		# 关闭响应缓冲，SSE 流式输出才能实时透传（对应 nginx 的 proxy_buffering off）
+		flush_interval -1
+		# 长上下文 agent 请求耗时较长，放宽超时
+		transport http {
+			read_timeout 600s
+			write_timeout 600s
+		}
+		header_up X-Real-IP {remote_host}
+	}
+}
+
+# ---------------------------------------------------------------------------
+# 场景 B：本机 HTTPS（需要先信任 Caddy 本地 CA）
+#   启用步骤：
+#     1. 取消下面的注释
+#     2. 以管理员身份执行一次：  caddy.exe trust
+#     3. 访问 https://localhost/admin/
+# ---------------------------------------------------------------------------
+# https://localhost {
+# 	bind 127.0.0.1
+# 	@bare_responses path /responses /responses/
+# 	rewrite @bare_responses /v1/responses
+# 	reverse_proxy 127.0.0.1:8787 {
+# 		flush_interval -1
+# 		transport http {
+# 			read_timeout 600s
+# 			write_timeout 600s
+# 		}
+# 	}
+# 	tls internal
+# }
+
+# ---------------------------------------------------------------------------
+# 场景 C：公网域名 + 自动 HTTPS
+#   把 api.example.com 换成你自己的域名，DNS 解析到本机，防火墙放通 80/443。
+#   Caddy 会自动申请并续期 Let's Encrypt 证书。
+#   注意：同时把 .env.local 里的 SECURE_COOKIE 改为 1，然后重启应用。
+# ---------------------------------------------------------------------------
+# api.example.com {
+# 	@bare_responses path /responses /responses/
+# 	rewrite @bare_responses /v1/responses
+# 	reverse_proxy 127.0.0.1:8787 {
+# 		flush_interval -1
+# 		transport http {
+# 			read_timeout 600s
+# 			write_timeout 600s
+# 		}
+# 	}
+# }

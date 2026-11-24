@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "codex-context-window": {
+      "command": "python",
+      "args": [
+        "-B",
+        "${PLUGIN_ROOT}/server.py"
+      ],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}

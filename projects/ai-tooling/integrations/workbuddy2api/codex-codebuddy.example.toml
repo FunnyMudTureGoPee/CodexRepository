@@ -1,0 +1,101 @@
+# ============================================================
+# CodeBuddy/WorkBuddy 订阅 -> OpenAI 兼容客户端 —— provider 配置示例（片段）
+# ------------------------------------------------------------
+# 前提：转换器已在本地运行（见 README.md）
+#   uv run converter.py --port 8787
+# 或：
+#   python3 converter.py --port 8787
+#
+# ⚠️ 本文件只是「示例」。若你的客户端需要合并配置，请【手动】把下面的段落
+#    复制/合并进你自己的配置文件。本脚本绝不自动改写任何已有配置。
+# ============================================================
+
+
+# ── 方式一：Codex CLI（Responses API）──────────────────────
+# 新版 Codex CLI 使用 Responses API（wire_api = "responses"）。
+# 转换器已支持 POST /v1/responses 端点，可直接接入 Codex CLI。
+#
+# ⚠️ 「profile」的写法在不同 Codex 版本里不一样，先确认你的版本：
+#
+#   A) 新版（实测 codex-cli 0.162.0-alpha.17.2）
+#      --profile 是「把 $CODEX_HOME/<name>.config.toml 叠加到 config.toml 之上」，
+#      **不是** config.toml 里的 [profiles.x] 段。帮助文本：
+#          -p, --profile <CONFIG_PROFILE_V2>
+#              Layer $CODEX_HOME/<name>.config.toml on top of the base user config
+#      → 新建 C:\Users\<你>\.codex\workbuddy.config.toml，写：
+#
+#          model = "glm-5.2"
+#          model_provider = "workbuddy"
+#
+#          # 单个工具输出可进上下文的 token 上限。官方模型是 10000，
+#          # 未知模型走兜底（可能更小），建议显式对齐。
+#          tool_output_token_limit = 10000
+#
+#          [model_providers.workbuddy]
+#          name = "WorkBuddy (via local proxy)"
+#          base_url = "http://127.0.0.1:8080/v1"   # 反代入口；直连应用用 8787
+#          wire_api = "responses"
+#          env_key = "CODEBUDDY2OPENAI_KEY"
+#
+#      然后：  codex -p workbuddy "你的任务"
+#              codex exec -p workbuddy "你的任务"
+#      （这种写法不改动 config.toml 里的默认模型，最省心。）
+#
+#   ⚠️ 关于 model_context_window —— 实测（0.162.0-alpha.17.2）它是一个「上限帽」，
+#      语义是 min(配置值, 模型元数据值)，**不能把窗口调大**：
+#          不设置      -> 258400（兜底 272000 × 95%）
+#          设 1000000  -> 258400   ← 抬不上去
+#          设 100000   ->  95000   ← 只能往下压
+#      想给自定义模型喂真实元数据，得用 ModelProviderInfo 的 model_catalog_url
+#      指向一个返回 Codex 目录格式 JSON 的端点；但对本转换器没有意义 ——
+#      转换器实际只向上游发几千 token，25.8 万的窗口根本碰不到。
+#
+#   ⚠️ 启动时那两行 warning 都是正常的、可忽略的：
+#          Model metadata for `glm-5.2` not found. Defaulting to fallback metadata
+#          error sending request for url (http://127.0.0.1:8081/mcp)   ← Unity MCP 未开
+#
+#   B) 老版 Codex CLI —— 把下面两段合并进 ~/.codex/config.toml：
+#
+#          [model_providers.workbuddy]
+#          name = "WorkBuddy (via local converter)"
+#          base_url = "http://127.0.0.1:8787/v1"
+#          wire_api = "responses"
+#          env_key = "CODEBUDDY2OPENAI_KEY"
+#
+#          [profiles.workbuddy]
+#          model = "glm-5.2"
+#          model_provider = "workbuddy"
+#
+#      然后：  codex --profile workbuddy "你的任务"
+#
+# ⚠️ 关于 Key：本服务的鉴权取决于 .env.local 里的 CODEBUDDY2OPENAI_KEY。
+#    - 若**已配置**客户端 Key（当前部署就是这种）：env_key 指向的环境变量
+#      必须是**真实 Key**（sk-wb-...），随便填会 401 invalid api key。
+#      持久化：  setx CODEBUDDY2OPENAI_KEY "sk-wb-..."     （Windows）
+#                export CODEBUDDY2OPENAI_KEY='sk-wb-...' （bash）
+#    - 若服务未配置 Key（老文档说的「随便填」）：那才可以用占位值。
+
+
+# ── 方式二：Cherry Studio / ZCode 等 OpenAI 兼容客户端 ─────
+# 这些客户端使用 Chat Completions API（/v1/chat/completions），
+# 转换器原生支持，只需在客户端的「自定义模型 / OpenAI 兼容」里填：
+#   接口地址 base_url : http://127.0.0.1:8787/v1
+#   API Key          : 留空（除非转换器启动时用了 --api-key）
+#   模型名 model     : glm-5.2 （或 kimi-k2.7 / deepseek-v4-pro / auto）
+
+
+# ── 方式三：Claude Code（通过 CC Switch，Anthropic API）─────
+# Claude Code 使用 Anthropic Messages API（POST /v1/messages）。
+# 转换器已内置 Anthropic 适配层，可通过 CC Switch 接入。
+#
+# 启动转换器（强烈建议开启脱敏，避免后端审核拦截）：
+#   uv run converter.py --desensitize
+# 若需保留 Claude Code 完整 system prompt（不压缩），加 --no-compact：
+#   uv run converter.py --desensitize --no-compact
+#
+# 通过 CC Switch 配置模型提供商，指向 Anthropic 端点：
+#   base_url : http://127.0.0.1:8787/v1/messages
+#   API Key  : 留空（除非转换器启动时用了 --api-key）
+#   模型名   : deepseek-v4-pro （或 glm-5.2 / kimi-k2.7 / auto 等 CodeBuddy 支持的模型）
+#
+# 注意：模型名必须填 CodeBuddy 支持的名称，不做 Anthropic 名称到 CodeBuddy 名称的自动映射。

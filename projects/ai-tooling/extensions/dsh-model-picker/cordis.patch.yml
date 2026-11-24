@@ -1,0 +1,3 @@
+- insert:
+    - id: model-picker
+      name: '@local/dsh-model-picker'

@@ -1,0 +1,1887 @@
+{
+  "snapshot_date": "2026-11-24",
+  "scope": "source-only public archive; upstream projects and media linked separately",
+  "files": [
+    {
+      "path": "plugins/subagent-budget-router/.codex-plugin/plugin.json",
+      "bytes": 1269,
+      "sha256": "4c3237c9b5f99b9ae7b7ecfe80a3c4b29e95f70d6627db02a1800b9ab65521dd"
+    },
+    {
+      "path": "plugins/subagent-budget-router/.mcp.json",
+      "bytes": 207,
+      "sha256": "6eeb41a1a0be612e2ced84089702a6014d98afb37692b95b8562081d4ca34963"
+    },
+    {
+      "path": "plugins/subagent-budget-router/assets/icon.svg",
+      "bytes": 510,
+      "sha256": "f6cf080a61c114b63f607fbcdf0d2875a602015f16e22a90e1bfc955b7d5f140"
+    },
+    {
+      "path": "plugins/subagent-budget-router/defaults.json",
+      "bytes": 522,
+      "sha256": "c21376b803cc8669875e65f198770c9ce07fcea3a9f3610098d440ba1f9b3a14"
+    },
+    {
+      "path": "plugins/subagent-budget-router/mcp.json",
+      "bytes": 304,
+      "sha256": "1e981fb43b5f0d203fa802aac6a292993a30d4eb1d1ca23a72ebba1921be2e47"
+    },
+    {
+      "path": "plugins/subagent-budget-router/plugin.json",
+      "bytes": 1400,
+      "sha256": "381cfeaa1f461615ebfeef6413fd8b5198341ef85a7a7f8e6f04f55e262b1fea"
+    },
+    {
+      "path": "plugins/subagent-budget-router/server.py",
+      "bytes": 31937,
+      "sha256": "909ba47c5b7f6f867be5b4fdd0afe27a2e3d02af7dee386f3ea455fe1b8851e9"
+    },
+    {
+      "path": "plugins/subagent-budget-router/skills/route-subagents/agents/openai.yaml",
+      "bytes": 342,
+      "sha256": "1b86e533f1da1bf8061be3cafe677c5fa0c7eeb3ba04ed16a644840da48c74c8"
+    },
+    {
+      "path": "plugins/subagent-budget-router/skills/route-subagents/references/operations.md",
+      "bytes": 5366,
+      "sha256": "0262cc20826240c6fb933c88e3a460bb3d58477b7ee02391fac3580f25a28ee9"
+    },
+    {
+      "path": "plugins/subagent-budget-router/skills/route-subagents/references/task-routing.md",
+      "bytes": 3785,
+      "sha256": "182b574dcd1a34d09d4e3eb692c48b7ab7e97200b0c0148f7f3e37db59d08f3f"
+    },
+    {
+      "path": "plugins/subagent-budget-router/skills/route-subagents/SKILL.md",
+      "bytes": 10968,
+      "sha256": "575315351c9a2afdabbfc0a1b497d894fe767b1d30adc301414f05063b6bff5b"
+    },
+    {
+      "path": "plugins/codex-context-window/.codex-plugin/plugin.json",
+      "bytes": 824,
+      "sha256": "debb0996ddbad9884d97d340ed9863cd7a4d3faea5d4d7e6044f9e34082f9644"
+    },
+    {
+      "path": "plugins/codex-context-window/.mcp.json",
+      "bytes": 205,
+      "sha256": "6d926415d9a9a7f07bae7bf7b4cb28141a87172a319ebc40d4ed390ceccb2301"
+    },
+    {
+      "path": "plugins/codex-context-window/assets/icon.svg",
+      "bytes": 336,
+      "sha256": "6f28319ad58cdddcebef4bffb1a0671995995fcc6d96b429999adf77dc8d750c"
+    },
+    {
+      "path": "plugins/codex-context-window/mcp.json",
+      "bytes": 302,
+      "sha256": "d2b0f13f72d9b30837b47256ab9f45b8340df352782f49bce5372c5ec9c62f70"
+    },
+    {
+      "path": "plugins/codex-context-window/panel.html",
+      "bytes": 3697,
+      "sha256": "ce7a5de760556236443745cf9f167a028ad09d7bc50fbdc9c742fc55a0aa77ac"
+    },
+    {
+      "path": "plugins/codex-context-window/panel.js",
+      "bytes": 4213,
+      "sha256": "a02e3749d961fb3b48035b52adce8e82f0794d9d78916e91d5260ecb2f0a0c51"
+    },
+    {
+      "path": "plugins/codex-context-window/plugin.json",
+      "bytes": 951,
+      "sha256": "e9ebb8386d1c289133edc0a207ce1951b0c7436c029d64a5c48fbf7800c0beb0"
+    },
+    {
+      "path": "plugins/codex-context-window/README.md",
+      "bytes": 1359,
+      "sha256": "41c45c2177469968410006b827e547f24935799ba4e7b3c52609a7fd8d6ffa1c"
+    },
+    {
+      "path": "plugins/codex-context-window/server.py",
+      "bytes": 8709,
+      "sha256": "fec823dcb3613ba09cf89fa0dd537930623e42e37aadb1b44b125b0d00983e0f"
+    },
+    {
+      "path": "plugins/codex-context-window/skills/context-window/SKILL.md",
+      "bytes": 858,
+      "sha256": "be09dea10ebd769f3d2d529317eedeb5ae0977d774a45f98ba6aee8b82234889"
+    },
+    {
+      "path": "plugins/codex-context-window/test_settings.py",
+      "bytes": 4050,
+      "sha256": "2b2080fbc5542b5b5a000ba9128e01598d675cdb10d4e9e9c10c65499b615c0f"
+    },
+    {
+      "path": "plugins/codex-trace-viewer/.codex-plugin/plugin.json",
+      "bytes": 701,
+      "sha256": "81f295711402d4abb8eccf241e17df779755a2143c639d40d3076f356ac557be"
+    },
+    {
+      "path": "plugins/codex-trace-viewer/.mcp.json",
+      "bytes": 241,
+      "sha256": "794444fa765036975fd4b4385cc6522a67ae6242752ccf69b6feb9fd9e87b071"
+    },
+    {
+      "path": "plugins/codex-trace-viewer/mcp.json",
+      "bytes": 336,
+      "sha256": "468acff56f3ab1eedcf16fa3a8e87360b0c701b98c4bd6a57dc1993864d4f850"
+    },
+    {
+      "path": "plugins/codex-trace-viewer/plugin.json",
+      "bytes": 808,
+      "sha256": "7458aca8e58a41887b1273335d0ce49583a4989d99c4b051b39b4d75311d4fdb"
+    },
+    {
+      "path": "plugins/codex-trace-viewer/README.md",
+      "bytes": 2495,
+      "sha256": "5e23557a6df43e5d7183b33c6f35ee1dd6fb00919b97afa3d3a8b761b391f368"
+    },
+    {
+      "path": "plugins/codex-trace-viewer/server.mjs",
+      "bytes": 6191,
+      "sha256": "0138dd4326d299f3ef8aa87a092576e64b055c490824490a844f10d53b5ca9d7"
+    },
+    {
+      "path": "plugins/codex-trace-viewer/skills/view-codex-trace/SKILL.md",
+      "bytes": 613,
+      "sha256": "d27d1651cb78e01c747a12d622d7b47326a68e631c5119ad0506cf4578010d93"
+    },
+    {
+      "path": "plugins/codex-trace-viewer/start.ps1",
+      "bytes": 860,
+      "sha256": "468887562f6dbd6ab30d6a8b48f76619856dc79a4b648fc081cb7eb9b427158c"
+    },
+    {
+      "path": "plugins/codex-trace-viewer/trace.mjs",
+      "bytes": 16333,
+      "sha256": "54cb20df1f3ef8ede9f8f3e3dd470379aa795537525549c6170189f0f1dc98ab"
+    },
+    {
+      "path": "plugins/codex-trace-viewer/viewer.html",
+      "bytes": 20694,
+      "sha256": "d5b0d2aff8cde589aac1e1a16cf9f93e0e86d3a573d6020a2dd5b02871101e2d"
+    },
+    {
+      "path": "plugins/memory-workbench/.codex-plugin/plugin.json",
+      "bytes": 1186,
+      "sha256": "31e1a5540d095c44a2aa3e29fc2134b245848fff456a7a69f05953fc115c2fb5"
+    },
+    {
+      "path": "plugins/memory-workbench/.mcp.json",
+      "bytes": 221,
+      "sha256": "2fb4193168e2b9b5786d5a48c66d08535fe9d632f544bcc8b5541cacb925472d"
+    },
+    {
+      "path": "plugins/memory-workbench/assets/memory.svg",
+      "bytes": 423,
+      "sha256": "00b290fa93a6ea4e4334f5a32871dfa73faef7d6b33ba08b645ee1d728b5584e"
+    },
+    {
+      "path": "plugins/memory-workbench/mcp.json",
+      "bytes": 316,
+      "sha256": "f00c5cdec024dfb7dd7d59506016acdb61c27fb27b58182abb3689bf1d78a667"
+    },
+    {
+      "path": "plugins/memory-workbench/plugin.json",
+      "bytes": 1326,
+      "sha256": "76c78b0b25961fdb721e413e0fb6de12433e7fa0ed3f6fe355297cb1dba7d2fa"
+    },
+    {
+      "path": "plugins/memory-workbench/skills/memory-maintain/agents/openai.yaml",
+      "bytes": 261,
+      "sha256": "47e700b12d003df8781da05bb1ae4e88239196a53ca1cdd06a9c8e2337d94696"
+    },
+    {
+      "path": "plugins/memory-workbench/skills/memory-maintain/references/ledger.md",
+      "bytes": 1216,
+      "sha256": "a85dd9d0246099c06de1f8b2bf1167a4c16d271861f12261968dddf39b73f8ce"
+    },
+    {
+      "path": "plugins/memory-workbench/skills/memory-maintain/SKILL.md",
+      "bytes": 2958,
+      "sha256": "00b5c7877aaf78f1f0e54fb423da79ba3e442d97fbc2a644084ae726816c4095"
+    },
+    {
+      "path": "plugins/memory-workbench/skills/memory-search/agents/openai.yaml",
+      "bytes": 274,
+      "sha256": "4bb8fdb424e4ff7345e9cf6577a0f19391333d682d9e3cf7f5128f592621c68b"
+    },
+    {
+      "path": "plugins/memory-workbench/skills/memory-search/scripts/dashboard.html",
+      "bytes": 6666,
+      "sha256": "912e2cf3b91794b56c4b46ea9921e5bb23d1e98ee27785e7c0374fb7e6e0b278"
+    },
+    {
+      "path": "plugins/memory-workbench/skills/memory-search/scripts/dashboard.js",
+      "bytes": 11394,
+      "sha256": "aa5da829f953dac5fa22b2d1ccf5ad3272ae93490900b77176ea2467a4dbdd40"
+    },
+    {
+      "path": "plugins/memory-workbench/skills/memory-search/scripts/dashboard.py",
+      "bytes": 11631,
+      "sha256": "c777365cfbc3438a98e592b483c5c9177a6d924f3b5dbc2fa089c8bc00e889d4"
+    },
+    {
+      "path": "plugins/memory-workbench/skills/memory-search/scripts/render.py",
+      "bytes": 6213,
+      "sha256": "22f1674cf36ab9eee2b340db86f80f63670fe122538d7241eec22fbbf56208c8"
+    },
+    {
+      "path": "plugins/memory-workbench/skills/memory-search/SKILL.md",
+      "bytes": 3245,
+      "sha256": "727de8ffe81db58527c29fc294651ee30396909d87d2fff1ba0e65a263c43038"
+    },
+    {
+      "path": "plugins/ai-image-denoise-director/.codex-plugin/plugin.json",
+      "bytes": 1050,
+      "sha256": "0f26bfb3934d4fcc6bf9b7f6d9286a3f543f7e3fc820bbc0d5b7ad2dc8f88dac"
+    },
+    {
+      "path": "plugins/ai-image-denoise-director/skills/denoise-image-prompt/agents/openai.yaml",
+      "bytes": 299,
+      "sha256": "d14c47392cbdd64d0d3923934818facbb8078f1760d00f36a487b8d3eca80c09"
+    },
+    {
+      "path": "plugins/ai-image-denoise-director/skills/denoise-image-prompt/references/prompt-patterns.md",
+      "bytes": 3127,
+      "sha256": "6c510657a1046fc03e8fd2e156fab9686a8ad8ad2ff63a6d5b6e4513cff61a47"
+    },
+    {
+      "path": "plugins/ai-image-denoise-director/skills/denoise-image-prompt/SKILL.md",
+      "bytes": 4478,
+      "sha256": "f382063a3c4faf645ae6bc440ce2de6262320a4a43093b20438ef1aa202be71f"
+    },
+    {
+      "path": "plugins/chat-image-bridge/.codex-plugin/plugin.json",
+      "bytes": 956,
+      "sha256": "0ef97328a94d0cc272087fe4e1d4f27b5cc67d7f5e499f5191bd46c3bed1e227"
+    },
+    {
+      "path": "plugins/chat-image-bridge/.mcp.json",
+      "bytes": 189,
+      "sha256": "9cd65eaeb1b93857ddd90c105e806776f4bf509f03b4a0746f82f02f4666a378"
+    },
+    {
+      "path": "plugins/chat-image-bridge/extension/background.js",
+      "bytes": 12993,
+      "sha256": "5fe7ca5a20a4849048ec8d435bf28ed7542960de4783ea42c05172500162253e"
+    },
+    {
+      "path": "plugins/chat-image-bridge/extension/content.js",
+      "bytes": 13880,
+      "sha256": "4c2f868a127b38b9f9460e6c78d62f2f7d894d7b7d8e8c8ebf3365f21c609600"
+    },
+    {
+      "path": "plugins/chat-image-bridge/extension/manifest.json",
+      "bytes": 568,
+      "sha256": "1ae1502958e753378acdf827511dcdd8b91c53abba9c293c1b0696bb1314d085"
+    },
+    {
+      "path": "plugins/chat-image-bridge/extension/popup.html",
+      "bytes": 1177,
+      "sha256": "f40cf2bd14cca38244bd816987141bca743b8c156de32d8c7aed253e32c1ac6a"
+    },
+    {
+      "path": "plugins/chat-image-bridge/extension/popup.js",
+      "bytes": 1934,
+      "sha256": "6a2b98ba7eaa24273572af2338d76e9345b846accfbbee5a51a7cdc78ddb2657"
+    },
+    {
+      "path": "plugins/chat-image-bridge/LICENSE",
+      "bytes": 1072,
+      "sha256": "616e8fbfa291789cedf97e782564495d72c4e7b561278051204c03da6a2ef523"
+    },
+    {
+      "path": "plugins/chat-image-bridge/package.json",
+      "bytes": 402,
+      "sha256": "d093ac0b072300e19c35e2d56abf92cdfc6f28a64c727dd8d7bbd1b5c89e37e3"
+    },
+    {
+      "path": "plugins/chat-image-bridge/README.md",
+      "bytes": 5685,
+      "sha256": "fbdd518aace5d77f4d5d1e82649f36baf7ea6a24a56dd6c88187cc9ecde273d9"
+    },
+    {
+      "path": "plugins/chat-image-bridge/scripts/install-windows-daemon.ps1",
+      "bytes": 1461,
+      "sha256": "6f089b50b874c2d8bf9fed7792c2d54d22e9e89e03968f0c353db2b526ba6e99"
+    },
+    {
+      "path": "plugins/chat-image-bridge/server.mjs",
+      "bytes": 22963,
+      "sha256": "89565e8666cd45256616a85f1be0051a7163ae0677846451df52ed3f506030d6"
+    },
+    {
+      "path": "plugins/chat-image-bridge/skills/chat-image-bridge/SKILL.md",
+      "bytes": 2106,
+      "sha256": "817c933c76479ace95a643a45760abd429ec382b29da744b0a73c49e81a6de45"
+    },
+    {
+      "path": "plugins/chat-image-bridge/tests/server.test.mjs",
+      "bytes": 4545,
+      "sha256": "3c0ceee888c2d3e8d57b700784b87f02aa4fd30580be6827271d388da9cc9312"
+    },
+    {
+      "path": "plugins/chat-image-bridge/ui/task-manager.html",
+      "bytes": 5418,
+      "sha256": "39d75d7a565b089f760d0dc80872d6155500c5cb45567bde9a4dcb5c6ccc2d0b"
+    },
+    {
+      "path": "skills/btw/agents/openai.yaml",
+      "bytes": 298,
+      "sha256": "4be58f72578eaf4f7cc74daa1f53a1fa6e1b529fcd3a7300ffd8291eee305eee"
+    },
+    {
+      "path": "skills/btw/SKILL.md",
+      "bytes": 6933,
+      "sha256": "d51a3c99a1259d6c0d17c574a7e1c2256e2a8b3a1bb3c4c611628d932f7ad252"
+    },
+    {
+      "path": "skills/plan-module-change/SKILL.md",
+      "bytes": 10350,
+      "sha256": "49b08fea0ab6f8a6d355f79a776f4fd36a4dc08aee8b1dcc5443d854d90a9484"
+    },
+    {
+      "path": "skills/pragmatic-coding/SKILL.md",
+      "bytes": 6241,
+      "sha256": "b74e732bbab9066d12a4c5720ed12ab80e212df2711fc0c19f51ea5bacfa189d"
+    },
+    {
+      "path": "skills/live2d-agent-kit/.gitattributes",
+      "bytes": 101,
+      "sha256": "3a38dcf708ba86fb45be9be1d8e1c7f186903ac47543d9fe4fd14a68a9f6a452"
+    },
+    {
+      "path": "skills/live2d-agent-kit/.gitignore",
+      "bytes": 517,
+      "sha256": "8e6864175fb97458a27a644c9054f25fe0ef91214dabe0dfa7edbde8ce677efc"
+    },
+    {
+      "path": "skills/live2d-agent-kit/agents/openai.yaml",
+      "bytes": 292,
+      "sha256": "29afbb1259488e5f85bb81d325322d019b835b57489b3476af94ceda8682f83e"
+    },
+    {
+      "path": "skills/live2d-agent-kit/AGENTS.md",
+      "bytes": 1820,
+      "sha256": "c309c3d14845143c338cd04a2e194dbf7b609fd3474a795136dfdf4f3e7a6185"
+    },
+    {
+      "path": "skills/live2d-agent-kit/assets/readme/provenance.json",
+      "bytes": 567,
+      "sha256": "6d9b246ace52852ee10d749bb8281799eea682dc4cf6e7cca833535a3607597b"
+    },
+    {
+      "path": "skills/live2d-agent-kit/assets/readme/README.md",
+      "bytes": 2434,
+      "sha256": "590a261e6e9e2c8c7613c9f1e60ab579dcde7cf4e9827fd3063bed8491aabfe7"
+    },
+    {
+      "path": "skills/live2d-agent-kit/CHANGELOG.md",
+      "bytes": 12297,
+      "sha256": "6f979b46693bee6d487acf5fd917dab62359530bd3a0ca9353b3ab00d52ff690"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/art-baseline-and-review.md",
+      "bytes": 5264,
+      "sha256": "204fffd0b64307492a241a26f2a1adfe6ceca047768c56d71a0a5b1905ffa12b"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/camera-tracking.md",
+      "bytes": 22026,
+      "sha256": "83458c2785973670a56c1efd846ebfbf5f823725626e1a8f811574bd5391ade0"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/case-study.md",
+      "bytes": 15668,
+      "sha256": "52e115c6158216ff805dc2b09fc8409e30875f1de511c9c91a690f2e4201579d"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/head-hair-motion-review.md",
+      "bytes": 4433,
+      "sha256": "acb60e88e70504d54b7c95efd4744231784843c7f09659d7abbebc68307ec735"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/manifest.md",
+      "bytes": 16456,
+      "sha256": "fc14dff1133726a38349412abca34891160a0433000b5a0e5bd92b81b972cd17"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/migrate-existing-model.md",
+      "bytes": 14026,
+      "sha256": "a3b5e1fcf7417478e81631426cb6d2af1919c892712acf1217ab7d6a122e64a8"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/model-protection.md",
+      "bytes": 10726,
+      "sha256": "fbffca08dbd1629b557a1e462742a206be01588fb74bde7ac0db126143d029bb"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/psd2live-versions.md",
+      "bytes": 7684,
+      "sha256": "d00145bb2ffbb05a44f0f40dc9437ec7941744a73cf108db3428e9812d7bfe9f"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/repository-review-results.json",
+      "bytes": 5764,
+      "sha256": "c8f3d91d7038dc2d7ec05323504fa529f52e40f243a4c0cf12d7175d8048e5a6"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/repository-review.md",
+      "bytes": 4255,
+      "sha256": "f5a5d2f3e8361fd3147cf50cc2c86a944ef1187ab32d9b1207c0129757f948b7"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/reproducibility.md",
+      "bytes": 23119,
+      "sha256": "5549e05808f3292aed6b24d956388d8db5d2a5a9834f961253b538bc09d77f25"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/setup.md",
+      "bytes": 11608,
+      "sha256": "a2b467469574d5981688756c7d7c0be6152a8679aca91d0a332ec1a2ab8b25ee"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/tooling.md",
+      "bytes": 8606,
+      "sha256": "3a2def8181d773d5f8f41154caa89304073fa4b97f9033854fd42fb9e1a939d3"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/troubleshooting.md",
+      "bytes": 20491,
+      "sha256": "5e56de7a82ddae2b2f9ee778276e23774be0c7b5811676525ee492b8076dfbae"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/unity-import.md",
+      "bytes": 5525,
+      "sha256": "0d8ce695aef1c73ddb688501454e02bdee1fbad8bca76bcaf28eacc76a5fc07c"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/upscaling.md",
+      "bytes": 10874,
+      "sha256": "fdac3720f96a88963587640303cb8fca260f64d4860d2bad2744e4a431642a63"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/camera-tracking.json",
+      "bytes": 18256,
+      "sha256": "285af2201643f8bef8fe6da7c81e24b24d41947441cca52f3e18bcd4c47470b6"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/capture-defaults/default-ownership.json",
+      "bytes": 1643,
+      "sha256": "e14099c09a792a0fd2c081f2330063b086a2a737c309d372b45331cdf0d365a5"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/capture-defaults/README.md",
+      "bytes": 1704,
+      "sha256": "3450b3052af05dc939f1c5775150ffb9c3a048143a21ed3cc7034f507bcc3216"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/capture-defaults/summary.json",
+      "bytes": 2624,
+      "sha256": "f63658d5c1db6946f8785b90ff93fe45230c6ff3cfa70d83a8e494dcd6ea17a1"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/capture-defaults/web-smoke.json",
+      "bytes": 10714,
+      "sha256": "69e1880f5f6d644dacbdf97bd52b40a51bd8f0d2fafa040113acf451de62ecaa"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/cold-build/commands.json",
+      "bytes": 10012,
+      "sha256": "7c11d2c800d4702674d3ac63a63af27184a26036fa5fc9128bfdacac825c2655"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/cold-build/compiled-output-tree.json",
+      "bytes": 409577,
+      "sha256": "dd440e7e4485dc80c0f7a8e22f37e86a8ae54fcaab0e2566cc6b4dde7cb162a8"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/cold-build/dependency-downloads.json",
+      "bytes": 239586,
+      "sha256": "bb85853407ccb871c50b12f264a3ece0bd99a5bd5230e430bb4689614b4e66bc"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/cold-build/engine-source-check.json",
+      "bytes": 530,
+      "sha256": "e5ecff7c14d7c43de72f377a4013ce2a2e7a63ff8a406cedd436659a3e46af56"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/cold-build/export-classpath.json",
+      "bytes": 22191,
+      "sha256": "9ac70d3e1acb178493b35667b1b6ecd7fcc39598e5b62c126097652e78965611"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/cold-build/exported-artifacts.json",
+      "bytes": 9215,
+      "sha256": "947bc1d68446c758d1ac439fec88ca8d5f1c98a5580c4d38dd8cf16b0782c650"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/cold-build/inputs-and-tools.json",
+      "bytes": 6585,
+      "sha256": "7dbca2cdbfd770ad29650d1658a4f7e6c4e3dfb7cb946898fccffc51a696134e"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/cold-build/native-minimal.json",
+      "bytes": 331384,
+      "sha256": "826dc543df1b7ec4867cff6f8819f68f745ce6057eb75a40a933ac147007bf01"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/cold-build/native-pink.json",
+      "bytes": 285264,
+      "sha256": "7050be4aa7391966edec5c0badb5d303140c4aec7944607b52905539e67601be"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/cold-build/README.md",
+      "bytes": 1632,
+      "sha256": "0d55b7e8fd16678d4a5ce92ce385a1161d04bd929738b1c6f4ef828d05478391"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/cold-build/summary.json",
+      "bytes": 5218,
+      "sha256": "3c72e0cf5f489011f47b37546d7a01a0ee57d3f756fc55bf222bc1baf8a5cdbd"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/cold-build/web-minimal.json",
+      "bytes": 9738,
+      "sha256": "b7cdd600b8bab4a9a6f849a54bb74aeb877155198635e4134f88b178ec2e8257"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/psd2live-authoring-history.json",
+      "bytes": 6247,
+      "sha256": "32e10896489a34cfae57a051bfd87d4904b7a47dfcbb9e04b8bbfbf5986f9453"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/README.md",
+      "bytes": 9494,
+      "sha256": "e09711af3d2ed0676c5c4833d16c90706a6c24666fae985776854c7f6665087c"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/source-package-526e9fb.json",
+      "bytes": 4986,
+      "sha256": "43a44c8ada4eb17c38259e216cbc2da65113bde98daba3497979b5a680c6d5bb"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/source-package-7f391f4.json",
+      "bytes": 4986,
+      "sha256": "fd24852710032c33bf9404945241936efd54903852dd9f800388051cff30afd9"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/source-package-a909460.json",
+      "bytes": 5106,
+      "sha256": "d9b7962590920cfccb6e68c9ff78053a237c8c9accf33de8cab7cb2be04b3ded"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/source-package-e2c4679.json",
+      "bytes": 4986,
+      "sha256": "dec48f7e8c8da6f036f9a39efff16389a3e80291bf5fbd5209ee5ed91ba6eb89"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/source-package-f41437c.json",
+      "bytes": 6389,
+      "sha256": "8900fdb60f72d2bfad056183b0c38bd8ab6608344a2ce6e34f66e43f6795f8a8"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification/web-features-20261018.json",
+      "bytes": 15719,
+      "sha256": "1b88f28b6519a59aa515919d54ca4b6c8cfc18d0fa2e73497a094aa83430d8e3"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/verification.md",
+      "bytes": 5718,
+      "sha256": "81ebf1221f75ea1e21412befac3261f22086df6ad8782063554c4761132c9d4c"
+    },
+    {
+      "path": "skills/live2d-agent-kit/docs/workflow.md",
+      "bytes": 12027,
+      "sha256": "671fd84df0910ca3a96ba216054eec4c4c612ce78b8956d561d44beb001aaee9"
+    },
+    {
+      "path": "skills/live2d-agent-kit/examples/minimal-model/GenerateExample.java",
+      "bytes": 4115,
+      "sha256": "d3b036c7f181219277b63c085532496356ba862b8816f4601b3fa3a8e85b94e3"
+    },
+    {
+      "path": "skills/live2d-agent-kit/examples/minimal-model/README.md",
+      "bytes": 1986,
+      "sha256": "ff7db7b979c6fc1231a587a8dfa9d4eb6017aff8cd7f755ea66290f09237e142"
+    },
+    {
+      "path": "skills/live2d-agent-kit/examples/minimal-model/verification.json",
+      "bytes": 5550,
+      "sha256": "4ff763b5675bdc10e57dc3bb0519726d4ceff62719ca5b65d477f2e8eb008953"
+    },
+    {
+      "path": "skills/live2d-agent-kit/integrations/psd2live/engine-lock.json",
+      "bytes": 1284,
+      "sha256": "8a34be2559c1aeb4c02ebf95588d7e3789de065207db5a7445be3eb18fc41e98"
+    },
+    {
+      "path": "skills/live2d-agent-kit/integrations/psd2live/ExtractPsd.kt",
+      "bytes": 2064,
+      "sha256": "9e8f13a51876df4f5d8e5b10cf5937af3fc795062580c0dcffd7a6bb975358a5"
+    },
+    {
+      "path": "skills/live2d-agent-kit/integrations/psd2live/ManifestExport.kt",
+      "bytes": 60141,
+      "sha256": "de2b4201b5c22beccaab7d26f872d1c6421a8916f566f2dc87506494101ee4a6"
+    },
+    {
+      "path": "skills/live2d-agent-kit/integrations/psd2live/PinkSakuraDynamics.kt",
+      "bytes": 16627,
+      "sha256": "c36bc6de3d26062789fd01a0c6d8576cb707cc011c83ff9f73d68fdd13d721c3"
+    },
+    {
+      "path": "skills/live2d-agent-kit/integrations/psd2live/PinkSakuraGestures.kt",
+      "bytes": 13978,
+      "sha256": "7d50771ce5f3c8991c982b0112d4400128cb0ae8f0bfd596d6b61e4cd23a2ce0"
+    },
+    {
+      "path": "skills/live2d-agent-kit/integrations/psd2live/README.md",
+      "bytes": 3137,
+      "sha256": "a8a91f98798cce0b3cad5a19954af7a3e1096dc91351ad378f3ed57223a99371"
+    },
+    {
+      "path": "skills/live2d-agent-kit/LICENSE",
+      "bytes": 1065,
+      "sha256": "1108d5e6bbe9a2573e7fde064a7c08fed5ba6b49909488e9126341715a741a4b"
+    },
+    {
+      "path": "skills/live2d-agent-kit/mcp/psd2live-project-revisions.md",
+      "bytes": 4294,
+      "sha256": "044b0210e8e451617b0cb42af01240906d09b742c32e0e1eb3b7aa13b0508c69"
+    },
+    {
+      "path": "skills/live2d-agent-kit/mcp/README.md",
+      "bytes": 7146,
+      "sha256": "1755f08587ebd783631c3c0995e17d08e7e69349be22f74b14824a1653935fad"
+    },
+    {
+      "path": "skills/live2d-agent-kit/patches/psd2live-agent-kit.patch",
+      "bytes": 58678,
+      "sha256": "a785a2cd38cb9d999a1f445d9fb36c75d3731d2742a335d072a3cdadd22a17fa"
+    },
+    {
+      "path": "skills/live2d-agent-kit/patches/README.md",
+      "bytes": 714,
+      "sha256": "f82dab09dd7b6b3df7f6bd7884fa73c081c29b078078f275d10ac87111254261"
+    },
+    {
+      "path": "skills/live2d-agent-kit/prompts/astra.md",
+      "bytes": 2528,
+      "sha256": "72e2b3a3d683065b1eabd166d6313eec15d1fc5d2eae37f54e35ab92da85f26e"
+    },
+    {
+      "path": "skills/live2d-agent-kit/README.en.md",
+      "bytes": 16225,
+      "sha256": "e28fc41f6fa84ea7e228379dd3c252153ef239f3189fcef2306c0cd12b52a58d"
+    },
+    {
+      "path": "skills/live2d-agent-kit/README.md",
+      "bytes": 15054,
+      "sha256": "811d0fb577b988fb468dbd92b823f214a89389c4a8430e3430c83b1e5735adc8"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/AtlasAlpha.java",
+      "bytes": 4364,
+      "sha256": "b8ba2522c8c09e4e7e645c58ad4ccf20c14bcb145367456ec5e4572c91e16824"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/check-camera.cjs",
+      "bytes": 11065,
+      "sha256": "895202b18279d811b11e61211341bb45fddf915383bd128d9a7ecb08cd8977d8"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/check-preview.cjs",
+      "bytes": 12119,
+      "sha256": "1ced8ef7cfaa6876d5f49bae0a87b4b3fb42f115e1ff6c902cc903395562e532"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/check-source-package.py",
+      "bytes": 9951,
+      "sha256": "74f11b9af51ebf80c20e59df1d4ae5da8ac58876582aab202156d19ec95c6062"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/doctor.sh",
+      "bytes": 775,
+      "sha256": "578c7a2108d8d30d4b0c97789f2e23bdb9b0fca2453f6a1431340325ba7e3663"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/export-model.sh",
+      "bytes": 1779,
+      "sha256": "982cbe1630d49863f7449ebe4375f1a2fccf5968684d30ab35cf20322a7c62b0"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/extract-psd.sh",
+      "bytes": 894,
+      "sha256": "722397f8c10d7531924ae5f6de64058cb5546c397dcfe89d2af9300a2bde4d30"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/maven-curl-relay.py",
+      "bytes": 7861,
+      "sha256": "95d661558b623d826108b876f2e8e4e1bd8c30c0b3838f42636cd6e5a662c502"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/package-model.py",
+      "bytes": 9298,
+      "sha256": "a4df94c8c9eac8f9ef1f9b909191fa802c4c13bfbb27004c2ffdfe1db11bb2b1"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/prepare-preview.py",
+      "bytes": 11929,
+      "sha256": "fc43598e212e16b3dc64c115027f8cabbc8e7d1ba7acec442e714c0a8471ff8e"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/preview-feature-checks.cjs",
+      "bytes": 8138,
+      "sha256": "63ba5766681e1a4c5a5a48ee78b34f988bfe5ff8ed082b6ed003cf6f375f04c0"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/psd2live-init.gradle",
+      "bytes": 3131,
+      "sha256": "609057647ae208c9aac88b493320de8e0f9dc7ea531b0cf678d86bf6d1871d94"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/render_core.java",
+      "bytes": 17176,
+      "sha256": "f8296a1b03bf216ded194f6043f64b2e81178dc537b9f69ce79256584db63195"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/render_core.sh",
+      "bytes": 2639,
+      "sha256": "cb50590a2e8bdc7a381287eedaf5ef0f3e9cc9bfde79533f7c3e6d4cdaa679d1"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/setup-psd2live.py",
+      "bytes": 4116,
+      "sha256": "9f238ebdd428309eb2c5a0e4a0399a2852dc45948e70f80aaa65e23c65f644d3"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/setup-psd2live.sh",
+      "bytes": 153,
+      "sha256": "af1a74476a1d9ddec4e7a3bb93ab273f453d899dcf17384fcdbc4f9035189e57"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/setup-tracking.py",
+      "bytes": 6636,
+      "sha256": "8a8b315c94aa2abb10766e78b42f0e1162e896c589fccf9536b1caf36a70982a"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/upscale-atlas.py",
+      "bytes": 7862,
+      "sha256": "762ff72511576e3ecd5564d2e9cf9c46957e4b07faf10eefc35b5472fc84dd5c"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/upscale-atlas.sh",
+      "bytes": 152,
+      "sha256": "e86caf7b040089d11f2f0e6d0662fcb2177e95732a55a753463ab3fb3fdf061c"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/validate.py",
+      "bytes": 28191,
+      "sha256": "897678b435394924cbff612ba87015ffe4f6f1b5e204371c862c090703aa50c8"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/validate.sh",
+      "bytes": 147,
+      "sha256": "1f7bde093adafd263318e3c071ae9b9f67c6cede309dd3d5789ef1239cb9bcea"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/validate_core.java",
+      "bytes": 19278,
+      "sha256": "2b2ce40ab0df1437f50a3d6ee93059611b6af7f34b1b1242ca51f5f24dd4088c"
+    },
+    {
+      "path": "skills/live2d-agent-kit/scripts/validate_core.sh",
+      "bytes": 656,
+      "sha256": "e8a9f36bd0517630ed061ace52c17f907a65a7fc436af864e22dce86ef48d7b8"
+    },
+    {
+      "path": "skills/live2d-agent-kit/SKILL.md",
+      "bytes": 9378,
+      "sha256": "fdb19b6629c6b7ad691f74a89febc7ef21a2fd41371054597ab45e312c5d0887"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/acceptance-monitor.js",
+      "bytes": 9761,
+      "sha256": "fe22876d5a8e0d54c66f9a3e9f7e58cb1faa9a214f2730f00a6f4b3794271fa2"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/app.js",
+      "bytes": 13246,
+      "sha256": "941aab73ec9bf66611ffc5f5112862ac248c1f8c246c4da61e4e88922b455e43"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/camera-tracker.js",
+      "bytes": 14563,
+      "sha256": "4fbf1a6ec649b5da1a438ca95e899564e0a73c52a31d42db6e4dd7a885e72d05"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/capture-controller.js",
+      "bytes": 10472,
+      "sha256": "0e515cb768f20eac9ea6ec35703859384db3bc423fa176f1097ab725cebbb383"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/dynamics-config.js",
+      "bytes": 1596,
+      "sha256": "3d6cc876ab9fac68b6ab845d380bd9887a9d475f95609da7df8a1cb68faae341"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/expression-layer.js",
+      "bytes": 1680,
+      "sha256": "c37eb03d295bb8f6729f86c33b1525b15da5000a0885683599bdf5a419f89c0c"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/gesture-handoff.js",
+      "bytes": 1568,
+      "sha256": "15022d0770b061ed311bcb23f7cfd113e5077d3f815a72d74e7d837fd4a155d1"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/index.html",
+      "bytes": 6309,
+      "sha256": "0f72a34140f1d13c4146cbaab2875e633e38dde745df03e2e52c99009e0ede9f"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/landmark-overlay.js",
+      "bytes": 10897,
+      "sha256": "f846ec7d92f962a80c49619f927f7289feac45fdd03850c674a513365b32d95e"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/README.md",
+      "bytes": 12942,
+      "sha256": "57929051b3da8f40f73544615e5aed4daf7bb2205cebe89a7f2a7f28a605d060"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/runtime.js",
+      "bytes": 21742,
+      "sha256": "0a4c838bd97a7363e9fb3b53ceb2eb3f91aaa74fb037db517f31b1062878cc86"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/server.py",
+      "bytes": 1551,
+      "sha256": "9efb35c8a42e06aa43355cbe3de2018cd26f0e21eeebf9ca892da2fe4d537ae1"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/speech-bob.js",
+      "bytes": 1210,
+      "sha256": "ebbb9481b27d6dbe49a966a0f2b9094c7103d310cf6a307ba91a567bbffa5846"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/styles.css",
+      "bytes": 3655,
+      "sha256": "739451d36da9db65d4cdd2429f0cbcac52855d6cb7e29346bd1334fac43169f7"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/tracking-input.js",
+      "bytes": 6958,
+      "sha256": "1ae28917580198ae32e1717e79a660d005188d12885b39c43da806fc1ab9d93e"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/tracking-math.js",
+      "bytes": 13932,
+      "sha256": "070f1252a5629792781984a280985e381cff2e2ccb2c9e74a6f6e1b93b002d33"
+    },
+    {
+      "path": "skills/live2d-agent-kit/templates/web-preview/view-config.js",
+      "bytes": 947,
+      "sha256": "35a34513047aed6f712d4397b742a94fe3178631f3cd9a59ecdfc7bacce0e988"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_acceptance_monitor.cjs",
+      "bytes": 8375,
+      "sha256": "fc1657986681c04adf49510b8a9eea79daf113407b248372ca2be0ee85615007"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_asset_identity.py",
+      "bytes": 11915,
+      "sha256": "55cb8de92ce0e7b1d570f7f61ddcdfc2562977fb7c3a22f9b9238eea13d0048c"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_build_export.py",
+      "bytes": 2715,
+      "sha256": "ead80130ccc485a4ee7222517407a44377d46781b81508f610fa499f3b94ad75"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_build_relay.py",
+      "bytes": 3352,
+      "sha256": "03e15a2527f02068ccf2045090b9882e31b5042ec1d064ad80fbdda9f1aa6f0c"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_build_setup.py",
+      "bytes": 4228,
+      "sha256": "bef55a71ffdbdfb8d238751c47eb075e3115bc3931f5de9c75efefd943da8df6"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_capture_controller.cjs",
+      "bytes": 10260,
+      "sha256": "a6b48f6ec20ec51f25b6675430e6bd3c3b8f6001dabbd4ed38df91b26ae63222"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_continuous_review.cjs",
+      "bytes": 2363,
+      "sha256": "6c0f0d9218565688a91cb4db74a35b0d298ab00d17e80aa7bce795ed15cf51ea"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_expression_layer.cjs",
+      "bytes": 2587,
+      "sha256": "8f7eec373b37362da24cfb37381fd38c37e4d89bd6a51d6853ec204ad00233c7"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_gentle_dynamics.cjs",
+      "bytes": 2131,
+      "sha256": "a0b5d9645efe309da86efac722bc86c51511738629c71eee0cf2b96937b5de79"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_gesture_frames.cjs",
+      "bytes": 1094,
+      "sha256": "6ce48cb5a89ae76b55343fd0fc84e5b479e70c6f4de459f2d8df4b7073286b9d"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_gesture_handoff.cjs",
+      "bytes": 1490,
+      "sha256": "5115bb2d3f315874496fda61b25fa30ccd0b6933f2cd75f3f366f8476a7a75ff"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_landmark_overlay.cjs",
+      "bytes": 5827,
+      "sha256": "4e8e80895f93dd564f11dc86b630aa7c02c4650e8589270ea0d18631aa5fe64c"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_pink_performance.cjs",
+      "bytes": 9097,
+      "sha256": "6c3a7c7efb3a8e5eff8d6940facc8670d377d7d6557a78512d492a31fac83ff6"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_preview_tracking.py",
+      "bytes": 2567,
+      "sha256": "836261127f2086e19a0a01edea8d49ed53963d7d5a106397682bea1f777bed8b"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_source_package.py",
+      "bytes": 2967,
+      "sha256": "b7b2358cdab47ee30ebb8d612354f9b884d69ce9e87168e1a7d4e64bba48170b"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_tracking_camera.cjs",
+      "bytes": 12567,
+      "sha256": "fea045d683c323a9587c21d1b18539f33f48db703e1993388d7d2628a820ea4e"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_tracking_input.cjs",
+      "bytes": 1653,
+      "sha256": "65b3aea58399b1a3e11609f8b6e2fc03753616e7355d13f82dd17df5f9776c91"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_tracking_math.cjs",
+      "bytes": 9879,
+      "sha256": "d6e283ee66a11cd332cf2be76a48725a24f6828c9f498cb6b4d2d7b8aed57c77"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_tracking_setup.py",
+      "bytes": 7125,
+      "sha256": "ae38499c58d83be3c9948a72b3365d99b21ecf12d63643a6f6e5d7839f06eaa5"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/test_validation.py",
+      "bytes": 27912,
+      "sha256": "d58b028e8a5858ee6b909f708beb348129a1ec3c870d95c95359e561e26087c2"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tests/tracking_fixtures.cjs",
+      "bytes": 1954,
+      "sha256": "ae3f84e15d5a5de0a39d55281c26c0d171b2f952338c548f505190a94536f789"
+    },
+    {
+      "path": "skills/live2d-agent-kit/third_party/GPL-3.0.txt",
+      "bytes": 35157,
+      "sha256": "22f65f0ba65b3fb08b8f2b681d5cefa436690fe67747fa9ad4674c75695643a4"
+    },
+    {
+      "path": "skills/live2d-agent-kit/THIRD_PARTY_NOTICES.md",
+      "bytes": 3624,
+      "sha256": "526a728ccf0f23b3398bfc288cba9a09282c975bd67e515ea8a66c72c2f065de"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tools/catalog.json",
+      "bytes": 59935,
+      "sha256": "d9fd3915db7e2c6e2fc211331bb690794401ae573c1d8597c3aed8606cf98f5b"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tools/commands.md",
+      "bytes": 11629,
+      "sha256": "3aa6b7cd074128d7354c1244073ba0b486f713ee061105e5f1f8da62fe5960d5"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tools/host-capabilities.md",
+      "bytes": 7090,
+      "sha256": "106bdec74ea724e9db4c21e60bf484889207ec2fc56d531812f2052f6eb64ab8"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tools/README.md",
+      "bytes": 19592,
+      "sha256": "466758b7c8459595df166f4213716a7d266692708298c46067e221031a533554"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tools/tracking-dependencies.json",
+      "bytes": 5422,
+      "sha256": "64c15452617080b8b8e5e100e18c3d9c5ed9420abea47c2c699bec5907baf480"
+    },
+    {
+      "path": "skills/live2d-agent-kit/tools/upscale-model-lock.json",
+      "bytes": 1371,
+      "sha256": "dc0865b10c815866e75db65b6a74dc79a918aa07ffa7ba942be8521386eeb5cc"
+    },
+    {
+      "path": "skills/gpt-image/agents/openai.yaml",
+      "bytes": 297,
+      "sha256": "2ce00267ec4a3f029a060663af419f16b2fc70fb3ed1c72a51c694854f8bda44"
+    },
+    {
+      "path": "skills/gpt-image/references/craft.md",
+      "bytes": 19851,
+      "sha256": "4ab9fc65b0d7dfc6db7100fc40452fe062f14b83945bb38163a7e0bf06db0eec"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-anime-and-manga.md",
+      "bytes": 15572,
+      "sha256": "3e746a7184fe8182587fd94db9708111d727e3d959a02b57c6251c4a9b10c461"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-architecture-and-interior.md",
+      "bytes": 6697,
+      "sha256": "79f3e6a8274bc7d4921c23ed0318a84b35a7ed4a5dd9d85c9418a19e7b2b2628"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-beauty-and-lifestyle.md",
+      "bytes": 2464,
+      "sha256": "a36156d57514dfdf3e5f5a43822ca22a38d6a9d84ddb0b90692e5292589397b3"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-brand-systems-and-identity.md",
+      "bytes": 3358,
+      "sha256": "13f678aaabe478a8a6096440eb221bd0f8ff9551ffca5cdc40a85b996eece0a9"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-character-design.md",
+      "bytes": 1995,
+      "sha256": "606d492547312b9524bff2800ef7e8fd92efd7ff4b5feb326b3faf487c2842f2"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-cinematic-and-animation.md",
+      "bytes": 6047,
+      "sha256": "21f0c37bf8704535f714534a1004186d8b6b3edbdc773a3779eb8229f2f01e11"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-cinematic-film-references.md",
+      "bytes": 7542,
+      "sha256": "3b369ded44f64ba9fd08aa7f1edfbc67bf6249f0bc541c5a739273482922bc50"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-data-visualization.md",
+      "bytes": 6571,
+      "sha256": "6aeccd1cd1a6bfd592fa86df444b8d2c19818ce7ee31a91a5209411e335fc742"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-edit-endpoint-showcase.md",
+      "bytes": 3042,
+      "sha256": "3373c325363d0978a3de54aae8146aa218a48ef11c8529b39d85947471509ddd"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-events-and-experience.md",
+      "bytes": 2512,
+      "sha256": "1717b45aeb836fa71531ac0a4a7959be405efec88e1fb73a20a877d244dc85bb"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-fashion-editorial.md",
+      "bytes": 8915,
+      "sha256": "46cbdc755b264b8a98d5958436ba989098e484b81c6aec0e6bc66dcd9370e3bf"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-fine-art-painting.md",
+      "bytes": 6021,
+      "sha256": "be3be4e471380e2d760dd9de42870d351695ed4ef92c7ba47a25a516be09d7a3"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-gaming.md",
+      "bytes": 8659,
+      "sha256": "6d42e61a4d0fca765d3442844ab29d011208d05913cd9001719453b9825a1735"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-illustration.md",
+      "bytes": 2305,
+      "sha256": "b88a80363ee4951eff0ed83387e459100f8fc21e0534eca5f269457face6614a"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-infographics-and-field-guides.md",
+      "bytes": 11163,
+      "sha256": "7d27c25d2cec30749910dac70ef1156143a103accc1af043577c156638677084"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-ink-and-chinese.md",
+      "bytes": 2595,
+      "sha256": "b89e73f8f7a15c81568dfc36bac5ade467cd2db5f9c46b7e215e1efa74ffa891"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-isometric.md",
+      "bytes": 4677,
+      "sha256": "d6249504742e55f9f90ed839caaa1752fe21495e71532f80a97a3217a7264a57"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-more-illustration-styles.md",
+      "bytes": 6738,
+      "sha256": "a935f73eaac3b4abda6cff2c4fc2e2c16381e3617eaac93577749dea9fdad425"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-official-openai-cookbook-examples.md",
+      "bytes": 3934,
+      "sha256": "d54df284224af52f69b18438a427b27ebf8935ac6cf27762d8bbf139d81432a4"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-photography.md",
+      "bytes": 7097,
+      "sha256": "c066c34de25e0d7eb3636fac58674abddb19a0fbbfed386b67eaade5e267c86b"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-pixel-art.md",
+      "bytes": 1877,
+      "sha256": "54aab0dbcabf1625d4d9d4ba9adb2a0f1e3bdb209b1f528f7058a6be4d02372e"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-product-and-food.md",
+      "bytes": 6027,
+      "sha256": "4b321f64d8f71d85a5c7a136181fbf60b7dbdbd73d750c438d15965e90f29571"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-research-paper-figures.md",
+      "bytes": 28846,
+      "sha256": "d950c0b76ff9e516a40f636a49118f66e4ef0e0e9e7c1ee22ff95128a45b055d"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-retro-and-cyberpunk.md",
+      "bytes": 4877,
+      "sha256": "da1bee5f7eb9230e4ea0f42bc9476f2e5ca53fa499be8f37231fbb5f8ce22da4"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-scientific-and-educational.md",
+      "bytes": 8826,
+      "sha256": "fa18947f4b6756dd771df643648aa63d5d5d29df8e36958168b3fafc31c6e6f1"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-screen-photography.md",
+      "bytes": 3248,
+      "sha256": "0ba8d7a94348afeff101f49c910cfb910cad1abfab38ace7125510eff5ce26ed"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-tattoo-design.md",
+      "bytes": 4450,
+      "sha256": "06005a3b774b2570bc4892a04eb48ef6aa1c6368aa6c52aad3bb7391209aa0e5"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-technical-illustration.md",
+      "bytes": 7176,
+      "sha256": "745a03c508c58c1cd5d5b83f375716ccbe6a46cb7a7ce4138da14c0fc75a8e3e"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-typography-and-posters.md",
+      "bytes": 15293,
+      "sha256": "70e589c2b108d8e714c571328108936626a4caadb5169eb9727ed8f9b4062a5f"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-ui-ux-mockups.md",
+      "bytes": 6436,
+      "sha256": "418401fa5399cd0916fea41c56637645d42a256a87d58208b989a7e2801e94a8"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery-watercolor.md",
+      "bytes": 2314,
+      "sha256": "2daef080b7903481590cffdf93c66d0b11d98d708b16bb8493306dcb9c10faa2"
+    },
+    {
+      "path": "skills/gpt-image/references/gallery.md",
+      "bytes": 4771,
+      "sha256": "d64cc41f8089405216098f1ab73b416652808a74b27118c9b7c66638fe042ed0"
+    },
+    {
+      "path": "skills/gpt-image/references/models.md",
+      "bytes": 6981,
+      "sha256": "53e8dbbff85037bcdc0d9de9d9b342805b097b28cb3d9fb8578bf6e027a7a93f"
+    },
+    {
+      "path": "skills/gpt-image/references/openai-cookbook.md",
+      "bytes": 47254,
+      "sha256": "18c33412a5c1283dc158613c97965d4f15987524a340185c1c504a58f412eb8a"
+    },
+    {
+      "path": "skills/gpt-image/references/openai-image-2.5-editing.md",
+      "bytes": 3622,
+      "sha256": "efb49240960aabb5a5b72d586f79e34650ac85476f2e5da060b08b490e8e1037"
+    },
+    {
+      "path": "skills/gpt-image/references/openai-image-2.5-generation.md",
+      "bytes": 2925,
+      "sha256": "3a29514a48956ce92acdcfab59e17880dd90a25ec55f70a07c8263d666bf0c3d"
+    },
+    {
+      "path": "skills/gpt-image/references/openai-image-2.5-layout-and-text.md",
+      "bytes": 2965,
+      "sha256": "1169024b62749832e4634e46f68949989d7fb84141eddc46282acaebcd978cb4"
+    },
+    {
+      "path": "skills/gpt-image/references/openai-image-2.5-migration.md",
+      "bytes": 2828,
+      "sha256": "ba55f6647f5b907fff56a3ecd3da5f721a126d3fe512d340f969f445f5e6f536"
+    },
+    {
+      "path": "skills/gpt-image/references/openai-image-2.5.md",
+      "bytes": 1444,
+      "sha256": "57088502660e020eaaa5f339c6e0f1230d516be8f1846fd1db66275dae72de4a"
+    },
+    {
+      "path": "skills/gpt-image/references/templates-gpt-image-2.5.md",
+      "bytes": 6751,
+      "sha256": "ad860b4509f0fc828ef0e3df21c3813f79c54d3e0afc9e46dd7645a608c64633"
+    },
+    {
+      "path": "skills/gpt-image/scripts/generate.py",
+      "bytes": 2529,
+      "sha256": "d662b7e05143e64b1b9f7a34152093ae5f6ce341083b99767b97dac2c39e8724"
+    },
+    {
+      "path": "skills/gpt-image/SKILL.md",
+      "bytes": 10227,
+      "sha256": "e53991d5c9d4a82d648e943c14ff9b7d0882e27f9a93ec22b548a01f0652823e"
+    },
+    {
+      "path": "skills/unity-mcp-skill/.unity-mcp-skill-sync",
+      "bytes": 31,
+      "sha256": "f2842d64d8208a81d0b29fa7138abb0acf83636eebea505d5b18524a5535824f"
+    },
+    {
+      "path": "skills/unity-mcp-skill/references/tools-reference.md",
+      "bytes": 60627,
+      "sha256": "c457f25cdb5d62f08bfe1772da42010640cd30c6e6debad96083ef21f7f98311"
+    },
+    {
+      "path": "skills/unity-mcp-skill/references/workflows.md",
+      "bytes": 74497,
+      "sha256": "5b230791f50d781e4ca129fe71b6af48d850f3299490721972b13670fd86084b"
+    },
+    {
+      "path": "skills/unity-mcp-skill/SKILL.md",
+      "bytes": 14170,
+      "sha256": "45a6fd0007eeb03b5fdfb48b88a841a1df8c7f945ad386d0dfd5071458698b2f"
+    },
+    {
+      "path": "integrations/workbuddy2api/.dockerignore",
+      "bytes": 109,
+      "sha256": "b4c72c17e30278ad26054a8b8c0adb51ab4e2e975517b9bf103046e33026fd1f"
+    },
+    {
+      "path": "integrations/workbuddy2api/.gitignore",
+      "bytes": 1281,
+      "sha256": "95b899dfa85ed97925ef2ee77129a921fe4a1f237ab03203242e0b35fdb0b297"
+    },
+    {
+      "path": "integrations/workbuddy2api/admin/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrations/workbuddy2api/admin/browser_login.py",
+      "bytes": 7622,
+      "sha256": "5353e06ae6f7952e381c58fb70b4c74a4e982d52970d4a74cd9eb972668c6419"
+    },
+    {
+      "path": "integrations/workbuddy2api/admin/metrics.py",
+      "bytes": 5836,
+      "sha256": "2cc3cbc6e8b08edc112057448ad51ca180d0dcd46aa81df543764b4bcc4e7c7c"
+    },
+    {
+      "path": "integrations/workbuddy2api/admin/pool.py",
+      "bytes": 17381,
+      "sha256": "07d724716c891a6b81e5944d333afe6bdd8103194a79580b4350c15d007481d4"
+    },
+    {
+      "path": "integrations/workbuddy2api/admin/server.py",
+      "bytes": 26924,
+      "sha256": "d84220d26f49877aace61b8ebc443975f15b82ff4a236e4dc9b33d75052e312b"
+    },
+    {
+      "path": "integrations/workbuddy2api/admin/static/app.js",
+      "bytes": 25656,
+      "sha256": "aa3cca54b981fbcc7466cb6069f055d2c2ffeaa88261641eed1566cfd4fdbb04"
+    },
+    {
+      "path": "integrations/workbuddy2api/admin/static/index.html",
+      "bytes": 17505,
+      "sha256": "d4f4030836393458f2dab31e95b6ad4b8e82f718b05edd9a47f889b0db41e52e"
+    },
+    {
+      "path": "integrations/workbuddy2api/admin/static/style.css",
+      "bytes": 22338,
+      "sha256": "867fb9ffec175f9f32ef13122d5af9d58130848a6100464d469ea1bb20ef4b70"
+    },
+    {
+      "path": "integrations/workbuddy2api/ADMIN_README.md",
+      "bytes": 8953,
+      "sha256": "c0476e0fc5b12154663466ae6cf671605d07702ce3d6333219c5b0025b9f7e5e"
+    },
+    {
+      "path": "integrations/workbuddy2api/codex-codebuddy.example.toml",
+      "bytes": 5489,
+      "sha256": "40d09ed052b0dc42333e289703f1f24666e47fd124c973814182fdc86f776331"
+    },
+    {
+      "path": "integrations/workbuddy2api/conftest.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrations/workbuddy2api/core/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrations/workbuddy2api/core/anthropic_adapter.py",
+      "bytes": 19901,
+      "sha256": "9ec2a9087bf74c8d957df6ff3f39a1d68ad7fa3f6d24229a1734ae10320fa9a7"
+    },
+    {
+      "path": "integrations/workbuddy2api/core/converter.py",
+      "bytes": 100474,
+      "sha256": "d218bcbd31036ef9bd438eb452f8e283f3e71ef653db66cac4219b94c8338dc1"
+    },
+    {
+      "path": "integrations/workbuddy2api/core/desensitize.py",
+      "bytes": 17534,
+      "sha256": "edc61e1e5dd3760598dfb4cc6ea82cc82bba184a325fd7ae330114258cbeb114"
+    },
+    {
+      "path": "integrations/workbuddy2api/core/model_catalog.py",
+      "bytes": 11930,
+      "sha256": "d8418e0fb6e1e6a15e18d2dc06da5fbe411a2088661c0af698406e91a7f25d4b"
+    },
+    {
+      "path": "integrations/workbuddy2api/core/response_store.py",
+      "bytes": 3652,
+      "sha256": "3ba8f163ab6546621df0d8eac9965803c485267996dabdb7eee3566a770aa649"
+    },
+    {
+      "path": "integrations/workbuddy2api/core/responses_adapter.py",
+      "bytes": 22378,
+      "sha256": "f6bee0068cc32c788589e7376e7c6fe1163a86787b80c3c06e360a70a12b48e4"
+    },
+    {
+      "path": "integrations/workbuddy2api/core/responses_projection.py",
+      "bytes": 41372,
+      "sha256": "86544e434641cee5a573aa4d1bf06360be7e21bef083166cd751bc9432321bfc"
+    },
+    {
+      "path": "integrations/workbuddy2api/deploy/admin/docker-compose.yml",
+      "bytes": 943,
+      "sha256": "713d5458d4e084b9d8c0100e9376f01f3de8e081aa7b675b058121a62f1eb72e"
+    },
+    {
+      "path": "integrations/workbuddy2api/deploy/admin/Dockerfile",
+      "bytes": 155,
+      "sha256": "a502c87a10cb0cb39a138a6989b4903637f09ce3c6a0de153fb9c1831f22f908"
+    },
+    {
+      "path": "integrations/workbuddy2api/deploy/admin/env.example",
+      "bytes": 197,
+      "sha256": "842e51af19722ed50f9f90ace222f1507e3ff21178834c4bb8b87151e27b4de4"
+    },
+    {
+      "path": "integrations/workbuddy2api/deploy/admin/nginx.conf.example",
+      "bytes": 645,
+      "sha256": "ce86179f52adb6191ccb93be1271b089286edde3d57ea52ddef481c16b8b7f83"
+    },
+    {
+      "path": "integrations/workbuddy2api/deploy/local/Caddyfile",
+      "bytes": 3207,
+      "sha256": "30dabcf8e636ddbfe58e0c0f626e1273f9a95ebfcaf1c55a68f621e7427564b0"
+    },
+    {
+      "path": "integrations/workbuddy2api/deploy/one-click/deploy.sh",
+      "bytes": 1312,
+      "sha256": "7a133164c5ab43f10db9c3f4bb0ef640b9e03a2b78d46c911bf83a032977b97b"
+    },
+    {
+      "path": "integrations/workbuddy2api/deploy/one-click/docker-compose.yml",
+      "bytes": 1037,
+      "sha256": "52b17aa580333aaf4e445552103b80547e4d98bc4e30f8defe2638f5d12b81f9"
+    },
+    {
+      "path": "integrations/workbuddy2api/deploy/one-click/Dockerfile",
+      "bytes": 375,
+      "sha256": "9ca26d671389ef7443cbab9c8c60910493e26ed20d44cbf3f84bbb01894fa2d1"
+    },
+    {
+      "path": "integrations/workbuddy2api/deploy/one-click/env.example",
+      "bytes": 216,
+      "sha256": "3da119bdbad5d6b768be6b7a3ce8c4517b46f041bb6521744e90bc4796726267"
+    },
+    {
+      "path": "integrations/workbuddy2api/deploy/standalone/docker-compose.yml",
+      "bytes": 811,
+      "sha256": "5f4eaa033ff45bd60fe68844698f1a67d2b44c33192bd1c11f54f1ae728daa74"
+    },
+    {
+      "path": "integrations/workbuddy2api/deploy/standalone/Dockerfile",
+      "bytes": 251,
+      "sha256": "f83b583633deb69c88dad1f9742d1dae1c560b019d0aefe049538c6fae954ac7"
+    },
+    {
+      "path": "integrations/workbuddy2api/launcher.py",
+      "bytes": 16897,
+      "sha256": "3f51b52f4e5828acdd658e358ce9c02136d86cd3ffc9a44c33c074c7d0a49eb7"
+    },
+    {
+      "path": "integrations/workbuddy2api/LICENSE",
+      "bytes": 1116,
+      "sha256": "c86bc0e27a2be60c1d3947c3768b3e99dc9cfc489e9e8af8bb86b368406e8576"
+    },
+    {
+      "path": "integrations/workbuddy2api/README.md",
+      "bytes": 28414,
+      "sha256": "744573de36179b9003637332e326c449ade1448cce877ed4944127b1c931bbc8"
+    },
+    {
+      "path": "integrations/workbuddy2api/requirements.txt",
+      "bytes": 35,
+      "sha256": "802f5a4151aadd198f875ed4c2960413034b322243f79854d1381e58e8a37770"
+    },
+    {
+      "path": "integrations/workbuddy2api/restart-all.bat",
+      "bytes": 1061,
+      "sha256": "fe2a385fe352c643f2572b83939dea8378cd36a9a49a5230e93090cea266ece3"
+    },
+    {
+      "path": "integrations/workbuddy2api/run-local.py",
+      "bytes": 2349,
+      "sha256": "e55a4798f9d8183068ee0e317a684d2b9b1ce260fb6cd51c07639a7d98acb691"
+    },
+    {
+      "path": "integrations/workbuddy2api/start-all.bat",
+      "bytes": 513,
+      "sha256": "ea9a8aa2ec76def78e1d57060d5e8437a70d77b0750a4696152b9aea9f726c6d"
+    },
+    {
+      "path": "integrations/workbuddy2api/start-proxy.bat",
+      "bytes": 767,
+      "sha256": "5dcba6bcf9f2322eb3f3bfc5b732dd2841e5a878a4e55a5591c5f52125999332"
+    },
+    {
+      "path": "integrations/workbuddy2api/start.bat",
+      "bytes": 610,
+      "sha256": "3e62b6cf654871383784b1c9f80a4323530f1e8d241eaa1801f7a8605cc946b0"
+    },
+    {
+      "path": "integrations/workbuddy2api/stop-all.bat",
+      "bytes": 285,
+      "sha256": "5732cfa5f0ed681b3487bbcf8623822370559183f2fb09381fdf1437bb42921a"
+    },
+    {
+      "path": "integrations/workbuddy2api/stop-all.py",
+      "bytes": 5430,
+      "sha256": "49ae08f38207c344234b619c5835dfc8aa26d4257945a52e1fa57527e761cd37"
+    },
+    {
+      "path": "integrations/workbuddy2api/sync-dsh-modalities.py",
+      "bytes": 7206,
+      "sha256": "eb9fcc3a33dcc8498ad3a6b3949a405c9832b3ff086c64063cb9524095b77034"
+    },
+    {
+      "path": "integrations/workbuddy2api/sync-dsh-models.bat",
+      "bytes": 446,
+      "sha256": "63cfa2909dd036c415ac497f68e2d88b2fe3a75588d638177ace05789888ed11"
+    },
+    {
+      "path": "integrations/workbuddy2api/sync-dsh-models.py",
+      "bytes": 15448,
+      "sha256": "c533508056465e19472348230b4672b76878c77b4efdec5cef2469a9d070b4df"
+    },
+    {
+      "path": "integrations/workbuddy2api/tests/test_account_pool.py",
+      "bytes": 7463,
+      "sha256": "ad3f8e1473d5927e2378d851434b08cdbbb9006297627a209ae6a6f78c387319"
+    },
+    {
+      "path": "integrations/workbuddy2api/tests/test_admin_server.py",
+      "bytes": 6438,
+      "sha256": "cbe78176f016651e9511d1ce50efb614dc9614f422837e03e3a4a1f473c328bb"
+    },
+    {
+      "path": "integrations/workbuddy2api/tests/test_anthropic_adapter.py",
+      "bytes": 15123,
+      "sha256": "13f0b8068fde96cfb66d5c8dc96f80c58c937d6cb5246140c5d3caef42c4648e"
+    },
+    {
+      "path": "integrations/workbuddy2api/tests/test_browser_login.py",
+      "bytes": 5635,
+      "sha256": "fc1accf6eaf7b9a94ddf683bff2d4a059b2f33aed200245234b6f853bd12c315"
+    },
+    {
+      "path": "integrations/workbuddy2api/tests/test_request_metrics.py",
+      "bytes": 4305,
+      "sha256": "e03bd1fd467a668c86efbfcb1599a6da8b1fd10052cb94ee3ca16314fd18643c"
+    },
+    {
+      "path": "integrations/workbuddy2api/tests/test_responses_adapter.py",
+      "bytes": 22986,
+      "sha256": "23acba63f915d1256949d6050e039a103b65186b52848ee5db7e66accd04bb29"
+    },
+    {
+      "path": "integrations/workbuddy2api/tools/dsh-discover-check.mjs",
+      "bytes": 3697,
+      "sha256": "5d51bf97bb9f2062d700f519f7bd480ea847933e83929dd983350599f63d8986"
+    },
+    {
+      "path": "integrations/workbuddy2api/tools/dsh-verify.mjs",
+      "bytes": 4155,
+      "sha256": "2dab8ae3f075330bd40500b81bae41cf4eeee22ffe24db919f1b6ed8a5bba0ce"
+    },
+    {
+      "path": "integrations/cpa/.gitignore",
+      "bytes": 63,
+      "sha256": "6bcbd0941309936c0e67b53754baaebabf9910e2c5678a7f50b73d8c93f3e8cc"
+    },
+    {
+      "path": "integrations/cpa/config.template.yaml",
+      "bytes": 662,
+      "sha256": "c91814fe436daef8e5745dcf07f2efdfabdc440b7b90f539626929c769ea5bbb"
+    },
+    {
+      "path": "integrations/cpa/configure-codex.ps1",
+      "bytes": 1696,
+      "sha256": "a4219e5533a8c573b940ed5c4665cbd357f4cd031c17b26fc12f42a55f629a8e"
+    },
+    {
+      "path": "integrations/cpa/install.ps1",
+      "bytes": 3293,
+      "sha256": "b90d62f1b4c11079618a8c3b2bf2795fc0dafce2e967b8954ab339f79f1152df"
+    },
+    {
+      "path": "integrations/cpa/README.md",
+      "bytes": 2197,
+      "sha256": "f4d78e4ecb91f654fa6c254ea63f089ad5b680b5c009945b2f68ea9e0f403a04"
+    },
+    {
+      "path": "integrations/cpa/show-secrets.ps1",
+      "bytes": 449,
+      "sha256": "70a25e0db880fffb25c347f31cd822b27e44b589500005f9dd00090f86841949"
+    },
+    {
+      "path": "integrations/cpa/start-background.ps1",
+      "bytes": 1130,
+      "sha256": "43ba1213e8ee4f34dc233cec3b4fa8065918f59a19a848fe708c81d936dc2bcc"
+    },
+    {
+      "path": "integrations/cpa/start.ps1",
+      "bytes": 482,
+      "sha256": "28494d8aadcd613b10203d407ffc8d130f7d8222162072fb771265954694992e"
+    },
+    {
+      "path": "integrations/cpa/status.ps1",
+      "bytes": 1093,
+      "sha256": "c73532f7435887195266e2c1f81b1e956ad5e2940d37fda98f58684e096da51c"
+    },
+    {
+      "path": "integrations/cpa/stop.ps1",
+      "bytes": 716,
+      "sha256": "952e8b6f3371e52cc621644ceedc5bb53b052c87cea35725a3e5e174fcb430ab"
+    },
+    {
+      "path": "tools/gemini-api-tester/package.json",
+      "bytes": 284,
+      "sha256": "ebdd5c58f95779c85e05b7be32d4a5fd11f8e8eebb7bae1be5db9515e61fb8dd"
+    },
+    {
+      "path": "tools/gemini-api-tester/public/app.js",
+      "bytes": 27262,
+      "sha256": "ea4d6ed985687b524e5b9ff74637c2bb33ccb5b2c5df131d1255da13394b7c80"
+    },
+    {
+      "path": "tools/gemini-api-tester/public/index.html",
+      "bytes": 6034,
+      "sha256": "422ec9573d696fd60ebaaad0e2b17399e4c5ed4df77dbec137b3ea554c5a0117"
+    },
+    {
+      "path": "tools/gemini-api-tester/public/key-parser.js",
+      "bytes": 5392,
+      "sha256": "e4491e8be007582c3a03cbf8f923089a646629bcc306d5e210bbabcbc45496c0"
+    },
+    {
+      "path": "tools/gemini-api-tester/public/styles.css",
+      "bytes": 13752,
+      "sha256": "b4018d586cce403b9418cd78d1f594e896bedf24864f139c780a859f84fa5b79"
+    },
+    {
+      "path": "tools/gemini-api-tester/README.md",
+      "bytes": 6697,
+      "sha256": "0666ab0e78c61e269fb7a4f326fdf470939d1ca2fa279cadcc00e6eea127cef7"
+    },
+    {
+      "path": "tools/gemini-api-tester/server.mjs",
+      "bytes": 12877,
+      "sha256": "3f5b5d4a069eef4ddfb15671acc6a4ad3adb0e842d5f06df03e0a776798bca53"
+    },
+    {
+      "path": "tools/gemini-api-tester/start.cmd",
+      "bytes": 1397,
+      "sha256": "955903d104ed1aaa0a5eff4583ad5461a4e8c8371ae850125ee46539b9fe337c"
+    },
+    {
+      "path": "tools/gemini-api-tester/test/key-parser.test.mjs",
+      "bytes": 4014,
+      "sha256": "764fd1e9b4fe3aeca507643d144b4cbba13ac3c485333cd792ed13eab9d1e344"
+    },
+    {
+      "path": "tools/gemini-api-tester/test/mock-service.mjs",
+      "bytes": 2747,
+      "sha256": "62843f12250eb7dbee742d25c9da95ab236d1433c9f8e8f1e990450199d21ec8"
+    },
+    {
+      "path": "tools/gemini-api-tester/test/server.test.mjs",
+      "bytes": 8432,
+      "sha256": "e27bc04c0a51a3614f6c8359b45b62e70bd1dbe0c1f2f112c9f1fba9287a96aa"
+    },
+    {
+      "path": "extensions/dsh-market-insight/client.js",
+      "bytes": 86867,
+      "sha256": "4cb02ce0951cb06f72e1f355486c3718275161e68052481f091a84f87d1aa28c"
+    },
+    {
+      "path": "extensions/dsh-market-insight/CONTRACT.md",
+      "bytes": 21853,
+      "sha256": "0907101d7954f963d18f939efb0290bbe963478922c963cfb9975a442a964835"
+    },
+    {
+      "path": "extensions/dsh-market-insight/cordis.patch.yml",
+      "bytes": 75,
+      "sha256": "699c79188b188fbef1c2ff1a8f276623a5236c27c0368f03aba9f721c470a00a"
+    },
+    {
+      "path": "extensions/dsh-market-insight/data/forks.json",
+      "bytes": 634826,
+      "sha256": "506c085de391088929d7bbf4b4b80c6168df094368202b5b622281ae5f763453"
+    },
+    {
+      "path": "extensions/dsh-market-insight/host/api.mjs",
+      "bytes": 4098,
+      "sha256": "a8c2a53838302ff132b025a126e20e5dd9fcbf1310124da11b109049a0f507a4"
+    },
+    {
+      "path": "extensions/dsh-market-insight/host/cache.mjs",
+      "bytes": 2140,
+      "sha256": "e14eb2ba8121a493ecad1c4fad47cb8415b67a1eece5e920efed979c0023ecd3"
+    },
+    {
+      "path": "extensions/dsh-market-insight/host/catalog.mjs",
+      "bytes": 5498,
+      "sha256": "0776a96fd2edbb8a1371c0893d34b35d82053e73e395af11c7542435997a48c4"
+    },
+    {
+      "path": "extensions/dsh-market-insight/host/forks.mjs",
+      "bytes": 5187,
+      "sha256": "59fbd86533d55ea2de14fb6e5aa8183040b760ff8182b43bd126e89349b34b96"
+    },
+    {
+      "path": "extensions/dsh-market-insight/host/lineage.mjs",
+      "bytes": 15312,
+      "sha256": "c8b1bb111bacdff6e436ccb72cc8a83d1b7ac41adc646d0f8b99995147b10392"
+    },
+    {
+      "path": "extensions/dsh-market-insight/host/market.mjs",
+      "bytes": 3863,
+      "sha256": "9ded79075dcc89754ade44b83066a39e82a8c683c8989c1afe3fd4a2eba2fd34"
+    },
+    {
+      "path": "extensions/dsh-market-insight/host/repo.mjs",
+      "bytes": 1271,
+      "sha256": "0ed76ab21103c23a6d867cd3542fe5f0d49b5026242216a2e85291ae70b192cf"
+    },
+    {
+      "path": "extensions/dsh-market-insight/host/search.mjs",
+      "bytes": 11076,
+      "sha256": "610cb9a1e52f0e14ab34cb28e3f5c7831159932f0ad018cdb4cdfc7e178ea7d4"
+    },
+    {
+      "path": "extensions/dsh-market-insight/host/store.mjs",
+      "bytes": 31385,
+      "sha256": "289f19bb1d414b2d22d740585f1301ba6a11d6ca4872597cb92d8039179f65bd"
+    },
+    {
+      "path": "extensions/dsh-market-insight/icon.svg",
+      "bytes": 993,
+      "sha256": "23592a44fe0a62c23447ecf08649c8c5a347cd38453907c156e80cb16ad333f3"
+    },
+    {
+      "path": "extensions/dsh-market-insight/index.js",
+      "bytes": 1479,
+      "sha256": "c3ba703d9cacc5a84b02607de054d566a10628a30c9d250618fdd9102e1d234c"
+    },
+    {
+      "path": "extensions/dsh-market-insight/locale/en.json",
+      "bytes": 202,
+      "sha256": "51db97e45e6b43fda7d7d107db54ffaff3a8ecae4e475429a8f76f0d44173868"
+    },
+    {
+      "path": "extensions/dsh-market-insight/locale/zh.json",
+      "bytes": 272,
+      "sha256": "aef8a4bdb29b63b7093b2cb0e975999ecd9221784ddb3ef6775a7e55e1441dea"
+    },
+    {
+      "path": "extensions/dsh-market-insight/notes/client-report.md",
+      "bytes": 9081,
+      "sha256": "af7924a3ddc4e41efc0418c2cfdae6aeef74d6a37994aa0c097d5cf10cc6d197"
+    },
+    {
+      "path": "extensions/dsh-market-insight/notes/lineage-report.md",
+      "bytes": 14550,
+      "sha256": "fedab8c8682306b49d57b68317a96af796c0700e384864a415f4bc73cf252935"
+    },
+    {
+      "path": "extensions/dsh-market-insight/package.json",
+      "bytes": 841,
+      "sha256": "8d49a107d0f08e8c1fc58c1fc6ce00d1b52959b2a203758951eed23ddcab02f6"
+    },
+    {
+      "path": "extensions/dsh-market-insight/README.md",
+      "bytes": 5902,
+      "sha256": "a7339b93e8d4dddbe6e3adc1b40777af2e74f5703088a9ffc1e325ea6c2ea63d"
+    },
+    {
+      "path": "extensions/dsh-market-insight/test/client-helpers.test.mjs",
+      "bytes": 20680,
+      "sha256": "8f641391c24ac52899fca1fa92a759b7b9cc71e823cf6d40321d6160c2a78e3d"
+    },
+    {
+      "path": "extensions/dsh-market-insight/test/lineage.test.mjs",
+      "bytes": 10424,
+      "sha256": "df188483a73b224838c1cb422d6babf98cda46b13950bcb088d377d0b52ba5b8"
+    },
+    {
+      "path": "extensions/dsh-market-insight/test/pipeline.test.mjs",
+      "bytes": 5476,
+      "sha256": "d3111df66df55345f9c5fc46641c90207de8eb169e3e846c8a62ae8930108776"
+    },
+    {
+      "path": "extensions/dsh-market-insight/test/search.test.mjs",
+      "bytes": 13124,
+      "sha256": "9a53fd6cffce86774181552b477ad785e59c6aa1a3f3e5d8bd6be2d93f29a59a"
+    },
+    {
+      "path": "extensions/dsh-market-insight/test/store.test.mjs",
+      "bytes": 10417,
+      "sha256": "364cecfa98069237138be3c6dc0eed31e0ab6efa86d392ee56b67cc73e7429d1"
+    },
+    {
+      "path": "extensions/dsh-market-insight/tools/collect-forks.mjs",
+      "bytes": 5466,
+      "sha256": "40a93453ba247f849d0e6ea012a4aacce7721b21bc1a473f0051c7b82512794d"
+    },
+    {
+      "path": "extensions/dsh-market-insight/tools/stats.mjs",
+      "bytes": 3538,
+      "sha256": "dd54085caa0bc43e25fa55a86669dd44d895fbd17a69c700ee6dcf4a202ce58d"
+    },
+    {
+      "path": "extensions/dsh-model-picker/client.js",
+      "bytes": 76482,
+      "sha256": "fd87379f1cabb5f19b4cab0006452fa4b17d0b5675ef1f5607c40ba3af211fff"
+    },
+    {
+      "path": "extensions/dsh-model-picker/cordis.patch.yml",
+      "bytes": 71,
+      "sha256": "c2d0623de68d33bfc64e8a4b69a66982201a70e7bf22b7e3567114e81748e0ae"
+    },
+    {
+      "path": "extensions/dsh-model-picker/icon.svg",
+      "bytes": 357,
+      "sha256": "e1be1ae89e493d9d15eb95c41c4372cc4459a080efb420045a87aa9aacf2a1ae"
+    },
+    {
+      "path": "extensions/dsh-model-picker/index.js",
+      "bytes": 4614,
+      "sha256": "987c1bfdc05ed53ca98f040633eeb62cfa8f16e9510b7ed73009cfd326bf8740"
+    },
+    {
+      "path": "extensions/dsh-model-picker/locale/en.json",
+      "bytes": 1178,
+      "sha256": "a10721797b16093537551f48b18bf46504bd597fc8c822a45670655036221387"
+    },
+    {
+      "path": "extensions/dsh-model-picker/locale/zh.json",
+      "bytes": 1170,
+      "sha256": "c52ae08db953151505a5e997d78ecfb8d78b596767ce53ed48a78640dd498592"
+    },
+    {
+      "path": "extensions/dsh-model-picker/package.json",
+      "bytes": 797,
+      "sha256": "ffd69c29784fc405ab77fd70dce04caf1e3c8b93f9ff6efe7c42a0bf5c67b498"
+    },
+    {
+      "path": "extensions/dsh-model-picker/README.md",
+      "bytes": 11110,
+      "sha256": "2d2d9457f9bfe8124ce0ee1a98720a3963c86603c4a2a0200459a7254f007a41"
+    },
+    {
+      "path": "extensions/dsh-model-picker/test/classify.test.mjs",
+      "bytes": 28464,
+      "sha256": "fc3e97071632122a607890520625951234683b81c569ec5968dfde4bc2f86ac7"
+    },
+    {
+      "path": "extensions/dsh-model-picker/tools/repair-encoding.mjs",
+      "bytes": 6367,
+      "sha256": "ceff643b6ac6e1b4eff231b747e7c1c07ec405af96b2a778b31e3de9b39df0ca"
+    },
+    {
+      "path": "extensions/dsh-model-picker/tools/test-directory-mode.mjs",
+      "bytes": 9586,
+      "sha256": "1a3d56cf6d68ff0a614375ef91743453f7678c15e06d86d706483d02a726ece0"
+    },
+    {
+      "path": "extensions/dsh-model-picker/tools/test-revival.mjs",
+      "bytes": 8763,
+      "sha256": "f0a2dea70b117b26f433f77c834cbfa39a851c7c867b1d8169827ee4f631e4e2"
+    }
+  ],
+  "upstream_projects": [
+    {
+      "directory": "agents/experience_runtime",
+      "description": "上游派生工程，保留来源",
+      "upstream": "https://github.com/Jouryane/experience_runtime.git",
+      "source_commit": "d16b4a0b73411efa9834eff5b63725e6458b038b",
+      "file_count": 92,
+      "license_files": []
+    },
+    {
+      "directory": "agents/dsh-desk",
+      "description": "第三方社区工程源码快照，不声明原创",
+      "upstream": "https://github.com/majiayu000/dsh-desk.git",
+      "source_commit": "7a2759c736d1ba70651c346fb78a33642ba20ea3",
+      "file_count": 198,
+      "license_files": [
+        "LICENSE"
+      ]
+    },
+    {
+      "directory": "integrations/workbuddy2api",
+      "description": "上游工程与本地有效修改",
+      "upstream": "https://github.com/ShouZhuo0413/codebuddy2api.git",
+      "source_commit": "e0776154927e9e930ad59c58b3e22e83ac145bab",
+      "file_count": 54,
+      "license_files": [
+        "LICENSE"
+      ]
+    }
+  ],
+  "excluded_groups": [
+    "论文原文与全文译本、PDF和插图",
+    "大型美术、模型及二进制示例",
+    "未改动的第三方完整仓库副本",
+    "历史配额原型、市场大数据及生成协议快照"
+  ]
+}

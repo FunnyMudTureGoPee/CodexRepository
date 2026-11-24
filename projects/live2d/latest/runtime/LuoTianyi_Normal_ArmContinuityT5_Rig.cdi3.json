@@ -1,0 +1,777 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamT50HipLMid",
+			"GroupId": "",
+			"Name": "Hip L middle propagation"
+		},
+		{
+			"Id": "ParamT50HipRMid",
+			"GroupId": "",
+			"Name": "Hip R middle propagation"
+		},
+		{
+			"Id": "ParamT39WaveClothNear",
+			"GroupId": "",
+			"Name": "挥手袖 · 靠臂布面"
+		},
+		{
+			"Id": "ParamT37ClothFold",
+			"GroupId": "",
+			"Name": "袖身柔性跟随"
+		},
+		{
+			"Id": "ParamT35WaveHem",
+			"GroupId": "",
+			"Name": "挥手袖摆末端"
+		},
+		{
+			"Id": "ParamChestSoftFollow",
+			"GroupId": "",
+			"Name": "胸部局部回弹"
+		},
+		{
+			"Id": "ParamChestPhysicsY",
+			"GroupId": "",
+			"Name": "ParamChestPhysicsY"
+		},
+		{
+			"Id": "ParamChestPhysicsX",
+			"GroupId": "",
+			"Name": "ParamChestPhysicsX"
+		},
+		{
+			"Id": "ParamT29ArmMode",
+			"GroupId": "",
+			"Name": "手臂姿势：0 垂手 / 1 挥手"
+		},
+		{
+			"Id": "ParamWaveAimX",
+			"GroupId": "",
+			"Name": "T23 挥手朝向（小臂左右）"
+		},
+		{
+			"Id": "ParamT19HandProportion",
+			"GroupId": "",
+			"Name": "T19 修长手型比例"
+		},
+		{
+			"Id": "ParamT19Little",
+			"GroupId": "",
+			"Name": "T19 小指屈伸张合"
+		},
+		{
+			"Id": "ParamT19Ring",
+			"GroupId": "",
+			"Name": "T19 无名指屈伸张合"
+		},
+		{
+			"Id": "ParamT19Middle",
+			"GroupId": "",
+			"Name": "T19 中指屈伸张合"
+		},
+		{
+			"Id": "ParamT19Index",
+			"GroupId": "",
+			"Name": "T19 食指屈伸张合"
+		},
+		{
+			"Id": "ParamT19Thumb",
+			"GroupId": "",
+			"Name": "T19 拇指屈伸张合"
+		},
+		{
+			"Id": "ParamT17WristLag",
+			"GroupId": "",
+			"Name": "T17 手腕跟随惯性"
+		},
+		{
+			"Id": "ParamT17HandWave",
+			"GroupId": "",
+			"Name": "T17 手掌独立摇摆"
+		},
+		{
+			"Id": "ParamT15ArmRSway",
+			"GroupId": "",
+			"Name": "T15 右肩摆臂"
+		},
+		{
+			"Id": "ParamT15ArmLSway",
+			"GroupId": "",
+			"Name": "T15 左肩摆臂"
+		},
+		{
+			"Id": "ParamT15ArmLWave",
+			"GroupId": "",
+			"Name": "T15 左手挥动"
+		},
+		{
+			"Id": "ParamT8Sleeve",
+			"GroupId": "",
+			"Name": "T8 宽袖回落"
+		},
+		{
+			"Id": "ParamT8Wrist",
+			"GroupId": "",
+			"Name": "T8 挥手手腕"
+		},
+		{
+			"Id": "ParamT8Elbow",
+			"GroupId": "",
+			"Name": "T8 屈肘微调"
+		},
+		{
+			"Id": "ParamT8Shoulder",
+			"GroupId": "",
+			"Name": "T8 大臂联动"
+		},
+		{
+			"Id": "ParamT7Wrist",
+			"GroupId": "",
+			"Name": "挥手手腕"
+		},
+		{
+			"Id": "ParamT7Wave",
+			"GroupId": "",
+			"Name": "挥手结构微动"
+		},
+		{
+			"Id": "ParamT7ArmPose",
+			"GroupId": "",
+			"Name": "手臂结构检查：0放下 / 1挥手"
+		},
+		{
+			"Id": "ParamHandLWave",
+			"GroupId": "",
+			"Name": "左手挥动"
+		},
+		{
+			"Id": "ParamHandLForm",
+			"GroupId": "",
+			"Name": "左手型：放松 / 挥手 / 掩嘴 / 握麦"
+		},
+		{
+			"Id": "ParamArmLPose",
+			"GroupId": "",
+			"Name": "左臂动作：挥手 / 掩嘴 / 握麦"
+		},
+		{
+			"Id": "ParamArmLLift",
+			"GroupId": "",
+			"Name": "左臂抬起 / 画面右"
+		},
+		{
+			"Id": "ParamT3HipLTip",
+			"GroupId": "",
+			"Name": "HipL delayed lower motion"
+		},
+		{
+			"Id": "ParamT3HipRTip",
+			"GroupId": "",
+			"Name": "HipR delayed lower motion"
+		},
+		{
+			"Id": "ParamT3SkirtTip",
+			"GroupId": "",
+			"Name": "Skirt delayed lower motion"
+		},
+		{
+			"Id": "ParamT3SleeveLTip",
+			"GroupId": "",
+			"Name": "SleeveL delayed lower motion"
+		},
+		{
+			"Id": "ParamT3SleeveRTip",
+			"GroupId": "",
+			"Name": "SleeveR delayed lower motion"
+		},
+		{
+			"Id": "ParamT3ArmLTip",
+			"GroupId": "",
+			"Name": "ArmL delayed lower motion"
+		},
+		{
+			"Id": "ParamT3ArmRTip",
+			"GroupId": "",
+			"Name": "ArmR delayed lower motion"
+		},
+		{
+			"Id": "ParamT2HipL",
+			"GroupId": "",
+			"Name": "HipL independent sway"
+		},
+		{
+			"Id": "ParamT2HipR",
+			"GroupId": "",
+			"Name": "HipR independent sway"
+		},
+		{
+			"Id": "ParamT2Skirt",
+			"GroupId": "",
+			"Name": "Skirt independent sway"
+		},
+		{
+			"Id": "ParamT2SleeveL",
+			"GroupId": "",
+			"Name": "SleeveL independent sway"
+		},
+		{
+			"Id": "ParamT2SleeveR",
+			"GroupId": "",
+			"Name": "SleeveR independent sway"
+		},
+		{
+			"Id": "ParamT2ArmL",
+			"GroupId": "",
+			"Name": "ArmL independent sway"
+		},
+		{
+			"Id": "ParamT2ArmR",
+			"GroupId": "",
+			"Name": "ArmR independent sway"
+		},
+		{
+			"Id": "ParamTorsoInertia",
+			"GroupId": "",
+			"Name": "躯干回落"
+		},
+		{
+			"Id": "ParamH1BackBraidCurl",
+			"GroupId": "",
+			"Name": "BackBraid terminal bend"
+		},
+		{
+			"Id": "ParamH1BraidLCurl",
+			"GroupId": "",
+			"Name": "BraidL terminal bend"
+		},
+		{
+			"Id": "ParamH1BraidRCurl",
+			"GroupId": "",
+			"Name": "BraidR terminal bend"
+		},
+		{
+			"Id": "ParamH1FringeCurl",
+			"GroupId": "",
+			"Name": "Fringe terminal bend"
+		},
+		{
+			"Id": "ParamH1SideLCurl",
+			"GroupId": "",
+			"Name": "SideL terminal bend"
+		},
+		{
+			"Id": "ParamH1SideRCurl",
+			"GroupId": "",
+			"Name": "SideR terminal bend"
+		},
+		{
+			"Id": "ParamH1RearLCurl",
+			"GroupId": "",
+			"Name": "RearL terminal bend"
+		},
+		{
+			"Id": "ParamH1RearRCurl",
+			"GroupId": "",
+			"Name": "RearR terminal bend"
+		},
+		{
+			"Id": "ParamH1BackBraidTip",
+			"GroupId": "",
+			"Name": "BackBraid tip"
+		},
+		{
+			"Id": "ParamH1BraidLTip",
+			"GroupId": "",
+			"Name": "BraidL tip"
+		},
+		{
+			"Id": "ParamH1BraidRTip",
+			"GroupId": "",
+			"Name": "BraidR tip"
+		},
+		{
+			"Id": "ParamH1LoopsTip",
+			"GroupId": "",
+			"Name": "Loops tip"
+		},
+		{
+			"Id": "ParamH1FringeTip",
+			"GroupId": "",
+			"Name": "Fringe tip"
+		},
+		{
+			"Id": "ParamH1SideLTip",
+			"GroupId": "",
+			"Name": "SideL tip"
+		},
+		{
+			"Id": "ParamH1SideRTip",
+			"GroupId": "",
+			"Name": "SideR tip"
+		},
+		{
+			"Id": "ParamH1RearLTip",
+			"GroupId": "",
+			"Name": "RearL tip"
+		},
+		{
+			"Id": "ParamH1RearRTip",
+			"GroupId": "",
+			"Name": "RearR tip"
+		},
+		{
+			"Id": "ParamH1BackBraid",
+			"GroupId": "",
+			"Name": "H1 BackBraid"
+		},
+		{
+			"Id": "ParamH1BraidL",
+			"GroupId": "",
+			"Name": "H1 BraidL"
+		},
+		{
+			"Id": "ParamH1BraidR",
+			"GroupId": "",
+			"Name": "H1 BraidR"
+		},
+		{
+			"Id": "ParamH1EarL",
+			"GroupId": "",
+			"Name": "H1 EarL"
+		},
+		{
+			"Id": "ParamH1EarR",
+			"GroupId": "",
+			"Name": "H1 EarR"
+		},
+		{
+			"Id": "ParamH1Crown",
+			"GroupId": "",
+			"Name": "H1 Crown"
+		},
+		{
+			"Id": "ParamH1Loops",
+			"GroupId": "",
+			"Name": "H1 Loops"
+		},
+		{
+			"Id": "ParamH1Fringe",
+			"GroupId": "",
+			"Name": "H1 Fringe"
+		},
+		{
+			"Id": "ParamH1TempleL",
+			"GroupId": "",
+			"Name": "H1 TempleL"
+		},
+		{
+			"Id": "ParamH1TempleR",
+			"GroupId": "",
+			"Name": "H1 TempleR"
+		},
+		{
+			"Id": "ParamH1SideL",
+			"GroupId": "",
+			"Name": "H1 SideL"
+		},
+		{
+			"Id": "ParamH1SideR",
+			"GroupId": "",
+			"Name": "H1 SideR"
+		},
+		{
+			"Id": "ParamH1RearL",
+			"GroupId": "",
+			"Name": "H1 RearL"
+		},
+		{
+			"Id": "ParamH1RearR",
+			"GroupId": "",
+			"Name": "H1 RearR"
+		},
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "ParamGroupFace",
+			"Name": "角度 X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "ParamGroupFace",
+			"Name": "角度 Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "ParamGroupFace",
+			"Name": "角度 Z"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "ParamGroupEyes",
+			"Name": "左眼开合"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "ParamGroupEyes",
+			"Name": "右眼开合"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "ParamGroupEyes",
+			"Name": "眼球 X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "ParamGroupEyes",
+			"Name": "眼球 Y"
+		},
+		{
+			"Id": "ParamEyeBallForm",
+			"GroupId": "ParamGroupEyes",
+			"Name": "果冻眼"
+		},
+		{
+			"Id": "ParamBrowLY",
+			"GroupId": "ParamGroupBrows",
+			"Name": "左眉 Y"
+		},
+		{
+			"Id": "ParamBrowRY",
+			"GroupId": "ParamGroupBrows",
+			"Name": "右眉 Y"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "ParamGroupMouth",
+			"Name": "嘴型"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "ParamGroupMouth",
+			"Name": "嘴巴开合"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "ParamGroupBody",
+			"Name": "身体角度 X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "ParamGroupBody",
+			"Name": "身体角度 Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "ParamGroupBody",
+			"Name": "身体角度 Z"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "ParamGroupBody",
+			"Name": "呼吸"
+		},
+		{
+			"Id": "ParamHairFront",
+			"GroupId": "ParamGroupPhysics",
+			"Name": "前发摆动"
+		},
+		{
+			"Id": "ParamHairBack",
+			"GroupId": "ParamGroupPhysics",
+			"Name": "后发摆动"
+		},
+		{
+			"Id": "ParamBodyLean",
+			"GroupId": "",
+			"Name": "身体前后倾"
+		},
+		{
+			"Id": "ParamProportion",
+			"GroupId": "",
+			"Name": "大小变（头身比）"
+		}
+	],
+	"ParameterGroups": [
+		{
+			"Id": "ParamGroupFace",
+			"GroupId": "",
+			"Name": "面部"
+		},
+		{
+			"Id": "ParamGroupEyes",
+			"GroupId": "",
+			"Name": "眼睛"
+		},
+		{
+			"Id": "ParamGroupBrows",
+			"GroupId": "",
+			"Name": "眉毛"
+		},
+		{
+			"Id": "ParamGroupMouth",
+			"GroupId": "",
+			"Name": "嘴巴"
+		},
+		{
+			"Id": "ParamGroupBody",
+			"GroupId": "",
+			"Name": "身体"
+		},
+		{
+			"Id": "ParamGroupPhysics",
+			"GroupId": "",
+			"Name": "物理"
+		}
+	],
+	"Parts": [
+		{
+			"Id": "PartHead",
+			"Name": "头部"
+		},
+		{
+			"Id": "PartHairBack",
+			"Name": "后发"
+		},
+		{
+			"Id": "PartFace",
+			"Name": "面部"
+		},
+		{
+			"Id": "PartHairFront",
+			"Name": "前发"
+		},
+		{
+			"Id": "PartHeadAccessories",
+			"Name": "头部附件"
+		},
+		{
+			"Id": "PartExtra",
+			"Name": "附加物"
+		},
+		{
+			"Id": "PartBody",
+			"Name": "身体"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"ParamAngleX",
+			"ParamAngleY"
+		],
+		[
+			"ParamEyeBallX",
+			"ParamEyeBallY"
+		],
+		[
+			"ParamBodyAngleX",
+			"ParamBodyAngleY"
+		]
+	],
+	"Drawables": [
+		{
+			"Id": "ArtMeshT29RestForearmL",
+			"Name": "rest-lowerarm-final"
+		},
+		{
+			"Id": "ArtMeshImage_13",
+			"Name": "T11 角色左袖前层／画面右"
+		},
+		{
+			"Id": "ArtMeshImage_14",
+			"Name": "T11 角色右袖前层／画面左"
+		},
+		{
+			"Id": "ArtMeshT20Hand",
+			"Name": "T20 挥手手部／肘锚点已校验"
+		},
+		{
+			"Id": "ArtMeshImage_16",
+			"Name": "T11 角色右小臂与手／紫色手套"
+		},
+		{
+			"Id": "ArtMeshImage_17",
+			"Name": "T11 角色左袖后层／画面右"
+		},
+		{
+			"Id": "ArtMeshImage_18",
+			"Name": "T11 角色右袖后层／画面左"
+		},
+		{
+			"Id": "ArtMeshImage_19",
+			"Name": "T11 躯干与两侧大臂（含臂环）"
+		},
+		{
+			"Id": "ArtMeshNeck",
+			"Name": "neck"
+		},
+		{
+			"Id": "ArtMeshLayerR5",
+			"Name": "body-leg-r"
+		},
+		{
+			"Id": "ArtMeshLayerL8",
+			"Name": "body-leg-l"
+		},
+		{
+			"Id": "ArtMeshLayer8",
+			"Name": "body-skirt"
+		},
+		{
+			"Id": "ArtMeshLayerR4",
+			"Name": "body-hip-r"
+		},
+		{
+			"Id": "ArtMeshLayerL7",
+			"Name": "body-hip-l"
+		},
+		{
+			"Id": "ArtMeshLayerL4",
+			"Name": "body-cavity-l"
+		},
+		{
+			"Id": "ArtMeshLayerL",
+			"Name": "body-sleeve-rest-l"
+		},
+		{
+			"Id": "ArtMeshHeadwearR2",
+			"Name": "headwear-ear-anchor-r"
+		},
+		{
+			"Id": "ArtMeshHeadwearL2",
+			"Name": "headwear-ear-anchor-l"
+		},
+		{
+			"Id": "ArtMeshHeadwearR",
+			"Name": "headwear-ear-r"
+		},
+		{
+			"Id": "ArtMeshHeadwearL",
+			"Name": "headwear-ear-l"
+		},
+		{
+			"Id": "ArtMeshHeadwear",
+			"Name": "headwear-crown"
+		},
+		{
+			"Id": "ArtMeshFrontHair5",
+			"Name": "hair-occiput-base"
+		},
+		{
+			"Id": "ArtMeshFrontHair4",
+			"Name": "hair-back-center-braid"
+		},
+		{
+			"Id": "ArtMeshFrontHairR4",
+			"Name": "hair-hanging-r"
+		},
+		{
+			"Id": "ArtMeshFrontHairL4",
+			"Name": "hair-hanging-l"
+		},
+		{
+			"Id": "ArtMeshFrontHairR3",
+			"Name": "hair-clasp-r"
+		},
+		{
+			"Id": "ArtMeshFrontHairL3",
+			"Name": "hair-clasp-l"
+		},
+		{
+			"Id": "ArtMeshFrontHair3",
+			"Name": "hair-crown-base"
+		},
+		{
+			"Id": "ArtMeshFrontHair2",
+			"Name": "front hair-loop-pair"
+		},
+		{
+			"Id": "ArtMeshFrontHairR2",
+			"Name": "front hair-temple-r"
+		},
+		{
+			"Id": "ArtMeshFrontHairL2",
+			"Name": "front hair-temple-l"
+		},
+		{
+			"Id": "ArtMeshFrontHairR",
+			"Name": "front hair-side-r"
+		},
+		{
+			"Id": "ArtMeshFrontHairL",
+			"Name": "front hair-side-l"
+		},
+		{
+			"Id": "ArtMeshFrontHair",
+			"Name": "front hair-bangs"
+		},
+		{
+			"Id": "ArtMeshEarsR",
+			"Name": "ear-r"
+		},
+		{
+			"Id": "ArtMeshEarsL",
+			"Name": "ear-l"
+		},
+		{
+			"Id": "ArtMeshFace",
+			"Name": "face"
+		},
+		{
+			"Id": "ArtMeshEyebrowR",
+			"Name": "eyebrow-r"
+		},
+		{
+			"Id": "ArtMeshEyebrowL",
+			"Name": "eyebrow-l"
+		},
+		{
+			"Id": "ArtMeshEyewhiteR",
+			"Name": "eyewhite-r"
+		},
+		{
+			"Id": "ArtMeshEyewhiteL",
+			"Name": "eyewhite-l"
+		},
+		{
+			"Id": "ArtMeshIridesR",
+			"Name": "irides-r"
+		},
+		{
+			"Id": "ArtMeshIridesL",
+			"Name": "irides-l"
+		},
+		{
+			"Id": "ArtMeshEyelashR",
+			"Name": "eyelash-r"
+		},
+		{
+			"Id": "ArtMeshEyelashL",
+			"Name": "eyelash-l"
+		},
+		{
+			"Id": "ArtMeshEyeCloseR",
+			"Name": "eye_close-r"
+		},
+		{
+			"Id": "ArtMeshEyeCloseL",
+			"Name": "eye_close-l"
+		},
+		{
+			"Id": "ArtMeshMouthOpen",
+			"Name": "mouth_open"
+		},
+		{
+			"Id": "ArtMeshMouthClose",
+			"Name": "mouth_close"
+		},
+		{
+			"Id": "ArtMeshBackHairR",
+			"Name": "back hair-short-r"
+		},
+		{
+			"Id": "ArtMeshBackHairL",
+			"Name": "back hair-short-l"
+		}
+	]
+}

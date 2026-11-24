@@ -1,0 +1,134 @@
+{
+  "T49": {
+    "ArtMeshLayerR4": {
+      "upper": {
+        "indices": [
+          11,
+          37,
+          38
+        ],
+        "target_dx": 13.398035685221345,
+        "half_follow_time": 1.4,
+        "initial_relative_dx_mean": 0.010801769438245401
+      },
+      "middle": {
+        "indices": [
+          32,
+          16,
+          17
+        ],
+        "target_dx": 5.051956176757827,
+        "half_follow_time": 1.3333333333333333,
+        "initial_relative_dx_mean": 0.43106042771112285
+      },
+      "tip": {
+        "indices": [
+          26,
+          27,
+          22
+        ],
+        "target_dx": 0.5377451578776231,
+        "half_follow_time": 1.0666666666666667,
+        "initial_relative_dx_mean": 2.1545213971819157
+      }
+    },
+    "ArtMeshLayerL7": {
+      "upper": {
+        "indices": [
+          40,
+          12,
+          13
+        ],
+        "target_dx": 8.231557210286454,
+        "half_follow_time": 1.4,
+        "initial_relative_dx_mean": 0.009488423665361876
+      },
+      "middle": {
+        "indices": [
+          34,
+          18,
+          19
+        ],
+        "target_dx": 3.534833272298158,
+        "half_follow_time": 1.3,
+        "initial_relative_dx_mean": 0.43153381347655845
+      },
+      "tip": {
+        "indices": [
+          24,
+          25,
+          29
+        ],
+        "target_dx": 0.5229441324869981,
+        "half_follow_time": 1.0666666666666667,
+        "initial_relative_dx_mean": 2.139737447102866
+      }
+    }
+  },
+  "T50": {
+    "ArtMeshLayerR4": {
+      "upper": {
+        "indices": [
+          11,
+          37,
+          38
+        ],
+        "target_dx": 13.154462178548172,
+        "half_follow_time": 1.4666666666666666,
+        "initial_relative_dx_mean": -0.5763411748976941
+      },
+      "middle": {
+        "indices": [
+          32,
+          16,
+          17
+        ],
+        "target_dx": 5.101763407389328,
+        "half_follow_time": 1.7333333333333334,
+        "initial_relative_dx_mean": -1.5856439499627928
+      },
+      "tip": {
+        "indices": [
+          26,
+          27,
+          22
+        ],
+        "target_dx": 0.5377578735351562,
+        "half_follow_time": 1.9666666666666666,
+        "initial_relative_dx_mean": -1.6818720499674467
+      }
+    },
+    "ArtMeshLayerL7": {
+      "upper": {
+        "indices": [
+          40,
+          12,
+          13
+        ],
+        "target_dx": 8.154823303222656,
+        "half_follow_time": 1.5,
+        "initial_relative_dx_mean": -0.5785162789481026
+      },
+      "middle": {
+        "indices": [
+          34,
+          18,
+          19
+        ],
+        "target_dx": 3.5376663208007812,
+        "half_follow_time": 1.7666666666666666,
+        "initial_relative_dx_mean": -1.5102230253673707
+      },
+      "tip": {
+        "indices": [
+          24,
+          25,
+          29
+        ],
+        "target_dx": 0.5229314168294366,
+        "half_follow_time": 1.9666666666666666,
+        "initial_relative_dx_mean": -1.6025565011160714
+      }
+    }
+  }
+}

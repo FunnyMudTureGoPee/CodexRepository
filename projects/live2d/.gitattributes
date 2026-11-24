@@ -1,0 +1,7 @@
+*.png binary
+*.gif binary
+*.moc3 binary
+latest/** -text
+docs/** -text
+BACKUP_MANIFEST.json -text
+*.py text eol=lf

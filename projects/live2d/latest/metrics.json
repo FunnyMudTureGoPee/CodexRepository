@@ -1,0 +1,374 @@
+{
+  "body": {
+    "frames": 391,
+    "fps": 30,
+    "meshes": {
+      "ArtMeshLayerR4": {
+        "connector_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "connector_extra_max_px": 0.011657754788155552,
+        "tip_extra_max_px": 13.084100491156219,
+        "tip_rigid_max_px": 11.615756942396636,
+        "tip_rigid_peak_to_peak_x_px": 14.347667841985015,
+        "fit_residual_max_px": 2.111722616721676,
+        "finite": true,
+        "new_flipped_triangle_frames": 0,
+        "settle_seconds": 2.5,
+        "post_stop_peak_px": 5.065216064466053
+      },
+      "ArtMeshLayerL7": {
+        "connector_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48
+        ],
+        "connector_extra_max_px": 0.00015728399755926745,
+        "tip_extra_max_px": 12.801950462576565,
+        "tip_rigid_max_px": 12.714098961247608,
+        "tip_rigid_peak_to_peak_x_px": 16.50158608476886,
+        "fit_residual_max_px": 1.5661899898900709,
+        "finite": true,
+        "new_flipped_triangle_frames": 0,
+        "settle_seconds": 2.533333333333333,
+        "post_stop_peak_px": 4.893844604555003
+      }
+    },
+    "outputs": {
+      "ParamT2HipR": {
+        "min": -0.10411879420280457,
+        "max": 0.10950208455324173,
+        "limit_frames": 0
+      },
+      "ParamT3HipRTip": {
+        "min": -0.08237937092781067,
+        "max": 0.07705748081207275,
+        "limit_frames": 0
+      },
+      "ParamT2HipL": {
+        "min": -0.10418553650379181,
+        "max": 0.11073681712150574,
+        "limit_frames": 0
+      },
+      "ParamT3HipLTip": {
+        "min": -0.0814756453037262,
+        "max": 0.07549361139535904,
+        "limit_frames": 0
+      },
+      "ParamT50HipRMid": {
+        "min": -0.07158949971199036,
+        "max": 0.06319737434387207,
+        "limit_frames": 0
+      },
+      "ParamT50HipLMid": {
+        "min": -0.07075387239456177,
+        "max": 0.06183191388845444,
+        "limit_frames": 0
+      }
+    }
+  },
+  "probe": {
+    "frames": 301,
+    "fps": 30,
+    "meshes": {
+      "ArtMeshLayerR4": {
+        "connector_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "connector_extra_max_px": 0.0095062255859375,
+        "tip_extra_max_px": 7.251464843751004,
+        "tip_rigid_max_px": 17.815212524192308,
+        "tip_rigid_peak_to_peak_x_px": 24.200225025129157,
+        "fit_residual_max_px": 1.7531899062945278,
+        "finite": true,
+        "new_flipped_triangle_frames": 0
+      },
+      "ArtMeshLayerL7": {
+        "connector_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48
+        ],
+        "connector_extra_max_px": 0.00015709884858683778,
+        "tip_extra_max_px": 7.094985962006614,
+        "tip_rigid_max_px": 13.291709660705148,
+        "tip_rigid_peak_to_peak_x_px": 24.009648207861545,
+        "fit_residual_max_px": 1.6400942567674652,
+        "finite": true,
+        "new_flipped_triangle_frames": 0
+      }
+    },
+    "outputs": {
+      "ParamT2HipR": {
+        "min": -0.08504989743232727,
+        "max": 0.06441832333803177,
+        "limit_frames": 0
+      },
+      "ParamT3HipRTip": {
+        "min": -0.0991242304444313,
+        "max": 0.11280983686447144,
+        "limit_frames": 0
+      },
+      "ParamT2HipL": {
+        "min": -0.08389659225940704,
+        "max": 0.06451921164989471,
+        "limit_frames": 0
+      },
+      "ParamT3HipLTip": {
+        "min": -0.09788024425506592,
+        "max": 0.10975997149944305,
+        "limit_frames": 0
+      },
+      "ParamT50HipRMid": {
+        "min": -0.08222275972366333,
+        "max": 0.07784321904182434,
+        "limit_frames": 0
+      },
+      "ParamT50HipLMid": {
+        "min": -0.08346117287874222,
+        "max": 0.07602549344301224,
+        "limit_frames": 0
+      }
+    }
+  },
+  "reverse": {
+    "frames": 391,
+    "fps": 30,
+    "meshes": {
+      "ArtMeshLayerR4": {
+        "connector_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "connector_extra_max_px": 0.0478668212890625,
+        "tip_extra_max_px": 13.084100491156219,
+        "tip_rigid_max_px": 11.5806502779665,
+        "tip_rigid_peak_to_peak_x_px": 22.42772474205765,
+        "fit_residual_max_px": 2.1121539424334337,
+        "finite": true,
+        "new_flipped_triangle_frames": 0,
+        "settle_seconds": 2.7666666666666666,
+        "post_stop_peak_px": 11.479232788238217
+      },
+      "ArtMeshLayerL7": {
+        "connector_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48
+        ],
+        "connector_extra_max_px": 0.00020542773464715973,
+        "tip_extra_max_px": 12.801950462576565,
+        "tip_rigid_max_px": 14.86189525602057,
+        "tip_rigid_peak_to_peak_x_px": 24.200160029550005,
+        "fit_residual_max_px": 1.5661899898900709,
+        "finite": true,
+        "new_flipped_triangle_frames": 0,
+        "settle_seconds": 2.8333333333333335,
+        "post_stop_peak_px": 10.157135009926801
+      }
+    },
+    "outputs": {
+      "ParamT2HipR": {
+        "min": -0.3841997981071472,
+        "max": 0.24022236466407776,
+        "limit_frames": 0
+      },
+      "ParamT3HipRTip": {
+        "min": -0.355038583278656,
+        "max": 0.3043875992298126,
+        "limit_frames": 0
+      },
+      "ParamT2HipL": {
+        "min": -0.3627620041370392,
+        "max": 0.2284070998430252,
+        "limit_frames": 0
+      },
+      "ParamT3HipLTip": {
+        "min": -0.3300928473472595,
+        "max": 0.28071409463882446,
+        "limit_frames": 0
+      },
+      "ParamT50HipRMid": {
+        "min": -0.31691819429397583,
+        "max": 0.4872901737689972,
+        "limit_frames": 0
+      },
+      "ParamT50HipLMid": {
+        "min": -0.29890120029449463,
+        "max": 0.46580636501312256,
+        "limit_frames": 0
+      }
+    }
+  },
+  "wave": {
+    "frames": 391,
+    "fps": 30,
+    "meshes": {
+      "ArtMeshLayerR4": {
+        "connector_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "connector_extra_max_px": 0.005126953125,
+        "tip_extra_max_px": 4.16207885744329,
+        "tip_rigid_max_px": 12.699398347967342,
+        "tip_rigid_peak_to_peak_x_px": 16.30604428487956,
+        "fit_residual_max_px": 1.717356295319691,
+        "finite": true,
+        "new_flipped_triangle_frames": 0
+      },
+      "ArtMeshLayerL7": {
+        "connector_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48
+        ],
+        "connector_extra_max_px": 0.00016434218771772778,
+        "tip_extra_max_px": 4.021804809592474,
+        "tip_rigid_max_px": 12.189538650661019,
+        "tip_rigid_peak_to_peak_x_px": 18.278448679061114,
+        "fit_residual_max_px": 1.6068472734771273,
+        "finite": true,
+        "new_flipped_triangle_frames": 0
+      }
+    },
+    "outputs": {
+      "ParamT2HipR": {
+        "min": -0.045323990285396576,
+        "max": 0.0267857164144516,
+        "limit_frames": 0
+      },
+      "ParamT3HipRTip": {
+        "min": -0.03300217539072037,
+        "max": 0.022734861820936203,
+        "limit_frames": 0
+      },
+      "ParamT2HipL": {
+        "min": -0.04472588375210762,
+        "max": 0.02682001329958439,
+        "limit_frames": 0
+      },
+      "ParamT3HipLTip": {
+        "min": -0.03211502358317375,
+        "max": 0.02240763045847416,
+        "limit_frames": 0
+      },
+      "ParamT50HipRMid": {
+        "min": -0.025200096890330315,
+        "max": 0.02587711066007614,
+        "limit_frames": 0
+      },
+      "ParamT50HipLMid": {
+        "min": -0.02440449967980385,
+        "max": 0.025592641904950142,
+        "limit_frames": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+latest/source/
+.downloads/
+*.partial
+*.psd2live
+*.part[0-9][0-9][0-9]
+__pycache__/

@@ -1,0 +1,22 @@
+{
+  "source_sha256": "427ca6666d9fb00e335861966c7e2dfa41b64f7473f15c1f18f372058a290ed8",
+  "runtime": {
+    "LuoTianyi_Normal_ArmContinuityT5_Rig.can3": "ca48ea1ff2deda6a34643748a7cadc9034f8a86d3bb052802ef1c24449b05e1f",
+    "LuoTianyi_Normal_ArmContinuityT5_Rig.cdi3.json": "e56aedad45ad234e1b991e089d2b8804821bf72c4cd1ac78b8ca0ee5ca677628",
+    "LuoTianyi_Normal_ArmContinuityT5_Rig.cmo3": "f019b20986b47ece46716b6970918f13cc73f928c4ad16980961c7cd46b33eff",
+    "LuoTianyi_Normal_ArmContinuityT5_Rig.moc3": "9cdc69dcfb2ebe59ea607e963fb566656275ede445e459cca0ef6a838cbb4341",
+    "LuoTianyi_Normal_ArmContinuityT5_Rig.model3.json": "766fa60d361fab23b964dbd717ad7684cc8b08853254a259e19e671f0e38ca6e",
+    "LuoTianyi_Normal_ArmContinuityT5_Rig.motion.motion3.json": "07878104a309797f58adb32e8e3674914396fcbe5f65fb2a81f2a19b027a2ad8",
+    "LuoTianyi_Normal_ArmContinuityT5_Rig.motion2.motion3.json": "3f62adeab432a42996d7272f48a1f64f6dcc941a369d1b3ccb65ecf6ce2052c4",
+    "LuoTianyi_Normal_ArmContinuityT5_Rig.motion3.motion3.json": "99cc3a095fa05102ee9b2cea8f8027496e79093adb17b53d2cbbdc4c4977eafe",
+    "LuoTianyi_Normal_ArmContinuityT5_Rig.motion4.motion3.json": "1df66aa2fa23d9d2f02ffaee948d0948dd901899f47c20015595df71e5ea0d2f",
+    "LuoTianyi_Normal_ArmContinuityT5_Rig.motion5.motion3.json": "61546387c64a85b6ccdb7151b5bb06a921a76997082dfbe8d7d812a4ada703a5",
+    "LuoTianyi_Normal_ArmContinuityT5_Rig.physics3.json": "17678431162d8af2590c3f60db4e2378c3f2a3fcd6cff21ebb0a011a594e3444",
+    "LuoTianyi_Normal_ArmContinuityT5_Rig.psd2live.json": "df24106b52c328bcb60544306265ed47747d28328cc0d6c5b0d72bfb2254563b",
+    "LuoTianyi_Normal_ArmContinuityT5_Rig.4096/texture_00.png": "942e84e93e03ea4f055012272f93f2861e3591b85ff8454251d9b459aee314dc",
+    "LuoTianyi_Normal_ArmContinuityT5_Rig.4096/texture_01.png": "08ed823d21fa0628fba558482b107e0e93f49e3ad9b7f6e66782a9d61d584bfd"
+  },
+  "reopen_matches": true,
+  "unique_physics_writers": true,
+  "zip_sha256": "8dbe958c74cad56335fbe25e6f457e47d5c06aa96b4fc931d1c801ba8004eefd"
+}

@@ -1,0 +1,40 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "LuoTianyi_Normal_ArmContinuityT5_Rig.moc3",
+		"Textures": [
+			"LuoTianyi_Normal_ArmContinuityT5_Rig.4096/texture_00.png",
+			"LuoTianyi_Normal_ArmContinuityT5_Rig.4096/texture_01.png"
+		],
+		"Physics": "LuoTianyi_Normal_ArmContinuityT5_Rig.physics3.json",
+		"DisplayInfo": "LuoTianyi_Normal_ArmContinuityT5_Rig.cdi3.json",
+		"Motions": {
+			"Idle": [
+				{
+					"File": "LuoTianyi_Normal_ArmContinuityT5_Rig.motion.motion3.json"
+				},
+				{
+					"File": "LuoTianyi_Normal_ArmContinuityT5_Rig.motion2.motion3.json"
+				},
+				{
+					"File": "LuoTianyi_Normal_ArmContinuityT5_Rig.motion3.motion3.json"
+				},
+				{
+					"File": "LuoTianyi_Normal_ArmContinuityT5_Rig.motion4.motion3.json"
+				},
+				{
+					"File": "LuoTianyi_Normal_ArmContinuityT5_Rig.motion5.motion3.json"
+				}
+			]
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"ParamMouthOpenY"
+			]
+		}
+	]
+}
